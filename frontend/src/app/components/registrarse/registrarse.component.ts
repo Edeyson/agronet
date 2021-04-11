@@ -69,7 +69,7 @@ export class RegistrarseComponent implements OnInit {
     this.usuario = this.formRegister.value;
     if (this.usuario.contrasena === contrasena.value) {
      console.log(this.usuario);
-    } else {
+    } else {      
      console.log('Las contraseñas no coinciden', 'Advertencia')
     }
   }
