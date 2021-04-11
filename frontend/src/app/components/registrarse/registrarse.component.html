@@ -1,56 +1,126 @@
-<app-header [showHeader]="false"></app-header>
+<div>
+  <form id="registro-form" class="form" action="" method="post" [formGroup]="formRegister">
+    <div class="row">
 
-<body style="background-color:rgb(210, 243, 205);">
-  <div class="content">
-    <div class="card border-primary mb-3" style="max-width: 25rem; align-items: center;">
-      <div class="card-header">Registrarse</div>
-      <div class="card-body text-dark">
-        <h5 class="card-title">ingresa los siguientes datos</h5>
-        <div class="card-content">
-          <form>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">correo</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="correo electronico">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputPassword4">contraseña</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="crea una contraseña">
-              </div>
-            </div>
-            <div>
-              <label for="inputState" class="text-info" required>Departamento <span class="required">*</span></label>
-              <select id="department" name="state" class="form-control" >
-                <option value="0">Selecciona un estado... </option>
-                <option *ngFor="let state of states" [value]="state.isoCode">
-                  {{state.name}}
-                </option>
-              </select>
-            </div>
-            <div>
-              <label for="inputState" class="text-info" required>Ciudad <span class="required">*</span></label>
-              <select name="state" class="form-control">
-                <option value="0">Selecciona una ciudad... </option>
-                <option *ngFor="let city of ciudades" [value]="city.name">
-                  {{city.name}}
-                </option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="inputAddress2">numero telefónico</label>
-              <input type="number" class="form-control" id="inputAddress2" placeholder="ej: 3125401758">
-            </div>
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card-body">
+          <h5 style="color: red;">Datos de Acceso</h5>
+          <hr>
+          <!-- Participan Full name  -->
+          <div class="form-group">
+            <label for="primerNombre" class="text-info" required>Primer nombre<span
+                class="required">*</span></label>
+            <input type="text" id="primerNombre" class="form-control" placeholder="Primer nombre" required
+              autofocus formControlName="primerNombre">
+          </div>
 
-            <div class="form-group">
-              <label for="inputAddress">dirección</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="ej: calle 46 #26-29">
-            </div>
-            <button type="submit" class="btn btn-primary">Registrarme</button>
-          </form>
+
+          <div class="form-group">
+            <label for="primerApellido" class="text-info" required>Primer apellido<span
+                class="required">*</span></label>
+            <input type="text" id="primerApellido" class="form-control" placeholder="Primer apellido" required
+              autofocus formControlName="primerApellido">
+          </div>
+          
+
+          <!-- primary email -->
+          <div class="form-group">
+            <label for="primaryEmail" class="text-info" required>Correo electrónico <span class="required">*</span></label>
+            <input type="correo" id="correo" class="form-control" placeholder="email@principal.com" required
+              formControlName="correo" >
+          
+          </div>
+
+          <!-- password -->
+          <div class="form-group">
+            <label for="contrasena" class="text-info" required>Contraseña <span class="required">*</span></label>
+            <input type="password" id="contrasena" class="form-control" placeholder="******" required
+              formControlName="contrasena" >           
+          </div>
+
+          <!-- confirm password -->
+          <div class="form-group">
+            <label for="confirmarContrasena" class="text-info" required>Repita la contraseña <span
+                class="required">*</span></label>
+            <input type="password" min="6" id="confirmarContrasena" 
+            class="form-control"
+            placeholder="******" required
+              #confirmarContrasena>
+          
+          </div>
+
+          <!-- number phone -->
+          <div class="form-group">
+            <label for="telefono" class="text-info" required>Teléfono móvil <span class="required">*</span></label>
+            <input type="number" id="phone" class="form-control" required formControlName="telefono"
+            >
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- SECOND COLUMN -->
+      <div class="col-sm-5" id="perfil">
+        <div class="card-body">
+
+          <h5 style="color: red;">Lugar de residencia</h5>
+          <hr>
+
+          <!-- state of country -->
+          <div class="form-group">
+            <label for="inputState" class="text-info" required>Departamento <span class="required">*</span></label>
+            <select name="departamento" class="form-control" (change)="onSate($event)" 
+            formControlName="departamento">
+              <option value="0">Selecciona un estado... </option>
+              <option *ngFor="let departamento of states" [value]="departamento.isoCode">
+                {{departamento.name}}
+              </option>
+            </select>
+          
+          </div>
+
+
+          <!-- City state -->
+          <div class="form-group">
+            <label for="ciudad" class="text-info" required>Ciudad <span class="required">*</span></label>
+            <select name="ciudad" class="form-control" formControlName="ciudad">
+              <option value="0">Selecciona una ciudad...</option>
+              <option *ngFor="let ciudad of ciudades" [value]="ciudad.name">
+                {{ciudad.name}}
+              </option>
+            </select>
+           
+          </div>
+
+          <div class="form-group">
+            <label for="telefono" class="text-info" required>Teléfono<span
+                class="required">*</span></label>
+            <input type="number" id="telefono" class="form-control" required
+              autofocus formControlName="telefono">
+          </div>
+
+          <div class="form-group">
+            <label for="direccion" class="text-info" required>Dirección<span
+                class="required">*</span></label>
+            <input type="direccion" id="direccion" class="form-control" placeholder="Dirección domicilio" required
+              autofocus formControlName="direccion">
+          </div>
+
+
         </div>
       </div>
     </div>
+
+    <div class="form-label-group">
+      <label for="comentarios" class="form-control" class="text-info">Comentarios adicionales</label><br>
+      <textarea id="comentarios" name="comentarios" class="form-control" rows="3"
+        placeholder="Comentarios adicionales que no se hayan contemplado en el formulario..."
+        formControlName="comentarios"></textarea>
+    </div>
+  </form>
+
+  <div>
+    <button type="button" class="btn btn-secondary" >Cancelar</button>
+    <button type="submit" class="btn btn-primary" (click)="save(confirmarContrasena)">Registrarme</button>
   </div>
-</body> 
-
-
+</div>
