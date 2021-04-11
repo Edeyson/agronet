@@ -72,7 +72,7 @@ export class RegistrarseComponent implements OnInit {
 
     this.usuario = this.formRegister.value;
     if (this.usuario.contrasena === contrasena.value) {     
-      this.toastrService.success("Registro exitoso", "Registro");
+      this.toastrService.success("Registro exitoso", "Registro"); 
       
     } else {          
     this.toastrService.warning('Las contraseñas no coinciden', 'Advertencia', {
