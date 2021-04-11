@@ -7,6 +7,7 @@ import { RegistrarseComponent } from './components/registrarse/registrarse.compo
 import { InicioComponent } from './components/inicio/inicio.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
@@ -21,7 +22,8 @@ const rutas: Routes = [
   declarations: [
     AppComponent,
     RegistrarseComponent,
-    InicioComponent
+    InicioComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

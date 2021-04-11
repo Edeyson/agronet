@@ -1,18 +1,4 @@
-<nav class="navbar navbar-dark bg-primary">
-  <button class="navbar-toggler" type="button">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#">
-    <img src="../../../assets/logo-uam.png" width="auto" height="50" class="d-inline-block align-top" alt="">
-    AgroNet
-  </a>
-  <div class="form-inline">
-    <a href="">
-      <button class="btn btn-secondary" type="submit">Ingresar</button>
-    </a>
-  </div>
-</nav>
-<br>
+<app-header [showHeader]="false"></app-header>
 
 <body style="background-color:rgb(210, 243, 205);">
   <div class="content">
@@ -34,7 +20,7 @@
             </div>
             <div>
               <label for="inputState" class="text-info" required>Departamento <span class="required">*</span></label>
-              <select name="state" class="form-control" (change)="onSite($event.target.value)">
+              <select id="department" name="state" class="form-control" >
                 <option value="0">Selecciona un estado... </option>
                 <option *ngFor="let state of states" [value]="state.isoCode">
                   {{state.name}}
