@@ -8,6 +8,9 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductoComponent } from './components/productos/producto/producto.component';
+import { ProductosComponent } from './components/productos/productos/productos.component';
 
 
 
@@ -24,11 +27,14 @@ const rutas: Routes = [
     AppComponent,
     RegistrarseComponent,
     InicioComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductoComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
     RouterModule.forRoot(
