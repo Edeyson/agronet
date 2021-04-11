@@ -38,7 +38,7 @@ export interface countries {
     primerApellido?: string;
     correo?: string;
     contrasena?: string;
-    departamente?: string;
+    departamento?: string;
     ciudad?: string;
     telefono?: string;
     direccion?: string;
