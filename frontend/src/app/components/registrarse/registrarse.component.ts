@@ -63,7 +63,7 @@ export class RegistrarseComponent implements OnInit {
 
 
   public save(contrasena: HTMLInputElement) {
-    this.submitted = true;  
+    this.submitted = true;
         
     if (this.formRegister.invalid) {
       this.toastrService.error("Por favor complete todos los campos", "Registro");
@@ -71,7 +71,7 @@ export class RegistrarseComponent implements OnInit {
     }
 
     this.usuario = this.formRegister.value;
-    if (this.usuario.contrasena === contrasena.value) {     
+    if (this.usuario.contrasena === contrasena.value) {    
       this.toastrService.success("Registro exitoso", "Registro"); 
       
     } else {          
