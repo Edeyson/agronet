@@ -6,6 +6,11 @@ import { AppComponent } from './app.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
+
+
+
 
 const rutas: Routes = [
   { path: '',   redirectTo: '/inicio', pathMatch: 'full' },
@@ -18,10 +23,13 @@ const rutas: Routes = [
   declarations: [
     AppComponent,
     RegistrarseComponent,
-    InicioComponent
+    InicioComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     RouterModule.forRoot(
       rutas,
