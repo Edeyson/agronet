@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { CountriesService } from 'src/app/services/countries.service';
 import { cities, states, UsuarioI } from '../interfaces/interfaces';
 
@@ -25,7 +26,8 @@ export class RegistrarseComponent implements OnInit {
   public statesOfCountry = [];
 
 
-  constructor(private service: CountriesService) { }
+  constructor(private service: CountriesService,
+              private toastrService: ToastrService) { }
 
   ngOnInit(): void {
     this.states = this.service.getStatesOfCountry(this.country);
@@ -40,7 +42,7 @@ export class RegistrarseComponent implements OnInit {
 
       telefono: new FormControl(null, [Validators.required]),
       direccion: new FormControl(null, [Validators.required]),
-      comentarios: new FormControl(null, [Validators.required]) 
+      comentarios: new FormControl(null) 
     })
 
   }
@@ -64,14 +66,18 @@ export class RegistrarseComponent implements OnInit {
     this.submitted = true;  
         
     if (this.formRegister.invalid) {
+      this.toastrService.error("Por favor complete todos los campos", "Registro");
       return;
     }
 
     this.usuario = this.formRegister.value;
-    if (this.usuario.contrasena === contrasena.value) {
-     console.log(this.usuario);
-    } else {      
-     console.log('Las contraseñas no coinciden', 'Advertencia')
+    if (this.usuario.contrasena === contrasena.value) {     
+      this.toastrService.success("Registro exitoso", "Registro");
+      
+    } else {          
+    this.toastrService.warning('Las contraseñas no coinciden', 'Advertencia', {
+        timeOut: 5000,
+    })
     }
   }
   
