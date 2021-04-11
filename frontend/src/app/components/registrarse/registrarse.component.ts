@@ -10,7 +10,7 @@ import { cities, states, UsuarioI } from '../interfaces/interfaces';
 })
 export class RegistrarseComponent implements OnInit {
 
-  
+  public submitted = false;
   public formRegister: FormGroup;
   public usuario: UsuarioI;
 
@@ -61,10 +61,11 @@ export class RegistrarseComponent implements OnInit {
 
 
   public save(contrasena: HTMLInputElement) {
+    this.submitted = true;  
         
-    // if (this.formRegister.invalid) {
-    //   return;
-    // }
+    if (this.formRegister.invalid) {
+      return;
+    }
 
     this.usuario = this.formRegister.value;
     if (this.usuario.contrasena === contrasena.value) {
@@ -74,6 +75,13 @@ export class RegistrarseComponent implements OnInit {
     }
   }
   
+
+  /**
+  * validates the form fields
+  */
+   get f(): any {
+    return this.formRegister.controls;
+  }
     
 
 }
