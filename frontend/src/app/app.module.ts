@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 const rutas: Routes = [
   { path: '',   redirectTo: '/inicio', pathMatch: 'full' },
@@ -22,6 +25,7 @@ const rutas: Routes = [
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     RouterModule.forRoot(
       rutas,

@@ -1,63 +1,70 @@
 <nav class="navbar navbar-dark bg-primary">
-    <button class="navbar-toggler"
-          type="button">
+  <button class="navbar-toggler" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
-    <a class="navbar-brand" href="#">
-      <img src="../../../assets/logo-uam.png" width="auto" height="50" class="d-inline-block align-top" alt="">
-      AgroNet
+  <a class="navbar-brand" href="#">
+    <img src="../../../assets/logo-uam.png" width="auto" height="50" class="d-inline-block align-top" alt="">
+    AgroNet
+  </a>
+  <div class="form-inline">
+    <a href="">
+      <button class="btn btn-secondary" type="submit">Ingresar</button>
     </a>
-    <div class="form-inline">
-        <a href="">
-            <button class="btn btn-secondary" type="submit">Ingresar</button>
-        </a>
-    </div>
-  </nav>
-  <br>
-  <body style="background-color:rgb(210, 243, 205);">
-    <div class="content" >
-        <div class="card border-primary mb-3" style="max-width: 25rem; align-items: center;" >
-            <div class="card-header">Registrarse</div>
-            <div class="card-body text-dark">
-              <h5 class="card-title">ingresa los siguientes datos</h5>
-              <div class="card-content">
-                <form>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputEmail4">correo</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="correo electronico">
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="inputPassword4">contraseña</label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="crea una contraseña">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="inputAddress">dirección</label>
-                      <input type="text" class="form-control" id="inputAddress" placeholder="ej: calle 46 #26-29">
-                    </div>
-                    <div class="form-group">
-                      <label for="inputAddress2">numero telefónico</label>
-                      <input type="number" class="form-control" id="inputAddress2" placeholder="ej: 3125401758">
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputCity">ciudad</label>
-                        <input type="text" class="form-control" id="ciudad" placeholder="ej: manizales">
-                      </div>
-                    </div>
-                    <!-- <div class="form-group">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                          
-                        </label>
-                      </div>
-                    </div> -->
-                    <button type="submit" class="btn btn-primary">Registrarme</button>
-                  </form>
+  </div>
+</nav>
+<br>
+
+<body style="background-color:rgb(210, 243, 205);">
+  <div class="content">
+    <div class="card border-primary mb-3" style="max-width: 25rem; align-items: center;">
+      <div class="card-header">Registrarse</div>
+      <div class="card-body text-dark">
+        <h5 class="card-title">ingresa los siguientes datos</h5>
+        <div class="card-content">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">correo</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="correo electronico">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">contraseña</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="crea una contraseña">
               </div>
             </div>
-          </div>
+            <div>
+              <label for="inputState" class="text-info" required>Departamento <span class="required">*</span></label>
+              <select name="state" class="form-control" (change)="onSite($event.target.value)">
+                <option value="0">Selecciona un estado... </option>
+                <option *ngFor="let state of states" [value]="state.isoCode">
+                  {{state.name}}
+                </option>
+              </select>
+            </div>
+            <div>
+              <label for="inputState" class="text-info" required>Ciudad <span class="required">*</span></label>
+              <select name="state" class="form-control">
+                <option value="0">Selecciona una ciudad... </option>
+                <option *ngFor="let city of ciudades" [value]="city.name">
+                  {{city.name}}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">numero telefónico</label>
+              <input type="number" class="form-control" id="inputAddress2" placeholder="ej: 3125401758">
+            </div>
+
+            <div class="form-group">
+              <label for="inputAddress">dirección</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="ej: calle 46 #26-29">
+            </div>
+            <button type="submit" class="btn btn-primary">Registrarme</button>
+          </form>
+        </div>
       </div>
-  </body>
+    </div>
+  </div>
+</body> 
+
+
