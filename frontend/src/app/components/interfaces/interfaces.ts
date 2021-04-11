@@ -32,3 +32,15 @@ export interface countries {
     latitude: string;
     longitude: string;
   }
+
+  export interface UsuarioI {
+    primerNombre?: string;
+    primerApellido?: string;
+    correo?: string;
+    contrasena?: string;
+    departamente?: string;
+    ciudad?: string;
+    telefono?: string;
+    direccion?: string;
+    comentarios?: string;
+  }
