@@ -41,8 +41,8 @@ export class RegistrarseComponent implements OnInit {
       ciudad: new FormControl(null, [Validators.required]),
 
       telefono: new FormControl(null, [Validators.required]),
-      direccion: new FormControl(null, [Validators.required]),
-      comentarios: new FormControl(null) 
+      // direccion: new FormControl(null, [Validators.required]),
+      // comentarios: new FormControl(null) 
     })
 
   }
@@ -73,6 +73,7 @@ export class RegistrarseComponent implements OnInit {
     this.usuario = this.formRegister.value;
     if (this.usuario.contrasena === contrasena.value) {    
       this.toastrService.success("Registro exitoso", "Registro"); 
+      console.log(this.usuario);
       
     } else {          
     this.toastrService.warning('Las contraseñas no coinciden', 'Advertencia', {

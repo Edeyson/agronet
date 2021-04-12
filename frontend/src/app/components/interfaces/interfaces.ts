@@ -41,6 +41,6 @@ export interface countries {
     departamento?: string;
     ciudad?: string;
     telefono?: string;
-    direccion?: string;
-    comentarios?: string;
+    // direccion?: string;
+    // comentarios?: string;
   }
