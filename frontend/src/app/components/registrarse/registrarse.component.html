@@ -8,18 +8,16 @@
         <div class="card-body">
           <h5 style="color: red;">Datos de Acceso</h5>
           <hr>
-        
+
 
           <div class="form-group">
-            <label for="primerNombre" class="text-info" required>Primer nombre<span
-                class="required">*</span></label>
-            <input type="text" id="primerNombre" class="form-control" placeholder="Primer nombre" required
-              autofocus formControlName="primerNombre"
-              [ngClass]="{'is-invalid': submitted && f.primerNombre.errors}">
-              <div *ngIf="submitted && f.primerNombre.errors" class="invalid-feedback">
-                <div *ngIf="f.primerNombre.errors.required">
-                  Campo obligatorio
-                </div>
+            <label for="primerNombre" class="text-info" required>Primer nombre<span class="required">*</span></label>
+            <input type="text" id="primerNombre" class="form-control" placeholder="Primer nombre" required autofocus
+              formControlName="primerNombre" [ngClass]="{'is-invalid': submitted && f.primerNombre.errors}">
+            <div *ngIf="submitted && f.primerNombre.errors" class="invalid-feedback">
+              <div *ngIf="f.primerNombre.errors.required">
+                Campo obligatorio
+              </div>
             </div>
           </div>
 
@@ -27,27 +25,25 @@
           <div class="form-group">
             <label for="primerApellido" class="text-info" required>Primer apellido<span
                 class="required">*</span></label>
-            <input type="text" id="primerApellido" class="form-control" placeholder="Primer apellido" required
-              autofocus formControlName="primerApellido"
-              [ngClass]="{'is-invalid': submitted && f.primerApellido.errors}">
-              <div *ngIf="submitted && f.primerApellido.errors" class="invalid-feedback">
-                <div *ngIf="f.primerApellido.errors.required">
-                  Campo obligatorio
-                </div>
+            <input type="text" id="primerApellido" class="form-control" placeholder="Primer apellido" required autofocus
+              formControlName="primerApellido" [ngClass]="{'is-invalid': submitted && f.primerApellido.errors}">
+            <div *ngIf="submitted && f.primerApellido.errors" class="invalid-feedback">
+              <div *ngIf="f.primerApellido.errors.required">
+                Campo obligatorio
+              </div>
             </div>
           </div>
-          
 
-          
+
+
           <div class="form-group">
             <label for="correo" class="text-info" required>Correo electrónico <span class="required">*</span></label>
             <input type="email" id="correo" class="form-control" placeholder="principal@email.com" required
-              formControlName="correo" 
-              [ngClass]="{'is-invalid': submitted && f.correo.errors}">
-              <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
-                <div *ngIf="f.correo.errors.required">
-                  Campo obligatorio
-                </div>
+              formControlName="correo" [ngClass]="{'is-invalid': submitted && f.correo.errors}">
+            <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
+              <div *ngIf="f.correo.errors.required">
+                Campo obligatorio
+              </div>
             </div>
           </div>
 
@@ -55,37 +51,34 @@
           <div class="form-group">
             <label for="contrasena" class="text-info" required>Contraseña <span class="required">*</span></label>
             <input type="password" id="contrasena" class="form-control" placeholder="******" required
-              formControlName="contrasena" 
-              [ngClass]="{'is-invalid': submitted && f.contrasena.errors}">   
-              <div *ngIf="submitted && f.contrasena.errors" class="invalid-feedback">
-                <div *ngIf="f.contrasena.errors.required">
-                  Campo obligatorio
-                </div>
-            </div>        
+              formControlName="contrasena" [ngClass]="{'is-invalid': submitted && f.contrasena.errors}">
+            <div *ngIf="submitted && f.contrasena.errors" class="invalid-feedback">
+              <div *ngIf="f.contrasena.errors.required">
+                Campo obligatorio
+              </div>
+            </div>
           </div>
 
           <!-- confirm password -->
           <div class="form-group">
             <label for="confirmarContrasena" class="text-info" required>Repita la contraseña <span
                 class="required">*</span></label>
-            <input type="password" min="6" id="confirmarContrasena" 
-            class="form-control"
-            placeholder="******" required #confirmarContrasena >
-              
-          
+            <input type="password" min="6" id="confirmarContrasena" class="form-control" placeholder="******" required
+              #confirmarContrasena>
+
+
           </div>
 
           <!-- number phone -->
           <div class="form-group">
             <label for="telefono" class="text-info" required>Teléfono móvil <span class="required">*</span></label>
-            <input type="number" id="phone" class="form-control" required
-            formControlName="telefono"
-            [ngClass]="{'is-invalid': submitted && f.telefono.errors}">
+            <input type="number" id="phone" class="form-control" required formControlName="telefono"
+              [ngClass]="{'is-invalid': submitted && f.telefono.errors}">
             <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
               <div *ngIf="f.telefono.errors.required">
                 Campo obligatorio
               </div>
-          </div>
+            </div>
           </div>
         </div>
       </div>
@@ -100,9 +93,8 @@
           <!-- state of country -->
           <div class="form-group">
             <label for="inputState" class="text-info" required>Departamento <span class="required">*</span></label>
-            <select name="departamento" class="form-control" (change)="onSate($event)" 
-            formControlName="departamento"
-            [ngClass]="{'is-invalid': submitted && f.departamento.errors}">
+            <select name="departamento" class="form-control" (change)="onSate($event)" formControlName="departamento"
+              [ngClass]="{'is-invalid': submitted && f.departamento.errors}">
               <option value="0">Selecciona un estado... </option>
               <option *ngFor="let departamento of states" [value]="departamento.isoCode">
                 {{departamento.name}}
@@ -112,8 +104,7 @@
               <div *ngIf="f.departamento.errors.required">
                 Campo obligatorio
               </div>
-          </div>
-          
+            </div>
           </div>
 
 
@@ -121,7 +112,7 @@
           <div class="form-group">
             <label for="ciudad" class="text-info" required>Ciudad <span class="required">*</span></label>
             <select name="ciudad" class="form-control" formControlName="ciudad"
-            [ngClass]="{'is-invalid': submitted && f.ciudad.errors}">
+              [ngClass]="{'is-invalid': submitted && f.ciudad.errors}">
               <option value="0">Selecciona una ciudad...</option>
               <option *ngFor="let ciudad of ciudades" [value]="ciudad.name">
                 {{ciudad.name}}
@@ -131,11 +122,11 @@
               <div *ngIf="f.ciudad.errors.required">
                 Campo obligatorio
               </div>
-          </div>
-           
+            </div>
+
           </div>
 
-          
+
 
           <!-- <div class="form-group">
             <label for="direccion" class="text-info" required>Dirección<span
@@ -164,7 +155,7 @@
   </form>
 
   <div>
-    <button type="button" class="btn btn-secondary" >Cancelar</button>
+    <button type="button" class="btn btn-secondary">Cancelar</button>
     <button type="submit" class="btn btn-primary" (click)="save(confirmarContrasena)">Registrarme</button>
   </div>
 </div>
