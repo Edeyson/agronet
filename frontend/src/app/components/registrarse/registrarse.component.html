@@ -95,7 +95,7 @@
             <label for="inputState" class="text-info" required>Departamento <span class="required">*</span></label>
             <select name="departamento" class="form-control" (change)="onSate($event)" formControlName="departamento"
               [ngClass]="{'is-invalid': submitted && f.departamento.errors}">
-              <option value="0">Selecciona un estado... </option>
+              <option value="0" disabled>Selecciona un estado... </option>
               <option *ngFor="let departamento of states" [value]="departamento.isoCode">
                 {{departamento.name}}
               </option>
@@ -113,7 +113,7 @@
             <label for="ciudad" class="text-info" required>Ciudad <span class="required">*</span></label>
             <select name="ciudad" class="form-control" formControlName="ciudad"
               [ngClass]="{'is-invalid': submitted && f.ciudad.errors}">
-              <option value="0">Selecciona una ciudad...</option>
+              <option value="0" disabled>Selecciona una ciudad...</option>
               <option *ngFor="let ciudad of ciudades" [value]="ciudad.name">
                 {{ciudad.name}}
               </option>
