@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,7 @@ Route::post('register', [App\Http\Controllers\Api\v1\RegisterController::class, 
 Route::post('login', [App\Http\Controllers\Api\v1\LoginController::class, 'login']);
 
 
-
-Route::middleware(['auth:sanctum'])->group(function () {
+Route::middleware(['auth:sanctum', 'role:'.Role::USUARIO_REGISTRADO])->group(function () {
 
     Route::post('logout', [App\Http\Controllers\Api\v1\LoginController::class, 'logout']);
 });

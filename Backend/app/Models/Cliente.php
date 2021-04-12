@@ -4,7 +4,12 @@ namespace App\Models;
 
 class Cliente extends User
 {
-    protected $telefono;
+    protected $direccion;
+    
+    protected $fillable = [       
+        
+        'direccion',
+    ];
 
     function __construct($telefono)
     {
@@ -16,5 +21,10 @@ class Cliente extends User
         if($role == Role::CLIENTE)
             return true;
         return parent::hasType($role);        
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

@@ -4,9 +4,13 @@ namespace App\Models;
 
 class Productor extends User
 {
-    protected $telefono;
 
     protected $direccion;
+    
+    protected $fillable = [       
+        
+        'direccion',
+    ];
 
     function __construct($telefono, $direccion)
     {
@@ -20,4 +24,10 @@ class Productor extends User
             return true;
         return parent::hasType($role);        
     }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
 }
