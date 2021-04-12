@@ -64,5 +64,5 @@
 -consumo de la api de noticias para simular los productos y organizar en cards en la vista principal
 ------12/04/2021--------------
 -generacion del modal en vista usuario publico
--terminacion del search para las consultas del usuario
--
+-terminacion del search para las consultas del usuario de forma conjunta
+
