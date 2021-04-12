@@ -16,5 +16,9 @@ Package Users
 
 ----------EDEYSON BERMEO BURBANO-------------------
 -------11/04/2021----------
-formulario de registro completo
-actualizacion del header de la aplicación
+-formulario de registro completo
+ - con validaciones
+ - y un plus de notificaciones
+-actualización del header de la aplicación
+-actualización del menu principal con departamentos y ciudades para filtrar
+-consumo de la api de noticias para simular los productos
