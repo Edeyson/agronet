@@ -1,17 +1,58 @@
 ----------JUAN DAVID MARULANDA QUINTERO-------------------
- prueba para webhook de github 2.0.0
- prueba de acrualizacion de repositorio git
+ ----7/4/2021----
+ se crearon los modelos de los roles en forma conjunta 
+ 
+ ----10/4/2021----
+ se crearon los metodos de la clase userBasic en forma conjunta
+ se creo el token para los loggin con factum de forma conjunta
+ 
+ ----11/4/2021----
+ se creo el modelo entidad relacion para los roles de forma conjunta
+ se crearon las migraciones de los roles de forma conjunta
+ se crearon los seeders para los roles de forma conjunta
+ se hicieron pruebas de añadir roles a usuarios de forma conjunta
+
+
+
+
+
+
+
+
 
 ----------Santiago Velez Suarez-------------------
+----7/4/2021----
+ se crearon los modelos de los roles en forma conjunta 
+ 
+ ----10/4/2021----
+ se crearon los metodos de la clase userBasic en forma conjunta
+ se creo el token para los loggin con factum de forma conjunta
+ 
+ ----11/4/2021----
+ se creo el modelo entidad relacion para los roles de forma conjunta
+ se crearon las migraciones de los roles de forma conjunta
+ se crearon los seeders para los roles de forma conjunta
+ se hicieron pruebas de añadir roles a usuarios de forma conjunta
 
-Package Users
-- Set Up Sanctum API Tokens
-- Register Users
-- Login Users
+
+
+
+
+
+
 
 
 
 ----------CATERINE LADINO GALVIS -------------------
+
+
+
+
+
+
+
+
+
 
 
 ----------EDEYSON BERMEO BURBANO-------------------
