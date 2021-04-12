@@ -10,4 +10,10 @@ class Gestor extends Productor
             return true;
         return parent::hasType($role);        
     }
+
+    public function owner()
+    {
+        return $this->belongsTo(Productor::class, 'productor_id');
+    }
+
 }
