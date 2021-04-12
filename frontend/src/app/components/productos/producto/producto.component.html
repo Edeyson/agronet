@@ -5,15 +5,15 @@
         <h5 class="card-title">{{article.title}}</h5>
         <p class="card-text">{{article.content}}</p>
     </div>
-    <div class="card-footer centrar" >
+    <div class="card-footer centrar">
         <a class="btn btn-outline-primary my-2 my-sm-0" type="submit" href="registro">
-            <img src="../../../assets/add-icon.png" width="auto" height="30" class="d-inline-block align-top"
-                    alt="">
+            <img src="../../../assets/add-icon.png" width="auto" height="30" class="d-inline-block align-top" alt="">
         </a>
         &nbsp;
-        <a class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+        <a class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)="articuloSelected()" data-toggle="modal" data-target="#productModal">
             <img src="../../../assets/más-info-icon.png" width="auto" height="30" class="d-inline-block align-top"
-                    alt="">
+                alt="">
         </a>
     </div>
 </div>
+<app-productmodal [article]="article"></app-productmodal>

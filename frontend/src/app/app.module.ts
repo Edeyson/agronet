@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { FilterPipe } from './pipes/filter.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { MaterialModule } from './material/material.module';
+import { ProductModalComponent } from './components/modals/product-modal/product-modal.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MaterialModule } from './material/material.module';
     ProductoComponent,
     ProductosComponent,
     FilterPipe,
-    LoginComponent
+    LoginComponent,
+    ProductModalComponent
   ],
   imports: [
     CommonModule,
