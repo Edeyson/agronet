@@ -8,10 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductoComponent implements OnInit {
 
   @Input() article:any;
+  public codigo:any;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  articuloSelected(){
+    console.log("Selected: ",this.article);
   }
 
 }
