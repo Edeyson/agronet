@@ -10,11 +10,11 @@
         AgroNet
     </a>
     <div class="form-inline">
-        <a href="registro" *ngIf="showHeader">
-            <button class="btn btn-success" type="submit">Registrarse</button>
+        <a routerLink="/registro" *ngIf="showHeader">
+            <button class="btn btn-success">Registrarse</button>
         </a>
-        <a href="">
-            <button class="btn btn-secondary" type="submit">Ingresar</button>
+        <a routerLink="/login">
+            <button class="btn btn-secondary">Ingresar</button>
         </a>
     </div>
 </nav>

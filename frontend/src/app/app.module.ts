@@ -15,16 +15,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { FilterPipe } from './pipes/filter.pipe';
-
-
-
-
-const rutas: Routes = [
-  { path: '',   redirectTo: '/inicio', pathMatch: 'full' },
-  { path: 'inicio', component: InicioComponent },
-  { path: 'registro', component: RegistrarseComponent },
- 
-];
+import { LoginComponent } from './components/login/login.component';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -34,11 +26,13 @@ const rutas: Routes = [
     HeaderComponent,
     ProductoComponent,
     ProductosComponent,
-    FilterPipe
+    FilterPipe,
+    LoginComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
+    MaterialModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -50,10 +44,11 @@ const rutas: Routes = [
       progressAnimation: 'increasing',
       preventDuplicates: true,
     }),
-    RouterModule.forRoot(
-      rutas,
-      { enableTracing: true }
-    )
+    AppRoutingModule
+    // RouterModule.forRoot(
+    //   rutas,
+    //   { enableTracing: true }
+    // )
   ],
   providers: [],
   bootstrap: [AppComponent]

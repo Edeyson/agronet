@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<mat-card>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <h2>Iniciar Sesion</h2>
+        <mat-form-field class="full-width-input">
+          <input matInput type="email" placeholder="Email" formControlName="email">
+          <mat-error>
+            Por favor ingresa un correo valido
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput type="password" placeholder="Password" formControlName="password">
+          <mat-error>
+            Por favor ingresa una contraseña valida
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button type="submit" color="primary">Ingresar</button>
+      </form>
+    </mat-card-content>
+</mat-card>
