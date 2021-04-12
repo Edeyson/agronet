@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsApiService } from 'src/app/services/news-api.service';
+import { FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-productos',
@@ -10,9 +11,13 @@ export class ProductosComponent implements OnInit {
 
   public articulos: any;
 
+  public filtrarProducto = '';
+
   constructor(private newsService:NewsApiService) { 
     this.loadNews();
   }
+
+  
 
   ngOnInit(): void {
     
