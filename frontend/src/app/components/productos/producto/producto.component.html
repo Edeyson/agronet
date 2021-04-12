@@ -1,10 +1,15 @@
-
 <div size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" class="card" style="width: 18rem; margin-top: auto;">
-<img [src]="article.urlToImage" alt="Card image">
-<h6 class="card-text">{{article.author}}</h6>
-<div class="card-body">
-    <h5 class="card-title">{{article.title}}</h5>
-    <p class="card-text">{{article.content}}</p>
-    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-</div>
+    <img [src]="article.urlToImage" alt="Card image">
+    <h6 class="card-text">{{article.author}}</h6>
+    <div class="card-body">
+        <h5 class="card-title">{{article.title}}</h5>
+        <p class="card-text">{{article.content}}</p>
+    </div>
+    <div class="card-footer">
+        agregar
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+            <img src="../../../assets/add-icon.png" width="20" height="20" class="d-inline-block align-top"
+                    alt="">
+        </button>
+    </div>
 </div>
