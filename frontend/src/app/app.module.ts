@@ -14,6 +14,7 @@ import { ProductosComponent } from './components/productos/productos/productos.c
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 
@@ -32,7 +33,8 @@ const rutas: Routes = [
     InicioComponent,
     HeaderComponent,
     ProductoComponent,
-    ProductosComponent
+    ProductosComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
