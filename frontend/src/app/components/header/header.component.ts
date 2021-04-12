@@ -28,7 +28,15 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  estadoSeleccinado(estado:string){
+    console.log(estado);
+    this.ciudades = this.service.getCitiesOfState(this.country,estado);
+    console.log(this.ciudades);
+}
+ciudadSeleccinada(ciudad:string){
+console.log(ciudad);
 
+}
   
 
 }
