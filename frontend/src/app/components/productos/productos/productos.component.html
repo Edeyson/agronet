@@ -1,4 +1,15 @@
 
+<ul class="navbar-nav rounded ml-auto">
+    <nav class="navbar navbar-dark bg-light" >
+        <form class="form-inline">
+            <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+                <img src="../../../assets/serach-icon.png" width="20" height="20" class="d-inline-block align-top"
+                    alt="">
+            </button>
+        </form>
+    </nav>
+</ul>
 <div class="row" fixed>
     <div class="col-sm" size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" *ngFor="let articulo of articulos">
         <app-producto [article]="articulo" ></app-producto>
