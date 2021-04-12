@@ -44,6 +44,13 @@
 
 
 ----------CATERINE LADINO GALVIS -------------------
+------ 12/04/2021-------------
+Se agrego el modulo de Angular Material al frontend
+Se arreglo el routing del frontend
+Se creo el componente del longin
+Se termino el search para las consultas del usuario de forma conjunta
+Se conecto el componente del login con el backend 
+
 
 
 
