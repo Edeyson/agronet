@@ -62,4 +62,4 @@
  - y un plus de notificaciones
 -actualización del menu principal con departamentos y ciudades para filtrar
 -consumo de la api de noticias para simular los productos y organizar en cards en la vista principal
-
+-generacion del modal en vista usuario publico
