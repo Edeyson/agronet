@@ -8,6 +8,9 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductoComponent } from './components/productos/producto/producto.component';
+import { ProductosComponent } from './components/productos/productos/productos.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
@@ -27,12 +30,15 @@ const rutas: Routes = [
     AppComponent,
     RegistrarseComponent,
     InicioComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductoComponent,
+    ProductosComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,

@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { NewsApiService } from 'src/app/services/news-api.service';
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.scss']
+  selector: 'app-productos',
+  templateUrl: './productos.component.html',
+  styleUrls: ['./productos.component.scss']
 })
-export class InicioComponent implements OnInit {
+export class ProductosComponent implements OnInit {
 
- public articles: any;
+  public articulos: any;
 
   constructor(private newsService:NewsApiService) { 
     this.loadNews();
@@ -20,10 +20,10 @@ export class InicioComponent implements OnInit {
 
   loadNews(){
     this.newsService.getNews("everything?q=tesla&from=2021-03-11&sortBy=publishedAt").subscribe( news =>{
-      this.articles = news;
-      this.articles = this.articles.articles;
-      console.log("articulos",this.articles);
+      this.articulos = news;
+      this.articulos = this.articulos.articles;
+      console.log("articulos",this.articulos);
     });
   }
-  
+
 }
