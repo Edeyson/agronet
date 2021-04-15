@@ -12,6 +12,8 @@ class LoginController extends Controller
 {
     public function login(LoginUserRequest $request)
     {
+        $attributes = $request->data['attributes'];
+        $request->replace($attributes);
         if(Auth::attempt($request->only('email', 'password')))
         {
             return response()->json([

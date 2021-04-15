@@ -19,9 +19,13 @@ class User extends UserRole
      * @var array
      */
     protected $fillable = [
-        'name',
+        'nombre',
+        'apellido',
         'email',
         'password',
+        'departamento',
+        'ciudad',
+        'telefono'
     ];
 
     /**
@@ -42,12 +46,12 @@ class User extends UserRole
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
- 
+
     public function hasType($role)
     {
         if($role == Role::USUARIO_REGISTRADO)
             return true;
-        return parent::hasType($role);        
+        return parent::hasType($role);
     }
 
     private function registrarComoCliente($telefono)

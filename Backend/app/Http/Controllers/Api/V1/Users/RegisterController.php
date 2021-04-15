@@ -12,14 +12,11 @@ use App\Http\Requests\api\v1\RegisterUserRequest;
 
 class RegisterController extends Controller
 {
-
     public function register(RegisterUserRequest $request)
     {
-        $user = User::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-        ]);
+        $attributes = $request->data['attributes'];
+        //$request->replace($attributes);
+        $user = User::create($attributes->validated());
 
         $token = $user->createToken($request->nameToken)->plainTextToken;
 
