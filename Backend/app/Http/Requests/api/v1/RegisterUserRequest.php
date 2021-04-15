@@ -24,10 +24,19 @@ class RegisterUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8'],
-            'nameToken' => ['required']
-        ];        
-    }    
+            'data' => [
+                'type' => 'required',
+                'attributes' => [
+                    'nombre' => 'required|sring|max:255',
+                    'apellido' => 'required|string|max:255',
+                    'email' => 'required|string|email|max:255|unique:users',
+                    'password' => 'required|string|min:8',
+                    'departamento' => 'required|string|max:255',
+                    'ciudad' => 'required|string|max:255',
+                    'telefono' => 'required|string|max:255',
+                    'nameToken' => 'required'
+                ]
+            ]
+        ];
+    }
 }

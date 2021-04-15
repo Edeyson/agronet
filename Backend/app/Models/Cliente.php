@@ -4,23 +4,17 @@ namespace App\Models;
 
 class Cliente extends User
 {
-    protected $direccion;
-    
-    protected $fillable = [       
-        
+
+    protected $fillable = [
+
         'direccion',
     ];
-
-    function __construct($telefono)
-    {
-        $this->telefono = $telefono;
-    }
 
     public function hasType($role)
     {
         if($role == Role::CLIENTE)
             return true;
-        return parent::hasType($role);        
+        return parent::hasType($role);
     }
 
     public function owner()

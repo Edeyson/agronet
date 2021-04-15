@@ -1,0 +1,72 @@
+
+# Endpoints
+# Summary
+# 01 -> Registrar Usuario Publico
+# 02 -> Login Usuarios Registrados
+# 03 -> Datos Perfil Usuario
+# 04 -> Logout
+
+# 01
+# Registrar Usuario Publico
+# url: /api/v1/register
+POST http://localhost:8000/api/register
+content-type: application/json
+Accept: application/json
+
+{
+    "data" : {
+        "type" : "User",
+        "attibutes" : {
+            "nombre" : "Pedro",
+            "apellido" : "boor",
+            "email": "pedro@gmail.com",
+            "password" : "password",
+            "nameToken" : "movil",
+            "departamento" : "Caldas",
+            "ciudad" : "Manizales",
+            "telefono" : "3012345678"
+        }
+    }
+}
+
+###
+
+# 02
+# Login Usuarios Registrados
+# url: /api/v1/login
+
+POST http://localhost:8000/api/login
+content-type: application/json
+Accept: application/json
+
+{
+    "data" : {
+        "type" : "User",
+        "attributes" : {
+            "email": "welch.shany@daniel.com",
+            "password" : "hola123",
+            "nameToken" : "movil"
+        }
+    }
+}
+
+
+###
+
+# 03
+# Get User Profile Data
+# url: /api/v1/profile
+# Headers => Authorization : Bearer + Token
+
+GET http://localhost:8000/api/profile
+Authorization: Bearer 6|HH5Nf1woI9mCy62lADdUSzMIXjjegDDXJXDANQSM
+
+###
+
+# 04
+# Logout an authenticated User
+# url: /api/v1/logout
+# Headers => Authorization : Bearer + Token
+
+POST http://localhost:8000/api/logout
+Authorization: Bearer 6|HH5Nf1woI9mCy62lADdUSzMIXjjegDDXJXDANQSM

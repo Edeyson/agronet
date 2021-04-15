@@ -4,25 +4,18 @@ namespace App\Models;
 
 class Productor extends User
 {
-
     protected $direccion;
-    
-    protected $fillable = [       
-        
+
+    protected $fillable = [
+
         'direccion',
     ];
-
-    function __construct($telefono, $direccion)
-    {
-        $this->telefono = $telefono;
-        $this->direccion = $direccion;
-    }
 
     public function hasType($role)
     {
         if($role == Role::PRODUCTOR)
             return true;
-        return parent::hasType($role);        
+        return parent::hasType($role);
     }
 
     public function owner()

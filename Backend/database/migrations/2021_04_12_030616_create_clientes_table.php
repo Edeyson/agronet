@@ -15,7 +15,7 @@ class CreateClientesTable extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->unique();
             $table->string('direccion');
             $table->timestamps();
 
