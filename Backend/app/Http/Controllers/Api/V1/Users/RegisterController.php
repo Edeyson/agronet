@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\v1;
+namespace App\Http\Controllers\Api\V1\Users;
 
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,9 +12,9 @@ use App\Http\Requests\api\v1\RegisterUserRequest;
 
 class RegisterController extends Controller
 {
-    
+
     public function register(RegisterUserRequest $request)
-    {        
+    {
         $user = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
@@ -27,5 +27,5 @@ class RegisterController extends Controller
             'token' => $token,
             'message' => 'Succesful Registration',
         ], 201);
-    }     
+    }
 }
