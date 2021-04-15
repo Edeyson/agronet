@@ -20,12 +20,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::post('register', [App\Http\Controllers\Api\v1\RegisterController::class, 'register']);
+Route::post('register', [App\Http\Controllers\Api\V1\Users\RegisterController::class, 'register']);
 
-Route::post('login', [App\Http\Controllers\Api\v1\LoginController::class, 'login']);
+Route::post('login', [App\Http\Controllers\Api\V1\Users\LoginController::class, 'login']);
 
 
 Route::middleware(['auth:sanctum', 'role:'.Role::USUARIO_REGISTRADO])->group(function () {
 
-    Route::post('logout', [App\Http\Controllers\Api\v1\LoginController::class, 'logout']);
+    Route::post('logout', [App\Http\Controllers\Api\V1\Users\LoginController::class, 'logout']);
+    Route::get('profile', [App\Http\Controllers\Api\V1\Users\ProfileController::class, 'show'])->name('user.profile');
 });
