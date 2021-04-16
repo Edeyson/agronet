@@ -23,4 +23,9 @@ class Productor extends User
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function gestor()
+    {
+        return $this->hasOne(Gestor::class);
+    }
+
 }

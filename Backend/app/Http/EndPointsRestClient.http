@@ -8,7 +8,7 @@
 
 # 01
 # Registrar Usuario Publico
-# url: /api/v1/register
+# url: POST /api/v1/register
 POST http://localhost:8000/api/register
 content-type: application/json
 Accept: application/json
@@ -33,7 +33,7 @@ Accept: application/json
 
 # 02
 # Login Usuarios Registrados
-# url: /api/v1/login
+# url: POST /api/v1/login
 
 POST http://localhost:8000/api/login
 content-type: application/json
@@ -55,7 +55,7 @@ Accept: application/json
 
 # 03
 # Get User Profile Data
-# url: /api/v1/profile
+# url: GET /api/v1/profile
 # Headers => Authorization : Bearer + Token
 
 GET http://localhost:8000/api/profile
@@ -70,3 +70,68 @@ Authorization: Bearer 6|HH5Nf1woI9mCy62lADdUSzMIXjjegDDXJXDANQSM
 
 POST http://localhost:8000/api/logout
 Authorization: Bearer 6|HH5Nf1woI9mCy62lADdUSzMIXjjegDDXJXDANQSM
+
+###
+
+# 05 JDM
+# Edit User Profile Data
+# url: PUT /api/v1/profile
+# Headers => Authorization : Bearer + Token (ROLE == USUARIO_REGISTRADO)
+
+###
+
+# 06 JDM
+# Get Data Cliente
+# url: GET api/v1/cliente/profile
+# Headers => Authorization : Bearer + Token (Role == CLIENTE)
+
+###
+
+# 07 JDM
+# Edit Cliente Profile Data
+# url: PUT /api/v1/cliente/profile
+# Headers => Authorization : Bearer + Token (ROLE == CLIENTE)
+
+###
+
+# 08 JDM
+# GET Data Productor
+# url: GET api/v1/productor/profile
+# Headers => Authorization : Bearer + Token (Role == PRODUCTOR)
+
+###
+
+# 09 JDM
+# Edit Productor Profile Data
+# url: PUT /api/v1/productor/profile
+# Headers => Authorization : Bearer + Token (ROLE == PRODUCTOR)
+
+###
+
+# 10
+# GET Data Gestor
+# url: GET api/v1/gestor/profile
+# Headers => Authorization : Bearer + Token (Role == GESTOR)
+
+###
+
+# 11
+# Edit Gestor Profile Data
+# url: PUT /api/v1/gestor/profile
+# Headers => Authorization : Bearer + Token (ROLE == GESTOR)
+
+###
+
+# 12
+# GET Data Administrador
+# url: GET api/v1/admin/profile
+# Headers => Authorization : Bearer + Token (Role == ADMIN)
+
+###
+
+# 13
+# Edit Admin Profile Data
+# url: PUT /api/v1/admin/profile
+# Headers => Authorization : Bearer + Token (ROLE == ADMIN)
+
+###

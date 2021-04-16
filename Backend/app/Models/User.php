@@ -54,6 +54,26 @@ class User extends UserRole
         return parent::hasType($role);
     }
 
+    public function admin()
+    {
+        return $this->hasOne(Admin::class);
+    }
+
+    public function productor()
+    {
+        return $this->hasOne(Productor::class);
+    }
+
+    public function gestor()
+    {
+        return $this->hasOneThrough(Gestor::class, Productor::class);
+    }
+
+    public function cliente()
+    {
+        return $this->hasOne(Cliente::class);
+    }
+
     private function registrarComoCliente($telefono)
     {
         return new Cliente($telefono);
