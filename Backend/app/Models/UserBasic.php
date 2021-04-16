@@ -9,7 +9,8 @@ class UserBasic
 
     public function addRole($role)
     {
-        array_push($this->roles,$role);
+        if($role)
+            array_push($this->roles,$role);
     }
 
     public function addRoles($roles)

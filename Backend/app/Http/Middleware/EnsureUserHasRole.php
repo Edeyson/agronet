@@ -6,6 +6,8 @@ use App\Models\Admin;
 use App\Models\Cliente;
 use App\Models\Gestor;
 use App\Models\Productor;
+use App\Models\Role;
+use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
 use App\Models\UserBasic;
@@ -22,8 +24,7 @@ class EnsureUserHasRole
     public function handle(Request $request, Closure $next, $role)
     {
         $user = new UserBasic();
-        $user->addRole($request->user());
-        $user->addRoles($this->getRoles($request->user()));
+        $user->addRole($this->hasRole($request->user(), $role));
         if (! $user->roleOf($role))
         {
             return response()->json([
@@ -34,33 +35,15 @@ class EnsureUserHasRole
         return $next($request);
     }
 
-    private function getClientRole($user)
+    public function hasRole($user, $type)
     {
-        return Cliente::find($user->id);
-    }
-
-    private function getAdminRole($user)
-    {
-        return Admin::find($user->id);
-    }
-
-    private function getGestorRole($user)
-    {
-        return Gestor::find($user->id);
-    }
-
-    private function getProductorRole($user)
-    {
-        return Productor::find($user->id);
-    }
-
-    private function getRoles($user)
-    {
-        $roles = array();
-        $this->getClientRole($user) ? array_push($roles, $this->getClientRole($user)) : '';
-        $this->getAdminRole($user) ? array_push($roles, $this->getAdminRole($user)) : '';
-        $this->getGestorRole($user) ? array_push($roles, $this->getGestorRole($user)) : '';
-        $this->getProductorRole($user) ? array_push($roles, $this->getProductorRole($user)) : '';
-        return $roles;
+        if($type == Role::ADMIN)
+            return $user->admin;
+        if($type == Role::PRODUCTOR)
+            return $user->productor;
+        if($type == Role::GESTOR)
+            return $user->gestor;
+        if($type == Role::CLIENTE)
+            return $user->cliente;
     }
 }
