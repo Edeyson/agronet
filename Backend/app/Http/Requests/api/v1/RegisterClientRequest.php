@@ -24,12 +24,11 @@ class RegisterClientRequest extends FormRequest
     public function rules()
     {
         return [
-            'data' => [
-                'type' => 'required',
-                'attributes' => [
-                    "direccion" => 'required',
-                ]
-            ]
+
+            'data' => ['required', 'array'],
+            'data.type' => ['required'],
+            'data.attributes' => ['required', 'array'],
+            'data.attributes.direccion' => ['required', 'string', 'max:255']
         ];
     }
 }

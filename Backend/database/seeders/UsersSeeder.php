@@ -16,7 +16,7 @@ class UsersSeeder extends Seeder
     public function run()
     {
         $faker = \Faker\Factory::create();
-        
+
          for($i=0; $i<5; $i++){
             DB::table('users')->insert([
                   'nombre'=> $faker->firstName(),

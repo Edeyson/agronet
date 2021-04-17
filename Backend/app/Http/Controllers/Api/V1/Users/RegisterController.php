@@ -14,11 +14,9 @@ class RegisterController extends Controller
 {
     public function register(RegisterUserRequest $request)
     {
-        $attributes = $request->data['attributes'];
-        //$request->replace($attributes);
-        $user = User::create($attributes->validated());
+        $user = User::create($request->input('data.attributes'));
 
-        $token = $user->createToken($request->nameToken)->plainTextToken;
+        $token = $user->createToken($request->input('data.attributes.nameToken'))->plainTextToken;
 
         return response()->json([
             'token' => $token,
