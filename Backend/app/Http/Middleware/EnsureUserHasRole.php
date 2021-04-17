@@ -45,5 +45,7 @@ class EnsureUserHasRole
             return $user->gestor;
         if($type == Role::CLIENTE)
             return $user->cliente;
+        if($type == Role::USUARIO_REGISTRADO)
+            return $user;
     }
 }

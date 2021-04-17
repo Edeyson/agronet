@@ -15,18 +15,9 @@ class ClienteController extends Controller
     public function register(RegisterClientRequest $request)
     {
         $user = $request->user();
-        $attributes = $request->data['attributes'];
-        $request->replace($attributes);
-        $cliente = new Cliente();
-        $cliente->direccion = $request->direccion;
-        $cliente->user_id = $user->id;
-        $cliente->save();
+        $user->cliente()->create($request->input('data.attributes'));
 
-        //dd($cliente->direccion);
-        //$cliente = Cliente::create($request->validated());
-
-        return new ClienteResource($cliente);
-
+        return new ClienteResource($user->cliente);
     }
 
     public function prueba(Request $request)

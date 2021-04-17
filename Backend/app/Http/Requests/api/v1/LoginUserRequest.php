@@ -24,14 +24,13 @@ class LoginUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'data' => [
-                'type' => 'required',
-                'attributes' => [
-                    'email' => 'required|email',
-                    'password' => 'required',
-                    'nameToken' => 'required'
-                ]
-            ]
+
+            'data' => ['required', 'array'],
+            'data.type' => ['required'],
+            'data.attributes' => ['required', 'array'],
+            'data.attributes.email' => ['required', 'email', 'max:255'],
+            'data.attributes.password' => ['required', 'string', 'max:255'],
+            'data.attributes.nameToken' => ['required', 'string', 'max:255']
         ];
     }
 }

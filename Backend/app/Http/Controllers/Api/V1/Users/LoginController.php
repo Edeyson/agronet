@@ -12,13 +12,13 @@ class LoginController extends Controller
 {
     public function login(LoginUserRequest $request)
     {
-        $attributes = $request->data['attributes'];
-        $request->replace($attributes);
-        if(Auth::attempt($request->only('email', 'password')))
+        $email = $request->input('data.attributes.email');
+        $password = $request->input('data.attributes.password');
+        if(Auth::attempt(['email' => $email, 'password' => $password]))
         {
             return response()->json([
                 'token' => $request->user()
-                ->createToken($request->nameToken)
+                ->createToken($request->input('data.attributes.nameToken'))
                 ->plainTextToken,
                 'message' => 'Successful authentication'
             ]);
