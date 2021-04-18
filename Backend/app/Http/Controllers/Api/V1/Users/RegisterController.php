@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\v1;
+namespace App\Http\Controllers\Api\V1\Users;
 
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,20 +12,15 @@ use App\Http\Requests\api\v1\RegisterUserRequest;
 
 class RegisterController extends Controller
 {
-    
     public function register(RegisterUserRequest $request)
-    {        
-        $user = User::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-        ]);
+    {
+        $user = User::create($request->input('data.attributes'));
 
-        $token = $user->createToken($request->nameToken)->plainTextToken;
+        $token = $user->createToken($request->input('data.attributes.nameToken'))->plainTextToken;
 
         return response()->json([
             'token' => $token,
             'message' => 'Succesful Registration',
         ], 201);
-    }     
+    }
 }

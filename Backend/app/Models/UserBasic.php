@@ -4,12 +4,19 @@ namespace App\Models;
 
 class UserBasic
 {
-    
+
     protected $roles = array();
-   
+
     public function addRole($role)
-    {        
-        array_push($this->roles,$role);
+    {
+        if($role)
+            array_push($this->roles,$role);
+    }
+
+    public function addRoles($roles)
+    {
+        foreach($roles as $role)
+            array_push($this->roles,$role);
     }
 
     public function roleOf($roleName)
@@ -20,6 +27,6 @@ class UserBasic
                 return $role;
         }
         return null;
-    }   
+    }
 
 }

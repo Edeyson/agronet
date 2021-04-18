@@ -1,0 +1,160 @@
+
+# Endpoints
+# Summary
+# 01 -> Registrar Usuario Publico
+# 02 -> Registrar Usuario Como Cliente
+# 03 -> Login Usuarios Registrados
+# 04 -> Datos Perfil Usuario
+# 05 -> Logout
+
+# 01
+# Registrar Usuario Publico
+# url: POST /api/v1/register
+POST http://localhost:8000/api/register
+content-type: application/json
+Accept: application/json
+
+{
+    "data" : {
+        "type" : "User",
+        "attributes" : {
+            "nombre" : "Cliente Paco 3",
+            "apellido" : "Caceres",
+            "email": "paco3@gmail.com",
+            "password" : "password",
+            "nameToken" : "movil",
+            "departamento" : "Caldas",
+            "ciudad" : "Manizales",
+            "telefono" : "3012345678"
+        }
+    }
+}
+
+###
+
+# 02
+# Registrar Usuario Como Cliente
+# url: POST /api/v1/register
+# Headers => Authorization : Bearer + Token
+POST http://localhost:8000/api/cliente/register
+content-type: application/json
+Accept: application/json
+Authorization: Bearer 5|fK4BhMGMeKx9DBO6SpZOd71mr3KKPUoPRPDbc8qc
+
+{
+    "data" : {
+        "type" : "Cliente",
+        "attributes" : {
+            "direccion" : "Cl 80 # 30 - 30 Casa Verde"
+        }
+    }
+}
+
+###
+
+# 03
+# Login Usuarios Registrados
+# url: POST /api/v1/login
+
+POST http://localhost:8000/api/login
+content-type: application/json
+Accept: application/json
+
+{
+    "data" : {
+        "type" : "User",
+        "attributes" : {
+            "email": "avonrueden@gmail.com",
+            "password" : "hola123",
+            "nameToken" : "movil"
+        }
+    }
+}
+
+
+###
+
+# 04
+# Get User Profile Data
+# url: GET /api/v1/profile
+# Headers => Authorization : Bearer + Token
+
+GET http://localhost:8000/api/profile
+Authorization: Bearer 5|fK4BhMGMeKx9DBO6SpZOd71mr3KKPUoPRPDbc8qc
+Accept: application/json
+
+###
+
+# 05
+# Logout an authenticated User
+# url: /api/v1/logout
+# Headers => Authorization : Bearer + Token
+
+POST http://localhost:8000/api/logout
+Authorization: Bearer 5|fK4BhMGMeKx9DBO6SpZOd71mr3KKPUoPRPDbc8qc
+Accept: application/json
+
+###
+
+# 06 JDM
+# Edit User Profile Data
+# url: PUT /api/v1/profile
+# Headers => Authorization : Bearer + Token (ROLE == USUARIO_REGISTRADO)
+
+###
+
+# 07 JDM
+# Get Data Cliente
+# url: GET api/v1/cliente/profile
+# Headers => Authorization : Bearer + Token (Role == CLIENTE)
+
+###
+
+# 08 JDM
+# Edit Cliente Profile Data
+# url: PUT /api/v1/cliente/profile
+# Headers => Authorization : Bearer + Token (ROLE == CLIENTE)
+
+###
+
+# 09 JDM
+# GET Data Productor
+# url: GET api/v1/productor/profile
+# Headers => Authorization : Bearer + Token (Role == PRODUCTOR)
+
+###
+
+# 10 JDM
+# Edit Productor Profile Data
+# url: PUT /api/v1/productor/profile
+# Headers => Authorization : Bearer + Token (ROLE == PRODUCTOR)
+
+###
+
+# 11
+# GET Data Gestor
+# url: GET api/v1/gestor/profile
+# Headers => Authorization : Bearer + Token (Role == GESTOR)
+
+###
+
+# 12
+# Edit Gestor Profile Data
+# url: PUT /api/v1/gestor/profile
+# Headers => Authorization : Bearer + Token (ROLE == GESTOR)
+
+###
+
+# 13
+# GET Data Administrador
+# url: GET api/v1/admin/profile
+# Headers => Authorization : Bearer + Token (Role == ADMIN)
+
+###
+
+# 14
+# Edit Admin Profile Data
+# url: PUT /api/v1/admin/profile
+# Headers => Authorization : Bearer + Token (ROLE == ADMIN)
+
+###

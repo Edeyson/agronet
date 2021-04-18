@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -19,9 +20,13 @@ class User extends UserRole
      * @var array
      */
     protected $fillable = [
-        'name',
+        'nombre',
+        'apellido',
         'email',
         'password',
+        'departamento',
+        'ciudad',
+        'telefono'
     ];
 
     /**
@@ -42,12 +47,32 @@ class User extends UserRole
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
- 
+
     public function hasType($role)
     {
         if($role == Role::USUARIO_REGISTRADO)
             return true;
-        return parent::hasType($role);        
+        return parent::hasType($role);
+    }
+
+    public function admin()
+    {
+        return $this->hasOne(Admin::class);
+    }
+
+    public function productor()
+    {
+        return $this->hasOne(Productor::class);
+    }
+
+    public function gestor()
+    {
+        return $this->hasOneThrough(Gestor::class, Productor::class);
+    }
+
+    public function cliente()
+    {
+        return $this->hasOne(Cliente::class);
     }
 
     private function registrarComoCliente($telefono)
@@ -58,5 +83,10 @@ class User extends UserRole
     private function registrarComoProductor($telefono, $direccion)
     {
         return new Productor($telefono, $direccion);
+    }
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = Hash::make($password);
     }
 }
