@@ -34,6 +34,11 @@
  se crearon los seeders para los roles de forma conjunta
  se hicieron pruebas de añadir roles a usuarios de forma conjunta
 
+ ----19/4/2021----
+ se implemento el endpoint para consultar el perfil de usuario
+ se implemento el endpoint para realizar logout
+ se implemento el endpoint para registrarse como cliente
+
 
 
 

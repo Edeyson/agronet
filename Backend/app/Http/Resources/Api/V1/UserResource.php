@@ -20,10 +20,10 @@ class UserResource extends JsonResource
             'attributes' => [
                 'nombre' => $this->nombre,
                 'apellido' => $this->apellido,
-                'email' => $this->apellido,
-                'departamento' => $this->apellido,
-                'ciudad' => $this->apellido,
-                'telefono' => $this->apellido,
+                'email' => $this->email,
+                'departamento' => $this->departamento,
+                'ciudad' => $this->ciudad,
+                'telefono' => $this->telefono,
                 'created_at' => $this->created_at,
                 'updated_at' => $this->updated_at
             ],
