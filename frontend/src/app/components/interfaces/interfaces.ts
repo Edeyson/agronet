@@ -34,13 +34,27 @@ export interface countries {
   }
 
   export interface UsuarioI {
-    primerNombre?: string;
-    primerApellido?: string;
-    correo?: string;
-    contrasena?: string;
+    nombre?: string;
+    apellido?: string;
+    email?: string;    
+    password?: string;
+    nameToken?:string;
     departamento?: string;
     ciudad?: string;
     telefono?: string;
-    // direccion?: string;
-    // comentarios?: string;
+    created_at?:string;
+  }
+
+  export interface SingleResponseModel<T> {
+    data: {
+      type: string;
+      attributes: T;
+    }
+  }
+
+  export interface PostModel {
+    data:{
+      type: string,
+      attributes: {}
+    }
   }
