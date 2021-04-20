@@ -29,7 +29,7 @@ Route::middleware(['auth:sanctum', 'role:'.Role::USUARIO_REGISTRADO])->group(fun
 
     Route::post('logout', [App\Http\Controllers\Api\V1\Users\LoginController::class, 'logout']);
     Route::get('profile', [App\Http\Controllers\Api\V1\Users\ProfileController::class, 'show'])->name('user.profile');
-    Route::post('cliente/register', [App\Http\Controllers\Api\V1\Users\ClienteController::class, 'register']);
+    Route::post('cliente/register', [App\Http\Controllers\Api\V1\Users\RegisterController::class, 'register']);
 });
 
 Route::middleware(['auth:sanctum', 'role:'.Role::GESTOR])->group(function () {
