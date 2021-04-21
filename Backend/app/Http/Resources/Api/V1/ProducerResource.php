@@ -4,7 +4,7 @@ namespace App\Http\Resources\Api\V1;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ClienteResource extends JsonResource
+class ProducerResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,10 +15,10 @@ class ClienteResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'type' => 'Cliente',
+            'type' => 'Producer',
             'id' => $this->id,
             'attributes' => [
-                'direccion' => $this->direccion
+                'sede_ppal' => $this->sede_ppal
             ],
             'links' => [
                 'self' => route('user.profile')

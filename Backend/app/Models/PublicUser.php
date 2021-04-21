@@ -2,7 +2,7 @@
 use Illuminate\Support\Collection;
 namespace App\Models;
 
-class UserBasic
+class PublicUser
 {
 
     protected $roles = array();

@@ -9,10 +9,11 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends UserRole
+class RegisteredUser extends UserRole
 {
-    use HasFactory, Notifiable, HasApiTokens;
+    use HasFactory, Notifiable, HasApiTokens, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -50,7 +51,7 @@ class User extends UserRole
 
     public function hasType($role)
     {
-        if($role == Role::USUARIO_REGISTRADO)
+        if($role == Role::REGISTERED_USER)
             return true;
         return parent::hasType($role);
     }
@@ -60,29 +61,9 @@ class User extends UserRole
         return $this->hasOne(Admin::class);
     }
 
-    public function productor()
+    public function producer()
     {
-        return $this->hasOne(Productor::class);
-    }
-
-    public function gestor()
-    {
-        return $this->hasOneThrough(Gestor::class, Productor::class);
-    }
-
-    public function cliente()
-    {
-        return $this->hasOne(Cliente::class);
-    }
-
-    private function registrarComoCliente($telefono)
-    {
-        return new Cliente($telefono);
-    }
-
-    private function registrarComoProductor($telefono, $direccion)
-    {
-        return new Productor($telefono, $direccion);
+        return $this->hasOne(Producer::class);
     }
 
     public function setPasswordAttribute($password)

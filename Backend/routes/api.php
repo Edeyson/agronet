@@ -15,7 +15,7 @@ use App\Models\Role;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
@@ -25,13 +25,13 @@ Route::post('register', [App\Http\Controllers\Api\V1\Users\RegisterController::c
 Route::post('login', [App\Http\Controllers\Api\V1\Users\LoginController::class, 'login']);
 
 
-Route::middleware(['auth:sanctum', 'role:'.Role::USUARIO_REGISTRADO])->group(function () {
+Route::middleware(['auth:sanctum', 'role:'.Role::REGISTERED_USER])->group(function () {
 
     Route::post('logout', [App\Http\Controllers\Api\V1\Users\LoginController::class, 'logout']);
     Route::get('profile', [App\Http\Controllers\Api\V1\Users\ProfileController::class, 'show'])->name('user.profile');
-    Route::post('cliente/register', [App\Http\Controllers\Api\V1\Users\RegisterController::class, 'register']);
+    Route::post('producer', [App\Http\Controllers\Api\V1\Users\ProducerController::class, 'register']);
 });
 
-Route::middleware(['auth:sanctum', 'role:'.Role::GESTOR])->group(function () {
+Route::middleware(['auth:sanctum', 'role:'.Role::PRODUCER])->group(function () {
     Route::get('cliente/prueba', [App\Http\Controllers\Api\V1\Users\ClienteController::class, 'prueba'])->name('user.prueba');
 });

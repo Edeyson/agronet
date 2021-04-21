@@ -10,42 +10,23 @@
 # 01
 # Registrar Usuario Publico
 # url: POST /api/v1/register
-POST http://143.198.127.182/api/register
+# POST http://143.198.127.182/api/register
+POST http://localhost:8000/api/register
 content-type: application/json
 Accept: application/json
 
 {
     "data" : {
-        "type" : "User",
+        "type" : "RegisteredUser",
         "attributes" : {
             "nombre" : "Cliente Paco 3",
             "apellido" : "Caceres",
-            "email": "paco2020@gmail.com",
+            "email": "paco@gmail.com",
             "password" : "password",
             "nameToken" : "movil",
             "departamento" : "Caldas",
             "ciudad" : "Manizales",
             "telefono" : "3012345678"
-        }
-    }
-}
-
-###
-
-# 02
-# Registrar Usuario Como Cliente
-# url: POST /api/v1/register
-# Headers => Authorization : Bearer + Token
-POST http://localhost:8000/api/cliente/register
-content-type: application/json
-Accept: application/json
-Authorization: Bearer 21|Uwd9n73leS9jyPIxSAX1GM1rMqHJjcLIo59oLTbq
-
-{
-    "data" : {
-        "type" : "Cliente",
-        "attributes" : {
-            "direccion" : "Cl 80 # 30 - 30 Casa Amarilla"
         }
     }
 }
@@ -62,10 +43,10 @@ Accept: application/json
 
 {
     "data" : {
-        "type" : "User",
+        "type" : "RegisteredUser",
         "attributes" : {
-            "email": "rowan63@metz.info ",
-            "password" : "hola123",
+            "email": "paco2021@gmail.com",
+            "password" : "password",
             "nameToken" : "movil"
         }
     }
@@ -73,7 +54,7 @@ Accept: application/json
 
 ###
 
-GET http://localhost:8000/api/cliente/prueba
+GET http://localhost:8000/api/admin/prueba
 Authorization: Bearer 23|3mPPVQbcxVHnUgiPtMETmyzMvxG8gr2UP1TyhuOJ
 Accept: application/json
 
@@ -83,9 +64,28 @@ Accept: application/json
 # Get User Profile Data
 # url: GET /api/v1/profile
 # Headers => Authorization : Bearer + Token
+POST http://localhost:8000/api/producer
+Authorization: Bearer 1|te3yNhkIC8RhmkMtmkIMmgWqTl190ZzOOgpYMYbV
+content-type: application/json
+Accept: application/json
 
-GET http://143.198.127.182/api/profile
-Authorization: Bearer 12|5pLPFoKd7Rh0PMvcgTyqLKcuGlCFLXiW2GICPvlI
+{
+    "data" : {
+        "type" : "Producer",
+        "attributes" : {
+            "sede_papal": null
+        }
+    }
+}
+
+###
+
+# 04
+# Get User Profile Data
+# url: GET /api/v1/profile
+# Headers => Authorization : Bearer + Token
+GET http://localhost:8000/api/profile
+Authorization: Bearer 2|Wmpa1wCvxil6LdqwSzC1RFXl1clpvTm2s3ZBGX8P
 Accept: application/json
 
 ###
@@ -96,7 +96,7 @@ Accept: application/json
 # Headers => Authorization : Bearer + Token
 
 POST http://localhost:8000/api/logout
-Authorization: Bearer 5|fK4BhMGMeKx9DBO6SpZOd71mr3KKPUoPRPDbc8qc
+Authorization: Bearer 1|Ok4CZUbUkn7xJbDQkmo9wEyjC6zQDrfVYMvsVJJk
 Accept: application/json
 
 ###

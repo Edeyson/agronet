@@ -3,14 +3,12 @@
 namespace App\Http\Middleware;
 
 use App\Models\Admin;
-use App\Models\Cliente;
-use App\Models\Gestor;
-use App\Models\Productor;
+use App\Models\Producer;
 use App\Models\Role;
-use App\Models\User;
+use App\Models\RegisteredUser;
 use Closure;
 use Illuminate\Http\Request;
-use App\Models\UserBasic;
+use App\Models\PublicUser;
 
 class EnsureUserHasRole
 {
@@ -23,7 +21,7 @@ class EnsureUserHasRole
      */
     public function handle(Request $request, Closure $next, $role)
     {
-        $user = new UserBasic();
+        $user = new PublicUser();
         $user->addRole($this->hasRole($request->user(), $role));
         if (! $user->roleOf($role))
         {
@@ -39,13 +37,9 @@ class EnsureUserHasRole
     {
         if($type == Role::ADMIN)
             return $user->admin;
-        if($type == Role::PRODUCTOR)
+        if($type == Role::PRODUCER)
             return $user->productor;
-        if($type == Role::GESTOR)
-            return $user->gestor;
-        if($type == Role::CLIENTE)
-            return $user->cliente;
-        if($type == Role::USUARIO_REGISTRADO)
+        if($type == Role::REGISTERED_USER)
             return $user;
     }
 }
