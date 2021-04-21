@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClientesTable extends Migration
+class CreateGeoLocationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class CreateClientesTable extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        Schema::create('geo_locations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->unique();
-            $table->string('direccion');
+            $table->foreignId('registered_user_id')->nullable();
+            $table->string('nombre');
+            $table->float('latitud');
+            $table->float('longitud');
             $table->timestamps();
 
-            $table->foreign('user_id')
-                ->references('id')->on('users')
+            $table->foreign('registered_user_id')
+                ->references('id')->on('registered_users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
@@ -33,6 +35,6 @@ class CreateClientesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientes');
+        Schema::dropIfExists('geo_locations');
     }
 }

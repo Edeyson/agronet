@@ -18,7 +18,7 @@ class UsersSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
          for($i=0; $i<5; $i++){
-            DB::table('users')->insert([
+            DB::table('registered_users')->insert([
                   'nombre'=> $faker->firstName(),
                   'apellido'=>$faker->lastName(),
                   'email'=>$faker->email(),

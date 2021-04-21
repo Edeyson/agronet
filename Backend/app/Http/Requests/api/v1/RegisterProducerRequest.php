@@ -4,7 +4,7 @@ namespace App\Http\Requests\api\v1;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterClientRequest extends FormRequest
+class RegisterProducerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,10 @@ class RegisterClientRequest extends FormRequest
     public function rules()
     {
         return [
-
             'data' => ['required', 'array'],
             'data.type' => ['required'],
             'data.attributes' => ['required', 'array'],
-            'data.attributes.direccion' => ['required', 'string', 'max:255']
+            'data.attributes.sede_ppal' => ['nullable', 'string', 'max:255'],
         ];
     }
 }

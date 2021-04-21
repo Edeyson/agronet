@@ -30,7 +30,7 @@ class RegisterUserRequest extends FormRequest
             'data.attributes' => ['required', 'array'],
             'data.attributes.nombre' => ['required', 'string', 'max:255'],
             'data.attributes.apellido' => ['required', 'string', 'max:255'],
-            'data.attributes.email' => ['required', 'string','email', 'max:255', 'unique:users,email'],
+            'data.attributes.email' => ['required', 'string','email', 'max:255', 'unique:registered_users,email'],
             'data.attributes.password' => ['required', 'string', 'min:8'],
             'data.attributes.departamento' => ['required', 'string', 'max:255'],
             'data.attributes.ciudad' => ['required', 'string', 'max:255'],

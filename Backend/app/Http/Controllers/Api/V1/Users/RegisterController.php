@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1\Users;
 
-use App\Models\User;
+use App\Models\RegisteredUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -14,7 +14,7 @@ class RegisterController extends Controller
 {
     public function register(RegisterUserRequest $request)
     {
-        $user = User::create($request->input('data.attributes'));
+        $user = RegisteredUser::create($request->input('data.attributes'));
 
         $token = $user->createToken($request->input('data.attributes.nameToken'))->plainTextToken;
 
