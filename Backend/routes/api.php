@@ -20,16 +20,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post('register', [App\Http\Controllers\Api\V1\Users\RegisterController::class, 'register']);
+Route::post('users/register', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'register']);
 
-Route::post('login', [App\Http\Controllers\Api\V1\Users\LoginController::class, 'login']);
+Route::post('users/login', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'login']);
 
 
 Route::middleware(['auth:sanctum', 'role:'.Role::REGISTERED_USER])->group(function () {
 
-    Route::post('logout', [App\Http\Controllers\Api\V1\Users\LoginController::class, 'logout']);
-    Route::get('profile', [App\Http\Controllers\Api\V1\Users\ProfileController::class, 'show'])->name('user.profile');
-    Route::post('producer', [App\Http\Controllers\Api\V1\Users\ProducerController::class, 'register']);
+    Route::post('users/logout', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'logout']);
+    Route::get('users/profile', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'getProfile'])->name('user.profile');
+    Route::post('users/producer', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'producerRegister']);
 });
 
 Route::middleware(['auth:sanctum', 'role:'.Role::PRODUCER])->group(function () {

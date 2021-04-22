@@ -11,7 +11,7 @@
 # Registrar Usuario Publico
 # url: POST /api/v1/register
 # POST http://143.198.127.182/api/register
-POST http://localhost:8000/api/register
+POST http://localhost:8000/api/users/register
 content-type: application/json
 Accept: application/json
 
@@ -21,7 +21,7 @@ Accept: application/json
         "attributes" : {
             "nombre" : "Cliente Paco 3",
             "apellido" : "Caceres",
-            "email": "paco@gmail.com",
+            "email": "paco210@gmail.com",
             "password" : "password",
             "nameToken" : "movil",
             "departamento" : "Caldas",
@@ -37,7 +37,7 @@ Accept: application/json
 # Login Usuarios Registrados
 # url: POST /api/v1/login
 
-POST http://localhost:8000/api/login
+POST http://localhost:8000/api/users/login
 content-type: application/json
 Accept: application/json
 
@@ -45,7 +45,7 @@ Accept: application/json
     "data" : {
         "type" : "RegisteredUser",
         "attributes" : {
-            "email": "paco2021@gmail.com",
+            "email": "paco115@gmail.com",
             "password" : "password",
             "nameToken" : "movil"
         }
@@ -64,8 +64,8 @@ Accept: application/json
 # Get User Profile Data
 # url: GET /api/v1/profile
 # Headers => Authorization : Bearer + Token
-POST http://localhost:8000/api/producer
-Authorization: Bearer 1|te3yNhkIC8RhmkMtmkIMmgWqTl190ZzOOgpYMYbV
+POST http://localhost:8000/api/users/producer
+Authorization: Bearer 3|x53c5SYl1hVEUnt9bA4jNLMDi2EwndvizA9YKuiy
 content-type: application/json
 Accept: application/json
 
@@ -84,8 +84,8 @@ Accept: application/json
 # Get User Profile Data
 # url: GET /api/v1/profile
 # Headers => Authorization : Bearer + Token
-GET http://localhost:8000/api/profile
-Authorization: Bearer 2|Wmpa1wCvxil6LdqwSzC1RFXl1clpvTm2s3ZBGX8P
+GET http://localhost:8000/api/users/profile
+Authorization: Bearer 2|HkMVrphtciOBvYaLN4sPQ4uqxHvueIXJ8OIuPmFN
 Accept: application/json
 
 ###
@@ -95,8 +95,8 @@ Accept: application/json
 # url: /api/v1/logout
 # Headers => Authorization : Bearer + Token
 
-POST http://localhost:8000/api/logout
-Authorization: Bearer 1|Ok4CZUbUkn7xJbDQkmo9wEyjC6zQDrfVYMvsVJJk
+POST http://localhost:8000/api/users/logout
+Authorization: Bearer 2|HkMVrphtciOBvYaLN4sPQ4uqxHvueIXJ8OIuPmFN
 Accept: application/json
 
 ###
