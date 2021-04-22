@@ -9,10 +9,12 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function show(Request $request)
-    {
-        //$user = User::find($id);
-        $user = $request->user();
-        return new UserResource($user);
-    }
+    //Migra hacia AuthController
+
+    // public function show(Request $request)
+    // {
+    //     //$user = User::find($id);
+    //     $user = $request->user();
+    //     return new UserResource($user);
+    // }
 }
