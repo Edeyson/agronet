@@ -65,7 +65,7 @@ Se conecto el componente del login con el backend
 
 
 
-
+############################################################################################################################
 
 ----------EDEYSON BERMEO BURBANO-------------------
 -------11/04/2021----------
@@ -77,4 +77,6 @@ Se conecto el componente del login con el backend
 ------12/04/2021--------------
 -generacion del modal en vista usuario publico
 -terminacion del search para las consultas del usuario de forma conjunta
+ ----19/04/2021----
+ implemento del endpoint para registrarse conexión con el backend
 
