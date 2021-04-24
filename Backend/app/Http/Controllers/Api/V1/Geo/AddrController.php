@@ -4,20 +4,25 @@ namespace App\Http\Controllers\Api\V1\Geo;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\api\v1\RegisterGeoLocationRequest;
-use App\Models\GeoLocation;
-use App\Http\Resources\Api\V1\GeoLocationResource;
+use App\Http\Requests\api\v1\RegisterAddrRequest;
+use App\Models\Addr;
+use App\Http\Resources\Api\V1\AddrResource;
+use App\Http\Resources\Api\V1\AddrResourceCollection;
 
-class GeographicLocationController extends Controller
+class AddrController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $user = $request->user();
+
+        $addrs = $user->addrs;
+
+        return new AddrResourceCollection($addrs);
     }
 
     /**
@@ -26,21 +31,17 @@ class GeographicLocationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(RegisterGeoLocationRequest $request)
+    public function store(RegisterAddrRequest $request)
     {
-        // TODO User get Direccion -> addr_id -> create geoLocation
-        //  (No permitir crear una coordenada a una direccion que no me pertenece)
         $user = $request->user();
 
-        //dd($user->addrs()->where('id', '=', $request->input('data.attributes.addr_id'))->first());
+        $addr = $user->addrs()->create($request->input('data.attributes'));
 
-        $addr = $user->addrs()->where('id', '=', $request->input('data.attributes.addr_id'))->first();
+        $user->refresh();
 
-        $geo = $addr->geoLocation()->create($request->input('data.attributes'));
+        //dd($addr);
 
-        $addr->refresh();
-
-        return new GeoLocationResource($geo);
+        return new AddrResource($addr);
     }
 
     /**
@@ -51,9 +52,7 @@ class GeographicLocationController extends Controller
      */
     public function show($id)
     {
-        $geo = GeoLocation::find($id);
-
-        return new GeoLocationResource($geo);
+        //
     }
 
     /**

@@ -21,7 +21,7 @@ Accept: application/json
         "attributes" : {
             "nombre" : "Cliente Paco 3",
             "apellido" : "Caceres",
-            "email": "paco210@gmail.com",
+            "email": "paco88@gmail.com",
             "password" : "password",
             "nameToken" : "movil",
             "departamento" : "Caldas",
@@ -45,7 +45,7 @@ Accept: application/json
     "data" : {
         "type" : "RegisteredUser",
         "attributes" : {
-            "email": "paco115@gmail.com",
+            "email": "paco88@gmail.com",
             "password" : "password",
             "nameToken" : "movil"
         }
@@ -65,7 +65,7 @@ Accept: application/json
 # url: GET /api/v1/profile
 # Headers => Authorization : Bearer + Token
 POST http://localhost:8000/api/users/producer
-Authorization: Bearer 3|x53c5SYl1hVEUnt9bA4jNLMDi2EwndvizA9YKuiy
+Authorization: Bearer 1|Ea0cDdY3B1uhdx1TnEnfARf4oPshKKrfgn3ruve2
 content-type: application/json
 Accept: application/json
 
@@ -96,10 +96,67 @@ Accept: application/json
 # Headers => Authorization : Bearer + Token
 
 POST http://localhost:8000/api/users/logout
-Authorization: Bearer 2|HkMVrphtciOBvYaLN4sPQ4uqxHvueIXJ8OIuPmFN
+Authorization: Bearer 1|wyKL2TcYZDbsYlCENmE2RuOtp3u0K6YmRWkIJvux
 Accept: application/json
 
 ###
+
+# 09
+#
+#
+#
+POST http://localhost:8000/api/address/
+content-type: application/json
+Authorization: Bearer 1|JgUOIkoqh1DOrwzZzJlxea6zRmFjcGl82Kcd2JzK
+Accept: application/json
+
+{
+    "data" : {
+        "type" : "Address",
+        "attributes" : {
+            "country" : "Colombia",
+            "province" : "Caldas",
+            "city": "Manizales",
+            "street" : "Av 8",
+            "location" : "Manzana 10",
+            "etiqueta" : "Casa"
+        }
+    }
+}
+
+###
+
+# 09
+#
+#
+#
+POST http://localhost:8000/api/geo-location
+content-type: application/json
+Authorization: Bearer 1|JgUOIkoqh1DOrwzZzJlxea6zRmFjcGl82Kcd2JzK
+Accept: application/json
+
+{
+    "data" : {
+        "type" : "GeoLocation",
+        "attributes" : {
+            "latitud" : 5,
+            "longitud" : -75.57865,
+            "addr_id" : 1
+        }
+    }
+}
+
+###
+
+GET http://localhost:8000/api/address
+Authorization: Bearer 2|MLhlpkcN4s83MT4JBFT8AGjvn1r6IXGdq29LIeq8
+Accept: application/json
+
+###
+
+GET http://localhost:8000/api/geo-location/1
+Authorization: Bearer 2|MLhlpkcN4s83MT4JBFT8AGjvn1r6IXGdq29LIeq8
+Accept: application/json
 
 # 06 JDM
 # Edit User Profile Data

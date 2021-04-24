@@ -25,7 +25,7 @@ class CreateProducersTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->foreign('sede_ppal')
-                ->references('id')->on('geo_locations')
+                ->references('id')->on('addrs')
                 ->onUpdate('cascade')
                 ->onDelete('set null');
         });

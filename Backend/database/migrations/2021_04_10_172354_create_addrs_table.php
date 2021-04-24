@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGeoLocationsTable extends Migration
+class CreateAddrsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateGeoLocationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('geo_locations', function (Blueprint $table) {
+        Schema::create('addrs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('registered_user_id')->nullable();
-            $table->string('nombre');
-            $table->float('latitud');
-            $table->float('longitud');
+            $table->foreignId('registered_user_id');
+            $table->string('country', 50);
+            $table->string('province', 50);
+            $table->string('city', 50);
+            $table->string('street', 50);
+            $table->string('location', 50)->nullable();
+            $table->string('etiqueta', 50);
             $table->timestamps();
 
             $table->foreign('registered_user_id')
@@ -35,6 +38,6 @@ class CreateGeoLocationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('geo_locations');
+        Schema::dropIfExists('addrs');
     }
 }
