@@ -66,6 +66,11 @@ class RegisteredUser extends UserRole
         return $this->hasOne(Producer::class);
     }
 
+    public function addrs()
+    {
+        return $this->hasMany(Addr::class);
+    }
+
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = Hash::make($password);

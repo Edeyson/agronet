@@ -27,11 +27,16 @@ Route::post('users/login', [App\Http\Controllers\Api\V1\Users\AuthController::cl
 
 Route::middleware(['auth:sanctum', 'role:'.Role::REGISTERED_USER])->group(function () {
 
+    /*Refactor pte */
     Route::post('users/logout', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'logout']);
     Route::get('users/profile', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'getProfile'])->name('user.profile');
     Route::post('users/producer', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'producerRegister']);
+    /* */
+
+    Route::apiResource('address', App\Http\Controllers\Api\V1\Geo\AddrController::class);
+    Route::apiResource('geo-location', App\Http\Controllers\Api\V1\Geo\GeographicLocationController::class);
 });
 
 Route::middleware(['auth:sanctum', 'role:'.Role::PRODUCER])->group(function () {
-    Route::get('cliente/prueba', [App\Http\Controllers\Api\V1\Users\ClienteController::class, 'prueba'])->name('user.prueba');
+    //Route::get('cliente/prueba', [App\Http\Controllers\Api\V1\Users\ClienteController::class, 'prueba'])->name('user.prueba');
 });
