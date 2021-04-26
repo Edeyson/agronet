@@ -1,0 +1,66 @@
+[RegisteredUserController]
+	-- v1/users/
+
+-index(): GET :
+-store($data): POST: Registrar Usuario Publico Como Registrado (Sign Up) -- v1/users/ OK
+-destroy($id):DELETE:
+-update($data): PUT:
+-destroy($id): DELETE:
+	--[Relationships]
+		--[Addrs]
+			-index(): GET : Listar Direcciones De Un RegUser. -- v1/users/addrs OK
+			-store(): POST : Registrar Mis Direcciones -- v1/users/addrs OK
+			-show($id): GET: Consultar Mi Dirección Por Id (Relationships -> Geo) -- v1/users/addrs/$id OK
+			-destroy($id): DELETE: Eliminar Mi Direccion Por Id -- v1/users/addrs/$id OK
+			-update($data): PUT: Editar Mis Direcciones -- v1/users/addrs/$id OK
+
+[AuthController]
+	-- v1/auth/
+
+-index(): GET : Consultar Mi Perfil De Usuario  OK -- v1/auth
+-index(): GET : Consultar Mi Perfil De Usuario + ->producer() [sede_papal] + ->admin()]
+-login($data): POST: (Sign In) -- v1/login OK
+-logout():POST: (Sign Out) -- v1/logout OK
+
+[Producers]
+	-- v1/producers/
+
+-index(): GET:
+-store(): POST : Registrar Rol de Productor a un Usuario Registrado. -- v1/producers/ OK
+-show($id):
+-update($data): PUT:
+-destroy($id): DELETE:
+
+[Adrrs]
+
+-index(): GET: Todas Las direcciones - Acepta Query Parameters -- v1/addrs
+-store($data): POST: 'admins'
+-show($id): GET: Consultar Dirección Por Id (Relationships -> Geo) -- v1/addrs/$id
+-update($data): PUT: Editar Direccion De User authenticated -- v1/addrs/$id
+-destroy($id): DELETE:
+
+[Geolocation]
+
+-index(): GET: Todas Las Geo-Coordenadas - Acepta Query Parameters -- v1/geolocation
+-store($data): POST: Registrar Geolocation -- v1/addrs/
+-show($id): GET: Consultar Geolocation Por Id  -- v1/geolocation/$id
+-update($data): PUT:
+-destroy($id): DELETE:
+
+[Events]
+
+-index(): GET: Todas Los eventos - Acepta Query Parameters -- v1/events
+-store($data): POST: Registrar Evento -- v1/events/
+-show($id): GET: Consultar Geolocation Por Id  -- v1/geolocation/$id
+-update($data): PUT:
+-destroy($id): DELETE:
+
+
+
+
+
+
+
+
+
+

@@ -32,4 +32,9 @@ class Addr extends Model
     {
         return $this->hasOne(GeoLocation::class);
     }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
 }

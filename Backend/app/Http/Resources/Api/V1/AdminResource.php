@@ -4,7 +4,7 @@ namespace App\Http\Resources\Api\V1;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class GeoLocationResource extends JsonResource
+class AdminResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,12 +15,10 @@ class GeoLocationResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'type' => 'GeoLocation',
+            'type' => 'Admin',
             'id' => $this->id,
             'attributes' => [
-                'latitud' => $this->latitud,
-                'longitud' => $this->longitud,
-                'addr_id' => $this->addr_id
+
             ],
             'links' => [
                 'self' => route('api.v1.auth.index')

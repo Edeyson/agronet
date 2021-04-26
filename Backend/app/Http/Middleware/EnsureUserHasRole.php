@@ -38,7 +38,7 @@ class EnsureUserHasRole
         if($type == Role::ADMIN)
             return $user->admin;
         if($type == Role::PRODUCER)
-            return $user->productor;
+            return $user->producer;
         if($type == Role::REGISTERED_USER)
             return $user;
     }

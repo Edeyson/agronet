@@ -23,4 +23,9 @@ class Producer extends RegisteredUser
         return $this->belongsTo(RegisteredUser::class, 'registered_user_id');
     }
 
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
 }
