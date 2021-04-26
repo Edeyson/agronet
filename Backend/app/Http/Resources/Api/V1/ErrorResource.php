@@ -4,7 +4,7 @@ namespace App\Http\Resources\Api\V1;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProducerResource extends JsonResource
+class ErrorResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,14 +15,7 @@ class ProducerResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'type' => 'Producer',
-            'id' => $this->id,
-            'attributes' => [
-                'sede_ppal' => $this->sede_ppal
-            ],
-            'links' => [
-                'self' => route('api.v1.auth.index')
-            ]
+
         ];
     }
 }

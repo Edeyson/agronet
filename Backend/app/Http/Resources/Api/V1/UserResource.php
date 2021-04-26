@@ -28,7 +28,7 @@ class UserResource extends JsonResource
                 'updated_at' => $this->updated_at
             ],
             'links' => [
-                'self' => route('user.profile')
+                'self' => route('api.v1.auth.index')
             ]
         ];
     }

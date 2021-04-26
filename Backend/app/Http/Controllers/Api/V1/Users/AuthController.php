@@ -7,13 +7,37 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\RegisteredUser;
 use App\Http\Requests\api\v1\LoginUserRequest;
-use App\Http\Requests\api\v1\RegisterUserRequest;
-use App\Http\Requests\api\v1\RegisterProducerRequest;
+use App\Http\Requests\api\v1\UserRequest;
 use App\Http\Resources\Api\V1\UserResource;
 use App\Http\Resources\Api\V1\ProducerResource;
 
 class AuthController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        $user = $request->user();
+        return new UserResource($user);
+    }
+
+    public function producer(Request $request)
+    {
+        $producer = $request->user()->producer;
+
+        return new ProducerResource($producer);
+    }
+
+    public function admin(Request $request)
+    {
+        $admin = $request->user()->admin;
+
+        return new AdminResource($admin);
+    }
+
     public function login(LoginUserRequest $request)
     {
         $email = $request->input('data.attributes.email');
@@ -41,35 +65,28 @@ class AuthController extends Controller
         ]);
     }
 
-    public function register(RegisterUserRequest $request)
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
-        $user = RegisteredUser::create($request->input('data.attributes'));
-
-        $token = $user->createToken($request->input('data.attributes.nameToken'))->plainTextToken;
-
-        return response()->json([
-            'token' => $token,
-            'message' => 'Succesful Registration',
-        ], 201);
+        //
     }
 
-    public function getProfile(Request $request)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
     {
-        $user = $request->user();
-        return new UserResource($user);
+        //
     }
 
-    public function producerRegister(RegisterProducerRequest $request)
-    {
-        $user = $request->user();
-        if(!$user->producer)
-        {
-            $user->producer()->create($request->input('data.attributes'));
-        }
-
-        $user->refresh();
-
-        return new ProducerResource($user->producer);
-    }
 
 }

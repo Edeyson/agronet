@@ -1,28 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Geo;
+namespace App\Http\Controllers\Api\V1\Users;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\api\v1\AddrRequest;
-use App\Models\Addr;
-use App\Http\Resources\Api\V1\AddrResource;
-use App\Http\Resources\Api\V1\AddrResourceCollection;
+use App\Models\RegisteredUser;
+use App\Http\Requests\api\v1\UserRequest;
 
-class AddrController extends Controller
+class RegisteredUserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        //$request Query Parameters
-
-       $addrs = Addr::simplePaginate(25);
-
-       return new AddrResourceCollection($addrs);
+        //
     }
 
     /**
@@ -31,9 +25,16 @@ class AddrController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AddrRequest $request)
+    public function store(UserRequest $request)
     {
-       // store user dir en Users/addrs
+        $user = RegisteredUser::create($request->input('data.attributes'));
+
+        $token = $user->createToken($request->input('data.attributes.nameToken'))->plainTextToken;
+
+        return response()->json([
+            'token' => $token,
+            'message' => 'Succesful Registration',
+        ], 201);
     }
 
     /**
@@ -44,9 +45,7 @@ class AddrController extends Controller
      */
     public function show($id)
     {
-        $addr = Addr::find($id);
-
-        return new AddrResource($addr);
+        //
     }
 
     /**
@@ -56,9 +55,9 @@ class AddrController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(AddrRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        // update dir de user en User/Addr
+        //
     }
 
     /**

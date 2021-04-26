@@ -21,7 +21,7 @@ class CreateAddrsTable extends Migration
             $table->string('city', 50);
             $table->string('street', 50);
             $table->string('location', 50)->nullable();
-            $table->string('etiqueta', 50);
+            $table->string('etiqueta', 50)->nullable();
             $table->timestamps();
 
             $table->foreign('registered_user_id')

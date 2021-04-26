@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGeoLocationsTable extends Migration
+class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,24 @@ class CreateGeoLocationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('geo_locations', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->float('latitud',16, 14);
-            $table->float('longitud', 16, 14);
-            $table->foreignId('addr_id')->unique();
+            $table->foreignId('producer_id');
+            $table->foreignId('addr_id');
+            $table->date('fecha');
+            $table->time('hora');
+            $table->integer('duracion');
             $table->timestamps();
+
+            $table->foreign('producer_id')
+                ->references('id')->on('producers')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
 
             $table->foreign('addr_id')
                 ->references('id')->on('addrs')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-
         });
     }
 
@@ -35,6 +41,6 @@ class CreateGeoLocationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('geo_locations');
+        Schema::dropIfExists('events');
     }
 }

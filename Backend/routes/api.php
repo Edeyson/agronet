@@ -15,28 +15,51 @@ use App\Models\Role;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+/*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});*/
+
+
+//Doing Refactor
+Route::group(['prefix'=>'v1','as'=>'api.v1.'], function(){
+    //Login + ...
+    Route::post('login', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'login']);
+    //Sign Up
+    Route::post('users', [App\Http\Controllers\Api\V1\Users\RegisteredUserController::class, 'store']);
+
+    Route::middleware(['auth:sanctum', 'role:'.Role::REGISTERED_USER])->group(function () {
+        Route::post('logout', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'logout']);
+        Route::apiResource('auth', App\Http\Controllers\Api\V1\Users\AuthController::class)->except('store');
+        Route::apiResource('producers', App\Http\Controllers\Api\V1\Users\Producer\ProducerController::class)->only('store');
+        Route::apiResource('users/addrs', App\Http\Controllers\Api\V1\Users\Addrs\UserAddrsController::class);
+    });
 });
 
 
-Route::post('users/register', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'register']);
-
-Route::post('users/login', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'login']);
 
 
-Route::middleware(['auth:sanctum', 'role:'.Role::REGISTERED_USER])->group(function () {
+//ok Route::post('users/register', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'register']);
 
-    /*Refactor pte */
-    Route::post('users/logout', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'logout']);
-    Route::get('users/profile', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'getProfile'])->name('user.profile');
-    Route::post('users/producer', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'producerRegister']);
-    /* */
+//ok Route::post('users/login', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'login']);
 
-    Route::apiResource('address', App\Http\Controllers\Api\V1\Geo\AddrController::class);
-    Route::apiResource('geo-location', App\Http\Controllers\Api\V1\Geo\GeographicLocationController::class);
-});
 
-Route::middleware(['auth:sanctum', 'role:'.Role::PRODUCER])->group(function () {
-    //Route::get('cliente/prueba', [App\Http\Controllers\Api\V1\Users\ClienteController::class, 'prueba'])->name('user.prueba');
-});
+
+// Route::middleware(['auth:sanctum', 'role:'.Role::REGISTERED_USER])->group(function () {
+
+//     /*Refactor pte */
+// ok    Route::post('users/logout', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'logout']);
+// ok    Route::get('users/profile', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'getProfile'])
+//                 ->name('user.profile');
+// ok    Route::post('users/producer', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'producerRegister']);
+//     /* */
+
+// ok    Route::apiResource('addrs', App\Http\Controllers\Api\V1\Geo\AddrController::class);
+//     Route::apiResource('geolocation', App\Http\Controllers\Api\V1\Geo\GeographicLocationController::class);
+// });
+
+// Route::middleware(['auth:sanctum', 'role:'.Role::PRODUCER])->group(function () {
+//     Route::get('producers/profile', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'getProducerProfile'])
+//                 ->name('producer.profile');
+//     Route::apiResource('producers', App\Http\Controllers\Api\V1\Users\Producer\ProducerController::class);
+//     Route::apiResource('events', App\Http\Controllers\Api\V1\Geo\EventController::class);
+// });

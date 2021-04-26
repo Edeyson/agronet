@@ -4,7 +4,7 @@ namespace App\Http\Requests\api\v1;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterAddrRequest extends FormRequest
+class ProducerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +24,10 @@ class RegisterAddrRequest extends FormRequest
     public function rules()
     {
         return [
-
             'data' => ['required', 'array'],
             'data.type' => ['required'],
             'data.attributes' => ['required', 'array'],
-            'data.attributes.country' => ['required', 'string', 'max:255'],
-            'data.attributes.province' => ['required', 'string', 'max:255'],
-            'data.attributes.city' => ['required', 'string', 'max:255'],
-            'data.attributes.street' => ['required', 'string', 'max:255'],
-            'data.attributes.location' => ['nullable', 'string', 'max:255'],
-            'data.attributes.etiqueta' => ['required', 'string', 'max:255']
+            'data.attributes.sede_ppal' => ['nullable', 'string', 'max:255'],
         ];
     }
 }

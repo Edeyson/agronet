@@ -4,7 +4,7 @@ namespace App\Http\Requests\api\v1;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterProducerRequest extends FormRequest
+class EventRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,14 @@ class RegisterProducerRequest extends FormRequest
     public function rules()
     {
         return [
+
             'data' => ['required', 'array'],
             'data.type' => ['required'],
             'data.attributes' => ['required', 'array'],
-            'data.attributes.sede_ppal' => ['nullable', 'string', 'max:255'],
+            'data.attributes.addr_id' => ['required', 'numeric'],
+            'data.attributes.fecha' => ['required', 'string', 'max:255'],
+            'data.attributes.hora' => ['required', 'string', 'max:255'],
+            'data.attributes.duracion' => ['required', 'numeric']
         ];
     }
 }

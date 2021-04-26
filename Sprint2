@@ -39,6 +39,9 @@
  se implemento el endpoint para realizar logout
  se implemento el endpoint para registrarse como cliente
 
+----23/4/2021----
+se implentaron middleware para proteger rutas de proctores y
+usuarios registrados
 
 
 
