@@ -17,11 +17,12 @@ class CreateAdminsTable extends Migration
             $table->id();
             $table->foreignId('registered_user_id')->unique();;
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('registered_user_id')
                 ->references('id')->on('registered_users')
                 ->onUpdate('cascade')
-                ->onDelete('cascade');
+                ->onDelete('restrict');
         });
     }
 

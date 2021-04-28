@@ -17,16 +17,36 @@ class UsersSeeder extends Seeder
     {
         $faker = \Faker\Factory::create();
 
-         for($i=0; $i<5; $i++){
-            DB::table('registered_users')->insert([
-                  'nombre'=> $faker->firstName(),
-                  'apellido'=>$faker->lastName(),
-                  'email'=>$faker->email(),
-                  'password'=> Hash::make('hola123'),
-                  'departamento'=>$faker->state(),
-                  'ciudad'=>$faker->city(),
-                  'telefono'=>$faker->phoneNumber(),
-            ]);
-        }
+
+        DB::table('registered_users')->insert([
+                'nombre'=> 'Admin',
+                'apellido'=>'Super Admin',
+                'email'=>'admin@mail.es',
+                'password'=> Hash::make('hola123'),
+                'departamento'=>$faker->state(),
+                'ciudad'=>$faker->city(),
+                'telefono'=>$faker->phoneNumber(),
+        ]);
+
+        DB::table('registered_users')->insert([
+            'nombre'=> 'Producer',
+            'apellido'=>'01',
+            'email'=>'producer01@mail.es',
+            'password'=> Hash::make('hola123'),
+            'departamento'=>$faker->state(),
+            'ciudad'=>$faker->city(),
+            'telefono'=>$faker->phoneNumber(),
+        ]);
+
+        DB::table('registered_users')->insert([
+            'nombre'=> 'user',
+            'apellido'=>'01',
+            'email'=>'user01@mail.es',
+            'password'=> Hash::make('hola123'),
+            'departamento'=>$faker->state(),
+            'ciudad'=>$faker->city(),
+            'telefono'=>$faker->phoneNumber(),
+    ]);
+
     }
 }

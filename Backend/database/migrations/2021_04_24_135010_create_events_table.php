@@ -20,6 +20,7 @@ class CreateEventsTable extends Migration
             $table->date('fecha');
             $table->time('hora');
             $table->integer('duracion');
+            $table->enum('state', ['pendiente','en_curso','cancelado','terminado'])->default('pendiente');
             $table->timestamps();
 
             $table->foreign('producer_id')

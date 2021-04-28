@@ -1,39 +1,49 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Geo;
+namespace App\Http\Controllers\Api\V1\Producers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\api\v1\AddrRequest;
-use App\Models\Addr;
-use App\Http\Resources\Api\V1\AddrResource;
-use App\Http\Resources\Api\V1\AddrResourceCollection;
+use App\Http\Requests\api\v1\ProducerRequest;
+use App\Http\Resources\Api\V1\ProducerResource;
 
-class AddrController extends Controller
+class ProducerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        //$request Query Parameters
-
-       $addrs = Addr::simplePaginate(25);
-
-       return new AddrResourceCollection($addrs);
+        //
     }
 
     /**
-     * Store a newly created resource in storage.
+     * RegUser to Producer
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AddrRequest $request)
+    public function store(ProducerRequest $request)
     {
-       // store user dir en Users/addrs
+        $user = $request->user();
+        if(!$user->producer)
+        {
+            $user->producer()->create($request->input('data.attributes'));
+        }
+        else
+        {
+            return response()->json(['errors' => [
+                'status' => 409,
+                'title'  => 'duplicate resource'
+                ]
+            ], 409);
+        }
+
+        $user->refresh();
+
+        return new ProducerResource($user->producer);
     }
 
     /**
@@ -42,11 +52,10 @@ class AddrController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // Perfil Producer Logged
     public function show($id)
     {
-        $addr = Addr::find($id);
-
-        return new AddrResource($addr);
+       //
     }
 
     /**
@@ -56,9 +65,9 @@ class AddrController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(AddrRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        // update dir de user en User/Addr
+        //
     }
 
     /**

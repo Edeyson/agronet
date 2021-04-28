@@ -22,16 +22,30 @@ use App\Models\Role;
 
 //Doing Refactor
 Route::group(['prefix'=>'v1','as'=>'api.v1.'], function(){
-    //Login + ...
-    Route::post('login', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'login']);
+    //Login
+    Route::post('auth', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'login']);
     //Sign Up
     Route::post('users', [App\Http\Controllers\Api\V1\Users\RegisteredUserController::class, 'store']);
 
     Route::middleware(['auth:sanctum', 'role:'.Role::REGISTERED_USER])->group(function () {
-        Route::post('logout', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'logout']);
-        Route::apiResource('auth', App\Http\Controllers\Api\V1\Users\AuthController::class)->except('store');
-        Route::apiResource('producers', App\Http\Controllers\Api\V1\Users\Producer\ProducerController::class)->only('store');
-        Route::apiResource('users/addrs', App\Http\Controllers\Api\V1\Users\Addrs\UserAddrsController::class);
+        Route::delete('auth', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'logout']);
+        Route::apiResource('producers', App\Http\Controllers\Api\V1\Producers\ProducerController::class)->only('store');
+        Route::apiResource('users', App\Http\Controllers\Api\V1\Users\RegisteredUserController::class)->except(['store','index']);
+        Route::apiResource('addrs', App\Http\Controllers\Api\V1\Addrs\AddrController::class)->only(['store', 'show', 'update', 'destroy']);
+        //del
+        /*Route::apiResource('producers', App\Http\Controllers\Api\V1\Producers\ProducerController::class)->only('store');
+        Route::apiResource('users/addrs', App\Http\Controllers\Api\V1\Addrs\AddrController::class);*/
+    });
+
+    Route::middleware(['auth:sanctum', 'role:'.Role::PRODUCER])->group(function () {
+        
+    });
+
+    Route::middleware(['auth:sanctum', 'role:'.Role::ADMIN])->group(function () {
+        Route::group(['prefix'=>'admin','as'=>'api.v1.'], function(){
+            Route::apiResource('users', App\Http\Controllers\Api\V1\Users\RegisteredUserController::class);
+            Route::apiResource('addrs', App\Http\Controllers\Api\V1\Addrs\AddrController::class);
+        });
     });
 });
 
