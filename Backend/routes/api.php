@@ -33,10 +33,9 @@ Route::group(['prefix'=>'v1','as'=>'api.v1.'], function(){
         Route::apiResource('users', App\Http\Controllers\Api\V1\Users\RegisteredUserController::class)->except(['store','index']);
         Route::get('users/{id}/addrs', [App\Http\Controllers\Api\V1\Users\RegisteredUserController::class, 'addrs']);
         Route::apiResource('addrs', App\Http\Controllers\Api\V1\Addrs\AddrController::class)->only(['store', 'show', 'update', 'destroy']);
+        Route::get('addrs/{id}/geo-location', [App\Http\Controllers\Api\V1\Addrs\AddrController::class, 'geoLocation']);    
+        Route::apiResource('geo-locations', App\Http\Controllers\Api\V1\GeoLocation\GeographicLocationController::class)->only(['store']);    
         
-        //del
-        /*Route::apiResource('producers', App\Http\Controllers\Api\V1\Producers\ProducerController::class)->only('store');
-        Route::apiResource('users/addrs', App\Http\Controllers\Api\V1\Addrs\AddrController::class);*/
     });
 
     Route::middleware(['auth:sanctum', 'role:'.Role::PRODUCER])->group(function () {
@@ -47,6 +46,7 @@ Route::group(['prefix'=>'v1','as'=>'api.v1.'], function(){
         Route::group(['prefix'=>'admin','as'=>'api.v1.'], function(){
             Route::apiResource('users', App\Http\Controllers\Api\V1\Users\RegisteredUserController::class);
             Route::apiResource('addrs', App\Http\Controllers\Api\V1\Addrs\AddrController::class);
+            Route::apiResource('geo-locations', App\Http\Controllers\Api\V1\GeoLocation\GeographicLocationController::class);
         });
     });
 });

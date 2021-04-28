@@ -9,6 +9,7 @@ class Producer extends RegisteredUser
     protected $fillable = [
 
         'sede_ppal',
+        'registered_user_id'
     ];
 
     public function hasType($role)

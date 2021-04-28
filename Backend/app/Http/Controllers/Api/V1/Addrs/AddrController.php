@@ -8,7 +8,9 @@ use App\Http\Requests\api\v1\AddrRequest;
 use App\Models\Addr;
 use App\Http\Resources\Api\V1\AddrResource;
 use App\Http\Resources\Api\V1\AddrResourceCollection;
+use App\Http\Resources\Api\V1\GeoLocationResource;
 use App\Models\RegisteredUser;
+use App\Models\GeoLocation;
 
 class AddrController extends Controller
 {
@@ -140,5 +142,42 @@ class AddrController extends Controller
             'title'  => 'Not Found'
             ]
         ], 404);
+    }
+
+    public function geoLocation(Request $request, $id)
+    {
+        if($request->user()->admin)
+        {
+            $geo = GeoLocation::where('addr_id', $id)->first();
+            //dd($geo);
+            if($geo)
+            {
+                return new GeoLocationResource($geo);
+            }
+            return response()->json(['errors' => [
+                'status' => 404,
+                'title'  => 'Not Found'
+                ]
+            ], 404);            
+            
+        }
+        
+        $addr = $request->user()->addrs()->find($id);
+        if($addr)
+            $geo = $addr->geoLocation;       
+
+        if(isset($geo))
+        {
+            return new GeoLocationResource($geo);
+        }
+        else
+        {
+            return response()->json(['errors' => [
+                'status' => 404,
+                'title'  => 'Not Found'
+                ]
+            ], 404);      
+        }
+        
     }
 }

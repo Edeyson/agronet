@@ -26,7 +26,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": " \n {\n     \"data\" : {\n        \"type\" : \"RegisteredUser\",\n        \"attributes\" : {\n            \"nombre\" : \"user 08\",\n            \"apellido\" : \"00008\",\n            \"email\": \"user08@mail.es\",\n            \"password\" : \"hola123\",\n            \"nameToken\" : \"movil\",\n            \"departamento\" : \"Caldas\",\n            \"ciudad\" : \"Manizales\",\n            \"telefono\" : \"3012345678\"\n        }\n    }\n }",
+							"raw": " \n {\n     \"data\" : {\n        \"type\" : \"RegisteredUser\",\n        \"attributes\" : {\n            \"nombre\" : \"user 08\",\n            \"apellido\" : \"00008\",\n            \"email\": \"user08@mail.es\",\n            \"password\" : \"hola1234\",\n            \"nameToken\" : \"movil\",\n            \"departamento\" : \"Caldas\",\n            \"ciudad\" : \"Manizales\",\n            \"telefono\" : \"3012345678\"\n        }\n    }\n }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -89,6 +89,47 @@
 				},
 				{
 					"name": "Login",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\" : {\n        \"type\" : \"RegisteredUser\",\n        \"attributes\" : {\n            \"email\": \"producer01@mail.es\",\n            \"password\" : \"hola123\",\n            \"nameToken\" : \"web\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Admin",
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {
 							"accept": true
@@ -220,7 +261,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "2|Xkq78cPEZTgDkNkRJtJ1lEz7pYC8AXV33Gd1CHPJ",
+									"value": "6|PHD1NyCPjbpKWMTlkEMcR34K98CEjKCKuOeh1qIJ",
 									"type": "string"
 								}
 							]
@@ -234,7 +275,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/v1/users/5",
+							"raw": "http://localhost:8000/api/v1/users/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -244,7 +285,86 @@
 								"api",
 								"v1",
 								"users",
-								"5"
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "13|EcjPCkqDF6rydRus2d1FLNbkxjAd4506ZP9xcrYO",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"type\": \"User\",        \n        \"attributes\": {\n            \"nombre\": \"user\",\n            \"apellido\": \"0001\",            \n            \"departamento\": \"Atlantico\",\n            \"ciudad\": \"Barranquilla\",\n            \"telefono\": \"+1-757-289-555\"            \n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "11|q25Cr8H2iPgrfs2OAE7L6u1x5oip7eFJrxWXwM0R",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"3"
 							]
 						}
 					},
@@ -268,7 +388,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "3|QQCesyoA0lidjrno94mQsCibabych3u1aWqD0Tka",
+									"value": "14|AHfHnlBqbcE439XYrHQLSc8pxwlLvLi4JmAlYk5N",
 									"type": "string"
 								}
 							]
@@ -283,7 +403,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\" : {\n        \"type\" : \"Producer\",\n        \"attributes\" : {\n            \"sede_papal\": null\n        }\n    }\n}",
+							"raw": "{\n    \"data\" : {\n        \"type\" : \"Producer\",\n        \"attributes\" : {\n            \"sede_papal\": null,\n            \"registered_user_id\" : 3\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -324,7 +444,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "13|IoMDbnntmlUPksu1LqEgXFIRbwRlEFv0ZdIvWSaY",
+									"value": "15|ytSpIuvREkHDtqGDN9dt8fEDBRhC8kQi7Q8CEQ1U",
 									"type": "string"
 								}
 							]
@@ -339,7 +459,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\" : {\n        \"type\" : \"Address\",\n        \"attributes\" : {            \n            \"country\" : \"Colombia\",\n            \"province\" : \"Caldas\",\n            \"city\": \"Chinchina\",\n            \"street\" : \"Av 55\",\n            \"location\" : \"# 10\",\n            \"etiqueta\" : \"Casa\"\n        }\n    }\n}",
+							"raw": "{\n    \"data\" : {\n        \"type\" : \"Address\",\n        \"attributes\" : {   \n            \"registered_user_id\" : 4,      \n            \"country\" : \"Colombia\",\n            \"province\" : \"Caldas\",\n            \"city\": \"Pacora\",\n            \"street\" : \"Av 55\",\n            \"location\" : \"# 10\",\n            \"etiqueta\" : \"Casa\"\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -363,6 +483,44 @@
 					"response": []
 				},
 				{
+					"name": "Listar Addrs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|cK3Na2JNdQ6gKSRWfa8OUCgIgos7W65aFgIs4BqZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/admin/addrs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"addrs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Listar Mis Addrs",
 					"request": {
 						"auth": {
@@ -370,15 +528,21 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "29|PioTEinGIoNPSWwA4m6PHCTYCszatbjrjP03dKNu",
+									"value": "5|8MUmfnJORKekOf10JOUxl6se4PABERX5vuXX8zWW",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:8000/api/v1/users/addrs",
+							"raw": "http://localhost:8000/api/v1/users/3/addrs",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -388,6 +552,7 @@
 								"api",
 								"v1",
 								"users",
+								"3",
 								"addrs"
 							]
 						}
@@ -407,7 +572,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "15|twOErHmzYxNHJmmXz81CycJZKsjULVvvWZ1S95vv",
+									"value": "2|FXkDcvDXU6t1TUpGYjZFWQmLNThS5H5kcDdm1LtO",
 									"type": "string"
 								}
 							]
@@ -421,7 +586,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/v1/addrs/8",
+							"raw": "http://localhost:8000/api/v1/addrs/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -431,7 +596,7 @@
 								"api",
 								"v1",
 								"addrs",
-								"8"
+								"1"
 							]
 						}
 					},
@@ -533,14 +698,14 @@
 					"response": []
 				},
 				{
-					"name": "Listar Addrs",
+					"name": "Geo",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "9|2mAV3OciICS38KlOWBDnZowyL0OX92IQjOHrVqgd",
+									"value": "16|HSayajSGl0zexKzKWmGbnEe1Y4WkXqzVvyBhqHwF",
 									"type": "string"
 								}
 							]
@@ -554,7 +719,51 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/v1/admin/addrs",
+							"raw": "http://localhost:8000/api/v1/addrs/5/geo-location",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"addrs",
+								"5",
+								"geo-location"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GeoLocation",
+			"item": [
+				{
+					"name": "Listar GeoLocations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|AHfHnlBqbcE439XYrHQLSc8pxwlLvLi4JmAlYk5N",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/admin/geo-locations",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -564,7 +773,92 @@
 								"api",
 								"v1",
 								"admin",
-								"addrs"
+								"geo-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store GeoLocation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|AHfHnlBqbcE439XYrHQLSc8pxwlLvLi4JmAlYk5N",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\" : {\n        \"type\" : \"RegisteredUser\",\n        \"attributes\" : {\n            \"latitud\": -5.87856,\n            \"longitud\" : 75.4766465,\n            \"addr_id\" : 50\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/geo-locations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"geo-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show GeoLocation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "16|HSayajSGl0zexKzKWmGbnEe1Y4WkXqzVvyBhqHwF",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/admin/geo-locations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"geo-locations",
+								"1"
 							]
 						}
 					},

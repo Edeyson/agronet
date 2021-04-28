@@ -30,7 +30,7 @@ class GeoLocationRequest extends FormRequest
             'data.attributes' => ['required', 'array'],
             'data.attributes.latitud' => ['required', 'numeric'],
             'data.attributes.longitud' => ['required', 'numeric'],
-            'data.attributes.addr_id' => ['required', 'numeric', 'unique:geo_locations,addr_id']
+            'data.attributes.addr_id' => ['required', 'numeric', 'unique:geo_locations,addr_id', 'exists:addrs,id']
         ];
     }
 }
