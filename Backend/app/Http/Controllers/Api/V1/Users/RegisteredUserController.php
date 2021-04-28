@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\RegisteredUser;
 use App\Http\Requests\api\v1\UserRequest;
+use App\Http\Requests\api\v1\UserEditRequest;
 use App\Http\Resources\Api\V1\UserResource;
 use App\Http\Resources\Api\V1\UserResourceCollection;
+use App\Http\Resources\Api\V1\AddrResourceCollection;
+use App\Models\Addr;
 
 class RegisteredUserController extends Controller
 {
@@ -85,19 +88,115 @@ class RegisteredUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserEditRequest $request, $id)
     {
-        //
+        if($request->user()->admin)
+        {            
+            $user = RegisteredUser::find($id);
+            if($user)
+            {
+                $upd = $user->update($request->input('data.attributes'));
+                $user->refresh();
+                return new UserResource($user);
+            }
+            return response()->json(['errors' => [
+                'status' => 404,
+                'title'  => 'Not Found'
+                ]
+            ], 404);  
+            
+        }
+
+        if($request->user()->id == $id)
+        {
+            $user = RegisteredUser::find($id);
+            $upd = $user->update($request->input('data.attributes'));
+            $user->refresh();
+            return new UserResource($user);
+        }
+
+        return response()->json([
+            'message' => 'Unauthorized'
+            ], 401);
+
+        /*$user = RegisteredUser::find($id);
+
+        if(!$user)
+        {
+            return response()->json(['errors' => [
+                'status' => 404,
+                'title'  => 'Not Found'
+                ]
+            ], 404);   
+        }
+
+        if($request->user()->admin)
+        {
+            $upd = $user->update($request->input('data.attributes'));
+            $user->refresh();
+            return new UserResource($user);
+        }
+
+        if($request->user()->id == $id)
+        {
+            $upd = $user->update($request->input('data.attributes'));
+            $user->refresh();
+            return new UserResource($user);
+        }
+        else
+        {
+            return response()->json([
+                'message' => 'Unauthorized'
+                ], 401); 
+        }*/
+             
+    }
+    
+    public function destroy(Request $request, $id)
+    {
+        if($request->user()->admin)
+        {            
+            $user = RegisteredUser::find($id);
+            if($user)
+            {
+                $user->delete();
+                return response(null, 204);
+            }
+            return response()->json(['errors' => [
+                'status' => 404,
+                'title'  => 'Not Found'
+                ]
+            ], 404);  
+            
+        }
+
+        if($request->user()->id == $id)
+        {
+            $request->user()->delete();
+            return response(null, 204);
+        }
+
+        return response()->json([
+            'message' => 'Unauthorized'
+            ], 401); 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function addrs(Request $request, $id)
     {
-        //
+        if($request->user()->admin)
+        {
+            $addrs = Addr::where('registered_user_id', $id)->get();
+            return new AddrResourceCollection($addrs);
+        }
+        if($request->user()->id == $id)
+        {
+            $addrs = Addr::where('registered_user_id', $id)->get();
+            return new AddrResourceCollection($addrs);
+        }
+
+        return response()->json([
+            'message' => 'Unauthorized'
+            ], 401); 
+        
     }
 }

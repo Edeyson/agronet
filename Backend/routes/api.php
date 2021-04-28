@@ -31,7 +31,9 @@ Route::group(['prefix'=>'v1','as'=>'api.v1.'], function(){
         Route::delete('auth', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'logout']);
         Route::apiResource('producers', App\Http\Controllers\Api\V1\Producers\ProducerController::class)->only('store');
         Route::apiResource('users', App\Http\Controllers\Api\V1\Users\RegisteredUserController::class)->except(['store','index']);
+        Route::get('users/{id}/addrs', [App\Http\Controllers\Api\V1\Users\RegisteredUserController::class, 'addrs']);
         Route::apiResource('addrs', App\Http\Controllers\Api\V1\Addrs\AddrController::class)->only(['store', 'show', 'update', 'destroy']);
+        
         //del
         /*Route::apiResource('producers', App\Http\Controllers\Api\V1\Producers\ProducerController::class)->only('store');
         Route::apiResource('users/addrs', App\Http\Controllers\Api\V1\Addrs\AddrController::class);*/

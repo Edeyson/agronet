@@ -16,6 +16,7 @@ class Addr extends Model
         'street',
         'location',
         'etiqueta',
+        'registered_user_id'
     ];
 
     public function scopeOwnedBy($query, $user_id)

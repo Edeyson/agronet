@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Geo;
+namespace App\Http\Controllers\Api\V1\EventsAgro;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -26,7 +26,7 @@ class EventController extends Controller
         {
             //$date = date($request->get('date'));
             //dd($date);
-            $query = $events->where('fecha', '>=', $request->get('date'));
+            //$query = $events->where('fecha', '>=', $request->get('date'));
             return new EventResourceCollection($query);
         }
         else
