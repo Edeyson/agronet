@@ -13,25 +13,14 @@ use App\Http\Resources\Api\V1\AddrResourceCollection;
 use App\Models\Addr;
 
 class RegisteredUserController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+{    
     public function index(Request $request)
     {
         $users = RegisteredUser::simplePaginate(25);
         
         return new UserResourceCollection($users);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(UserRequest $request)
     {
         $user = RegisteredUser::create($request->input('data.attributes'));
@@ -45,13 +34,7 @@ class RegisteredUserController extends Controller
             'message' => 'Succesful Registration',
         ], 201);*/
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show(Request $request, $id)
     {
         if($request->user()->admin)
@@ -80,14 +63,7 @@ class RegisteredUserController extends Controller
                 'message' => 'Unauthorized'
                 ], 401);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(UserEditRequest $request, $id)
     {
         if($request->user()->admin)
@@ -117,38 +93,7 @@ class RegisteredUserController extends Controller
 
         return response()->json([
             'message' => 'Unauthorized'
-            ], 401);
-
-        /*$user = RegisteredUser::find($id);
-
-        if(!$user)
-        {
-            return response()->json(['errors' => [
-                'status' => 404,
-                'title'  => 'Not Found'
-                ]
-            ], 404);   
-        }
-
-        if($request->user()->admin)
-        {
-            $upd = $user->update($request->input('data.attributes'));
-            $user->refresh();
-            return new UserResource($user);
-        }
-
-        if($request->user()->id == $id)
-        {
-            $upd = $user->update($request->input('data.attributes'));
-            $user->refresh();
-            return new UserResource($user);
-        }
-        else
-        {
-            return response()->json([
-                'message' => 'Unauthorized'
-                ], 401); 
-        }*/
+            ], 401);       
              
     }
     

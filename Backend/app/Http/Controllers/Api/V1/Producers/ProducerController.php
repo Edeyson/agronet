@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\api\v1\ProducerRequest;
 use App\Http\Resources\Api\V1\ProducerResource;
+use App\Models\Producer;
 
 class ProducerController extends Controller
 {
@@ -27,7 +28,25 @@ class ProducerController extends Controller
      */
     public function store(ProducerRequest $request)
     {
-        $user = $request->user();
+        $user = $request->user();        
+
+        if($user->admin)
+        {
+            $producer = Producer::create($request->input('data.attributes'));
+            return new ProducerResource($producer);
+        } 
+
+        if($user->id == $request->input('data.attributes.registered_user_id'))
+        {
+            $producer = Producer::create($request->input('data.attributes'));
+            return new ProducerResource($producer);
+        }       
+
+        return response()->json([
+            'message' => 'Unauthorized'
+            ], 401);
+        
+        /*$user = $request->user();
         if(!$user->producer)
         {
             $user->producer()->create($request->input('data.attributes'));
@@ -43,7 +62,7 @@ class ProducerController extends Controller
 
         $user->refresh();
 
-        return new ProducerResource($user->producer);
+        return new ProducerResource($user->producer);*/
     }
 
     /**
