@@ -33,48 +33,23 @@ class AddrController extends Controller
      */
     public function store(AddrRequest $request)
     {
-        $user = $request->user();
+        $user = $request->user();        
 
         if($user->admin)
         {
-            //dd($userAdr->admin);
-            $user = RegisteredUser::find($request->input('data.attributes.id'));
+            $addr = Addr::create($request->input('data.attributes'));
+            return new AddrResource($addr);
+        }            
 
-            if($user)
-            {
-                $addr = $user->addrs()->create($request->input('data.attributes'));
-
-                $user->refresh();
-
-                return new AddrResource($addr);
-            }   
-
-            return response()->json(['errors' => [
-                'status' => 404,
-                'title'  => 'Not Found',
-                'errors'  => 'User id is required'
-                ]
-            ], 404);         
-        }
-
-        if($request->input('data.attributes.id'))
+        if($user->id == $request->input('data.attributes.registered_user_id'))
         {
-            if($request->user()->id == $request->input('data.attributes.id'))
-            {
-                $addr = $user->addrs()->create($request->input('data.attributes'));
-
-                $user->refresh();
-
-                return new AddrResource($addr);
-            }
-        }
+            $addr = Addr::create($request->input('data.attributes'));
+            return new AddrResource($addr);
+        }       
 
         return response()->json([
             'message' => 'Unauthorized'
-            ], 401);        
-
-        //dd($addr);
-        
+            ], 401);         
     }
 
     /**

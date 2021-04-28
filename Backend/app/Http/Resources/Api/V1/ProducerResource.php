@@ -21,7 +21,7 @@ class ProducerResource extends JsonResource
                 'sede_ppal' => $this->sede_ppal
             ],
             'links' => [
-                'self' => route('api.v1.')
+                'self' => 'route()'
             ]
         ];
     }

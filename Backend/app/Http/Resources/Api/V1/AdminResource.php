@@ -21,7 +21,7 @@ class AdminResource extends JsonResource
 
             ],
             'links' => [
-                'self' => route('api.v1.auth.index')
+                'self' => 'route()'
             ]
         ];
     }

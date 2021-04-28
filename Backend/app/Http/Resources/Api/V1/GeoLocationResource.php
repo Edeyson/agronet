@@ -23,7 +23,7 @@ class GeoLocationResource extends JsonResource
                 'addr_id' => $this->addr_id
             ],
             'links' => [
-                'self' => route('api.v1.auth.index')
+                'self' => 'route()'
             ]
         ];
     }
