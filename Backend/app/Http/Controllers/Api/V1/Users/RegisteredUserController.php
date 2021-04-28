@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\RegisteredUser;
 use App\Http\Requests\api\v1\UserRequest;
+use App\Http\Resources\Api\V1\UserResource;
+use App\Http\Resources\Api\V1\UserResourceCollection;
 
 class RegisteredUserController extends Controller
 {
@@ -14,9 +16,11 @@ class RegisteredUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $users = RegisteredUser::simplePaginate(25);
+        
+        return new UserResourceCollection($users);
     }
 
     /**
@@ -29,12 +33,14 @@ class RegisteredUserController extends Controller
     {
         $user = RegisteredUser::create($request->input('data.attributes'));
 
-        $token = $user->createToken($request->input('data.attributes.nameToken'))->plainTextToken;
+        return new UserResource($user);
+
+        /*$token = $user->createToken($request->input('data.attributes.nameToken'))->plainTextToken;
 
         return response()->json([
             'token' => $token,
             'message' => 'Succesful Registration',
-        ], 201);
+        ], 201);*/
     }
 
     /**
@@ -43,9 +49,33 @@ class RegisteredUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+        if($request->user()->admin)
+        {
+            $user = RegisteredUser::find($id);
+
+            if($user)
+            {
+                return new UserResource($user);
+            }
+
+            return response()->json(['errors' => [
+                'status' => 404,
+                'title'  => 'Not Found'
+                ]
+            ], 404);            
+            
+        }
+
+        if($request->user()->id == $id)
+        {
+            return new UserResource($request->user());
+        }
+        
+        return response()->json([
+                'message' => 'Unauthorized'
+                ], 401);
     }
 
     /**

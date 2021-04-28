@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Geo;
+namespace App\Http\Controllers\Api\V1\GeoLocation;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -53,7 +53,16 @@ class GeographicLocationController extends Controller
     {
         $geo = GeoLocation::find($id);
 
-        return new GeoLocationResource($geo);
+        if($geo)
+        {
+            return new GeoLocationResource($geo);
+        }        
+
+        return response()->json(['errors' => [
+            'status' => 404,
+            'title'  => 'Not Found'
+            ]
+        ], 404); 
     }
 
     /**

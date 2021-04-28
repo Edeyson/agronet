@@ -37,7 +37,7 @@ class AddrResource extends JsonResource
                 ]
             ],
             'links' => [
-                'self' => route('api.v1.auth.index')
+                'self' => route('api.v1.')
             ]
         ];
     }
