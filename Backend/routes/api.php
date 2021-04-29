@@ -22,10 +22,20 @@ use App\Models\Role;
 
 //Doing Refactor
 Route::group(['prefix'=>'v1','as'=>'api.v1.'], function(){
-    //Login
+    
     Route::post('auth', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'login']);
-    //Sign Up
+   
     Route::post('users', [App\Http\Controllers\Api\V1\Users\RegisteredUserController::class, 'store']);
+
+    Route::get('events', [App\Http\Controllers\Api\V1\EventsAgro\EventController::class, 'index']); 
+    
+    Route::get('events/{id}', [App\Http\Controllers\Api\V1\EventsAgro\EventController::class, 'show']); 
+
+    Route::get('events/{id}/addr', [App\Http\Controllers\Api\V1\EventsAgro\EventController::class, 'addr']); 
+
+    Route::get('events/{id}/geo-location', [App\Http\Controllers\Api\V1\EventsAgro\EventController::class, 'geoLocation']);
+    
+    Route::get('producers/{id}/events', [App\Http\Controllers\Api\V1\Producers\ProducerController::class, 'events']);
 
     Route::middleware(['auth:sanctum', 'role:'.Role::REGISTERED_USER])->group(function () {
         Route::delete('auth', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'logout']);
@@ -39,7 +49,7 @@ Route::group(['prefix'=>'v1','as'=>'api.v1.'], function(){
     });
 
     Route::middleware(['auth:sanctum', 'role:'.Role::PRODUCER])->group(function () {
-        
+        Route::apiResource('events', App\Http\Controllers\Api\V1\EventsAgro\EventController::class)->except(['index']);    
     });
 
     Route::middleware(['auth:sanctum', 'role:'.Role::ADMIN])->group(function () {

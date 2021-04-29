@@ -71,7 +71,7 @@ class AddrController extends Controller
             $addr = $request->user()->addrs()->find($id);
         }        
 
-        if($addr)
+        if(isset($addr))
         {
             return new AddrResource($addr);
         }        
@@ -101,7 +101,7 @@ class AddrController extends Controller
             $user = $request->user();
             $addr = $request->user()->addrs()->find($id);
         }        
-        if($addr)
+        if(isset($addr))
         {
             $addr->update($request->input('data.attributes'));
             return new AddrResource($addr);

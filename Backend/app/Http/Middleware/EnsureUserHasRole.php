@@ -22,9 +22,9 @@ class EnsureUserHasRole
     public function handle(Request $request, Closure $next, $role)
     {
         $user = new PublicUser();
-        $user->addRole($this->hasRole($request->user(), $role));
+        $user->addRole($this->hasRole($request->user(), $role));        
         if (! $user->roleOf($role))
-        {
+        {            
             return response()->json([
                 'message' => 'Unauthorized'
                 ], 401);

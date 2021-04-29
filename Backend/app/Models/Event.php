@@ -15,6 +15,7 @@ class Event extends Model
         'fecha',
         'hora',
         'duracion',
+        'state'
     ];
 
     protected $filters = ['sort', 'greater_or_equal'];

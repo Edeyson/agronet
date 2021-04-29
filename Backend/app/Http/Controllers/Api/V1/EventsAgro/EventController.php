@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Api\V1\EventsAgro;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\api\v1\RegisterEventRequest;
+use App\Http\Requests\api\v1\EventRequest;
 use App\Http\Resources\Api\V1\EventResource;
+use App\Http\Resources\Api\V1\GeoLocationResource;
+use App\Http\Resources\Api\V1\AddrResource;
 use App\Http\Resources\Api\V1\EventResourceCollection;
 use App\Models\Event;
+use App\Models\GeoLocation;
 
 class EventController extends Controller
 {
@@ -18,35 +21,12 @@ class EventController extends Controller
      */
     public function index(Request $request)
     {
-        //Example Comming Events : http://localhost:8000/api/events?date=2019-12-31
+        //Example Coming Events : http://localhost:8000/api/events?date=2019-12-31
 
-        $events = Event::simplePaginate(25);
+        $eventos = Event::simplePaginate(25);
 
-        if($request->get('date'))
-        {
-            //$date = date($request->get('date'));
-            //dd($date);
-            //$query = $events->where('fecha', '>=', $request->get('date'));
-            return new EventResourceCollection($query);
-        }
-        else
-        {
-            return new EventResourceCollection($events);
-        }
-
-
-        //$events = Event::simplePaginate(25);
-
-        //return new EventResourceCollection($events);
-
-
-        /* Eventos del productor logueado
-        $producer = $request->user()->producer;
-
-        $events = $producer->events;
-
-        return new EventResourceCollection($events);
-        */
+        return new EventResourceCollection($eventos);
+        
     }
 
     /**
@@ -55,15 +35,38 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(RegisterEventRequest $request)
+    public function store(EventRequest $request)
     {
-        $producer = $request->user()->producer;
+        $user = $request->user();
 
-        $event = $producer->events()->create($request->input('data.attributes'));
+        if($user->admin)
+        {           
+            $event = Event::create($request->input('data.attributes'));
+            return new EventResource($event);           
+        }  
+        //dd($user->producer->id);
+        if($user->producer->id == $request->input('data.attributes.producer_id'))
+        {
+            $addr = $user->addrs()->find($request->input('data.attributes.addr_id'));
+            //dd($addr);
+            if($addr)
+            {
+                $event = Event::create($request->input('data.attributes'));
+                return new EventResource($event);
+            }
+            else
+            {
+                return response()->json([
+                    'message' => 'Unauthorized',
+                    'details' => 'invalid Addr',
+                    ], 401); 
+            }
+           
+        }       
 
-        $producer->refresh();
-
-        return new EventResource($event);
+        return response()->json([
+            'message' => 'Unauthorized'
+            ], 401); 
     }
 
     /**
@@ -74,7 +77,16 @@ class EventController extends Controller
      */
     public function show($id)
     {
+        $event = Event::find($id);
 
+        if($event)
+            return new EventResource($event);
+        
+        return response()->json(['errors' => [
+            'status' => 404,
+            'title'  => 'Not Found'
+            ]
+        ], 404);
     }
 
     /**
@@ -86,7 +98,26 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($request->user()->admin)
+        {
+            $event = Event::find($id);
+        }
+        else
+        {
+            $user = $request->user();
+            $event = $request->user()->producer->events->find($id);
+        }        
+        if(isset($event))
+        {
+            $event->update($request->input('data.attributes'));
+            return new EventResource($event);
+        }
+
+        return response()->json(['errors' => [
+            'status' => 404,
+            'title'  => 'Not Found'
+            ]
+        ], 404);
     }
 
     /**
@@ -99,4 +130,39 @@ class EventController extends Controller
     {
         //
     }
+
+    public function addr($id)
+    {
+        $event = Event::find($id);
+
+        if($event)
+        {
+            $addr = $event->addr;
+            return new AddrResource($addr);
+        }            
+        
+        return response()->json(['errors' => [
+            'status' => 404,
+            'title'  => 'Not Found'
+            ]
+        ], 404);
+    }
+
+    public function geoLocation($id)
+    {
+        $event = Event::find($id);
+
+        if($event)
+        {
+            $geo = $event->addr->geoLocation;
+            return new GeoLocationResource($geo);
+        }            
+        
+        return response()->json(['errors' => [
+            'status' => 404,
+            'title'  => 'Not Found'
+            ]
+        ], 404);
+    }
+    
 }
