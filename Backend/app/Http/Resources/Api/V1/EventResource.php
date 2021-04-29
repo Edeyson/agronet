@@ -23,6 +23,7 @@ class EventResource extends JsonResource
                 'fecha' => $this->fecha,
                 'hora' => $this->hora,
                 'duracion' => $this->duracion,
+                'state' => $this->state,
                 'created_at' => $this->created_at,
                 'updated_at' => $this->updated_at
             ],

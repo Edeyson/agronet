@@ -43,6 +43,10 @@
 se implentaron middleware para proteger rutas de proctores y
 usuarios registrados
 
+----28/4/2021----
+Se implemento la funcionalidad de registrar eventos por parte de los
+productores incluyendo dirección y coordenadas geograficas.
+
 
 
 

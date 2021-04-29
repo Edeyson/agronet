@@ -28,7 +28,8 @@ class EventRequest extends FormRequest
             'data' => ['required', 'array'],
             'data.type' => ['required'],
             'data.attributes' => ['required', 'array'],
-            'data.attributes.addr_id' => ['required', 'numeric'],
+            'data.attributes.producer_id' => ['required', 'exists:producers,id'],
+            'data.attributes.addr_id' => ['required', 'numeric', 'exists:addrs,id'],
             'data.attributes.fecha' => ['required', 'string', 'max:255'],
             'data.attributes.hora' => ['required', 'string', 'max:255'],
             'data.attributes.duracion' => ['required', 'numeric']
