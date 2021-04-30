@@ -37,6 +37,8 @@ Route::group(['prefix'=>'v1','as'=>'api.v1.'], function(){
     
     Route::get('producers/{id}/events', [App\Http\Controllers\Api\V1\Producers\ProducerController::class, 'events']);
 
+    Route::get('events/geo/{lt}/{lng}/{val}', [App\Http\Controllers\Api\V1\GeoLocation\GeographicLocationController::class, 'circundantes']);
+
     Route::middleware(['auth:sanctum', 'role:'.Role::REGISTERED_USER])->group(function () {
         Route::delete('auth', [App\Http\Controllers\Api\V1\Users\AuthController::class, 'logout']);
         Route::apiResource('producers', App\Http\Controllers\Api\V1\Producers\ProducerController::class)->only('store');

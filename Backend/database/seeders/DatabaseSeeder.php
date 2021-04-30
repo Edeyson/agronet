@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
             UsersSeeder::class,
             ProducerSeed::class,
             AdminsSeeder::class,
+            AddrSeeder::class,
+            GeoSeeder::class,
+            EventSeeder::class
         ]);
     }
 }
