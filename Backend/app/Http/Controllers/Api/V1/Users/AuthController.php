@@ -15,10 +15,15 @@ class AuthController extends Controller
         $password = $request->input('data.attributes.password');
         if(Auth::attempt(['email' => $email, 'password' => $password]))
         {
+            $token = $request->user()->createToken($request->input('data.attributes.nameToken'))->plainTextToken;
+            $roleId = $request->user()->id;
+            if($request->user()->producer)
+                $roleId = $request->user()->producer->id;
             return response()->json([
-                'token' => $request->user()
-                ->createToken($request->input('data.attributes.nameToken'))
-                ->plainTextToken,
+                'token' => $token,
+                'slug' => $request->user()->id,
+                //'role_id' => $request->user()->producer->id,
+                'role_id' => $roleId,
                 'message' => 'Successful authentication'
             ],200);
         }

@@ -1,0 +1,7 @@
+#mapa-mapbox-create-event {
+  width: 100%;
+  min-height: 50vh;
+  height: 50%;
+  margin-bottom: 15px;
+  border: 2px solid #000000;
+}
