@@ -16,7 +16,7 @@ class CreateAddrsTable extends Migration
         Schema::create('addrs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('registered_user_id');
-            $table->string('country', 50);
+            $table->string('country', 50)->default('Colombia');
             $table->string('province', 50);
             $table->string('city', 50);
             $table->string('street', 50);
