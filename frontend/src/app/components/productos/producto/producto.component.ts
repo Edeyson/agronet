@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
+import { Product } from '../../interfaces/interfaces';
 
 @Component({
   selector: 'app-producto',
@@ -7,16 +9,23 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductoComponent implements OnInit {
 
-  @Input() article:any;
+  @Input() product: Product;
   public codigo:any;
 
-  constructor() { }
+  constructor(
+    private shoppingCartService: ShoppingCartService
+  ) { }
 
   ngOnInit(): void {
   }
 
   articuloSelected(){
-    console.log("Selected: ",this.article);
+    console.log("Selected: ",this.product);
+  }
+
+  addProduct(product: Product)
+  {
+    this.shoppingCartService.addProduct(product);
   }
 
 }

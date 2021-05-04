@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   API_Key: 'f1d7b114cbe24db2a75c89aff87a4e0c',
-  API_URL: 'https://newsapi.org/v2/'
+  API_URL: 'https://newsapi.org/v2/',
+  API_BACKEND_URL: 'http://127.0.0.1:8000/api/'
 };
 
 /*

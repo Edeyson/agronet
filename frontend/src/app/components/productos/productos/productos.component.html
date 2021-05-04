@@ -1,4 +1,3 @@
-
 <ul class="navbar-nav rounded ml-auto">
     <nav class="navbar navbar-dark bg-light" >
         <div class="form-inline">
@@ -9,9 +8,9 @@
             </button>
         </div>
     </nav>
-</ul>
-<div class="row" fixed>
-    <div class="col-sm" size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" *ngFor="let articulo of articulos | filter:filtrarProducto">
-        <app-producto [article]="articulo" ></app-producto>
+</ul>       
+<div class="row">
+    <div class="col-sm-3 mt-3" *ngFor="let product of products">
+        <app-producto [product]="product"></app-producto>
     </div>
 </div>
