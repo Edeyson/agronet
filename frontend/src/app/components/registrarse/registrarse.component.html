@@ -11,11 +11,11 @@
 
 
           <div class="form-group">
-            <label for="primerNombre" class="text-info" required>Primer nombre<span class="required">*</span></label>
-            <input type="text" id="primerNombre" class="form-control" placeholder="Primer nombre" required autofocus
-              formControlName="primerNombre" [ngClass]="{'is-invalid': submitted && f.primerNombre.errors}">
-            <div *ngIf="submitted && f.primerNombre.errors" class="invalid-feedback">
-              <div *ngIf="f.primerNombre.errors.required">
+            <label for="nombre" class="text-info" required>Primer nombre<span class="required">*</span></label>
+            <input type="text" id="nombre" class="form-control" placeholder="Primer nombre" required autofocus
+              formControlName="nombre" [ngClass]="{'is-invalid': submitted && f.nombre.errors}">
+            <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+              <div *ngIf="f.nombre.errors.required">
                 Campo obligatorio
               </div>
             </div>
@@ -23,12 +23,12 @@
 
 
           <div class="form-group">
-            <label for="primerApellido" class="text-info" required>Primer apellido<span
+            <label for="apellido" class="text-info" required>Primer apellido<span
                 class="required">*</span></label>
-            <input type="text" id="primerApellido" class="form-control" placeholder="Primer apellido" required autofocus
-              formControlName="primerApellido" [ngClass]="{'is-invalid': submitted && f.primerApellido.errors}">
-            <div *ngIf="submitted && f.primerApellido.errors" class="invalid-feedback">
-              <div *ngIf="f.primerApellido.errors.required">
+            <input type="text" id="apellido" class="form-control" placeholder="Primer apellido" required autofocus
+              formControlName="apellido" [ngClass]="{'is-invalid': submitted && f.apellido.errors}">
+            <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
+              <div *ngIf="f.apellido.errors.required">
                 Campo obligatorio
               </div>
             </div>
@@ -37,11 +37,11 @@
 
 
           <div class="form-group">
-            <label for="correo" class="text-info" required>Correo electrónico <span class="required">*</span></label>
-            <input type="email" id="correo" class="form-control" placeholder="principal@email.com" required
-              formControlName="correo" [ngClass]="{'is-invalid': submitted && f.correo.errors}">
-            <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
-              <div *ngIf="f.correo.errors.required">
+            <label for="email" class="text-info" required>email electrónico <span class="required">*</span></label>
+            <input type="email" id="email" class="form-control" placeholder="principal@email.com" required
+              formControlName="email" [ngClass]="{'is-invalid': submitted && f.email.errors}">
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">
                 Campo obligatorio
               </div>
             </div>
@@ -49,11 +49,11 @@
 
           <!-- password -->
           <div class="form-group">
-            <label for="contrasena" class="text-info" required>Contraseña <span class="required">*</span></label>
-            <input type="password" id="contrasena" class="form-control" placeholder="******" required
-              formControlName="contrasena" [ngClass]="{'is-invalid': submitted && f.contrasena.errors}">
-            <div *ngIf="submitted && f.contrasena.errors" class="invalid-feedback">
-              <div *ngIf="f.contrasena.errors.required">
+            <label for="password" class="text-info" required>Contraseña <span class="required">*</span></label>
+            <input type="password" id="password" class="form-control" placeholder="******" required
+              formControlName="password" [ngClass]="{'is-invalid': submitted && f.password.errors}">
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">
                 Campo obligatorio
               </div>
             </div>
@@ -61,10 +61,10 @@
 
           <!-- confirm password -->
           <div class="form-group">
-            <label for="confirmarContrasena" class="text-info" required>Repita la contraseña <span
+            <label for="confirmarpassword" class="text-info" required>Repita la contraseña <span
                 class="required">*</span></label>
-            <input type="password" min="6" id="confirmarContrasena" class="form-control" placeholder="******" required
-              #confirmarContrasena>
+            <input type="password" min="6" id="confirmarpassword" class="form-control" placeholder="******" required
+              #confirmarpassword>
 
 
           </div>
@@ -95,7 +95,7 @@
             <label for="inputState" class="text-info" required>Departamento <span class="required">*</span></label>
             <select name="departamento" class="form-control" (change)="onSate($event)" formControlName="departamento"
               [ngClass]="{'is-invalid': submitted && f.departamento.errors}">
-              <option value="0">Selecciona un estado... </option>
+              <option value="0" disabled>Selecciona un estado... </option>
               <option *ngFor="let departamento of states" [value]="departamento.isoCode">
                 {{departamento.name}}
               </option>
@@ -113,7 +113,7 @@
             <label for="ciudad" class="text-info" required>Ciudad <span class="required">*</span></label>
             <select name="ciudad" class="form-control" formControlName="ciudad"
               [ngClass]="{'is-invalid': submitted && f.ciudad.errors}">
-              <option value="0">Selecciona una ciudad...</option>
+              <option value="0" disabled>Selecciona una ciudad...</option>
               <option *ngFor="let ciudad of ciudades" [value]="ciudad.name">
                 {{ciudad.name}}
               </option>
@@ -156,6 +156,6 @@
 
   <div class="centrar">
     <button type="button" class="btn btn-secondary">Cancelar</button>
-    <button type="submit" class="btn btn-primary" (click)="save(confirmarContrasena)">Registrarme</button>
+    <button type="submit" class="btn btn-primary" (click)="save(confirmarpassword)">Registrarme</button>
   </div>
 </div>

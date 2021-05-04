@@ -34,6 +34,18 @@
  se crearon los seeders para los roles de forma conjunta
  se hicieron pruebas de añadir roles a usuarios de forma conjunta
 
+ ----19/4/2021----
+ se implemento el endpoint para consultar el perfil de usuario
+ se implemento el endpoint para realizar logout
+ se implemento el endpoint para registrarse como cliente
+
+----23/4/2021----
+se implentaron middleware para proteger rutas de proctores y
+usuarios registrados
+
+----28/4/2021----
+Se implemento la funcionalidad de registrar eventos por parte de los
+productores incluyendo dirección y coordenadas geograficas.
 
 
 
@@ -44,6 +56,12 @@
 
 
 ----------CATERINE LADINO GALVIS -------------------
+------ 12/04/2021-------------
+Se agrego el modulo de Angular Material al frontend
+Se arreglo el routing del frontend
+Se creo el componente del longin
+Se termino el search para las consultas del usuario de forma conjunta
+Se conecto el componente del login con el backend 
 
 
 
@@ -54,6 +72,7 @@
 
 
 
+############################################################################################################################
 
 ----------EDEYSON BERMEO BURBANO-------------------
 -------11/04/2021----------
@@ -62,4 +81,9 @@
  - y un plus de notificaciones
 -actualización del menu principal con departamentos y ciudades para filtrar
 -consumo de la api de noticias para simular los productos y organizar en cards en la vista principal
+------12/04/2021--------------
 -generacion del modal en vista usuario publico
+-terminacion del search para las consultas del usuario de forma conjunta
+ ----19/04/2021----
+ implemento del endpoint para registrarse conexión con el backend
+
