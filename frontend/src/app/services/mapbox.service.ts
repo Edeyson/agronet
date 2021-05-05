@@ -10,11 +10,11 @@ import { Token } from '../components/interfaces/token';
   providedIn: 'root'
 })
 export class MapboxService {
-  urlApi = 'http://localhost:8000/api/v1/';
+  urlApi = 'http://143.198.127.128/api/v1/';
 
   constructor(
     private http: HttpClient
-    
+
   ) { }
 
   storeAddr(addr: PostModel): Observable<RespSingleModel>
