@@ -1,6 +1,6 @@
 # Editor configuration, see https://editorconfig.org
 root = true
-/src/environments
+
 
 [*]
 charset = utf-8
