@@ -3,7 +3,8 @@ import { FormControl, FormControlName, FormGroup, Validators } from '@angular/fo
 import { ToastrService } from 'ngx-toastr';
 import { CountriesService } from 'src/app/services/countries.service';
 import { UsuarioserviceService } from 'src/app/services/usuarioservice.service';
-import { cities, PostModel, SingleResponseModel, states, UsuarioI } from '../interfaces/interfaces';
+import { cities, states, UsuarioI } from '../interfaces/interfaces';
+import { PostModel } from '../interfaces/post-model';
 
 @Component({
   selector: 'app-registrarse',

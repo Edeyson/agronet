@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { PostModel, SingleResponseModel, UsuarioI } from '../components/interfaces/interfaces';
+import { PostModel } from '../components/interfaces/post-model';
+
 
 @Injectable({
   providedIn: 'root'

@@ -45,16 +45,3 @@ export interface countries {
     created_at?:string;
   }
 
-  export interface SingleResponseModel<T> {
-    data: {
-      type: string;
-      attributes: T;
-    }
-  }
-
-  export interface PostModel {
-    data:{
-      type: string,
-      attributes: {}
-    }
-  }
