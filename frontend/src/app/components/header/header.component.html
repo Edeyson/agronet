@@ -1,110 +1,138 @@
-<nav class="navbar navbar-dark bg-primary">
-    <div class="navbar-header">
+<!--
+        <nav class="navbar navbar-dark bg-primary">
+        <div class="navbar-header">
         <button class="navbar-toggle btn btn-primary dropdown-toggle" data-toggle="collapse"
-            data-target=".navbar-ex1-collapse" type="button" id="dropdownMenuButton">
-            <span class="navbar-toggler-icon"></span>
+        data-target=".navbar-ex1-collapse" type="button" id="dropdownMenuButton">
+        <span class="navbar-toggler-icon"></span>
         </button>
-    </div>
-    <a class="navbar-brand" href="#">
+        </div>
+        <a class="navbar-brand" href="#">
         <img src="../../../assets/logo-uam.png" width="auto" height="40" class="d-inline-block align-top" alt="">
         AgroNet
-    </a>
-    <div class="form-inline">
+        </a>
+        <div class="form-inline">
         <a routerLink="/registro" *ngIf="showHeader">
-            <button class="btn btn-success">Registrarse</button>
+        <button class="btn btn-success">Registrarse</button>
         </a>
         <a routerLink="/login">
-            <button class="btn btn-secondary">Ingresar</button>
+        <button class="btn btn-secondary">Ingresar</button>
         </a>
-    </div>
-</nav>
-
-
-<div class="dropdown">
-    <div style="width: 10rem;">
-        <nav class="navbar navbar-dark">
-            <div class="collapse navbar-collapse navbar-ex1-collapse navbar-secondary">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Productos</a></li>
-                    <li><a href="#">Categorias</a></li>
-                    <li><a href="#">Productores</a></li>
-                    <li class="dropdown" >
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target=".nabar-estados">
-                            departamento<b class="caret"></b>
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target=".nabar-ciudades">
-                            ciudad <b class="caret"></b>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        </div>
         </nav>
+
+        -->
+<div>
+    <div class="row">
+        <div class="col-sm-1">
+            <a class="navbar-brand" href="#">
+                <img src="../../../assets/logo-agronet.jpeg" width="100rem" height="auto" class="d-inline-block align-top" alt="">
+            </a>
+        </div>
+        <div class="col-lg">
+            <div class="row">
+                <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+                        <img src="../../../assets/serach-icon.png" width="20" height="20" class="d-inline-block align-top"
+                            alt="">
+                    </button>
+                    </form>
+                    <div class="form-inline">
+                        <a routerLink="/registro" *ngIf="showHeader">
+                            <button class="btn btn-success">Registrarse</button>
+                        </a>
+                        <a routerLink="/login">
+                            <button class="btn btn-secondary">Ingresar</button>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+
+                <nav class="navbar navbar-expand-xl navbar-ligth bg-ligth">
+
+                    <button class="navbar-toggle btn btn-secondary dropdown-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" type="button" id="dropdownMenuButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarColor02">
+                        <ul class="navbar-nav mr-auto">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Eventos</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="eventCreate">Crear</a>
+                                    <a class="dropdown-item" href="eventVer">Ver</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Categorias</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">agricultores</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">contáctenos</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </nav>
+
+
+
+            </div>
+            <div class="dropdown">
+                <div style="width: 10rem;">
+                    <nav class="navbar navbar-dark">
+                        <div class="collapse navbar-collapse navbar-ex1-collapse navbar-secondary">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target=".nabar-estados">
+                        departamento<b class="caret"></b>
+                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target=".nabar-ciudades">
+                        ciudad <b class="caret"></b>
+                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <nav class="navbar nabar-estados">
+                <div class="navbar-header">
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let state of states">
+                            <a type="button" (click)="estadoSeleccinado(state.isoCode)">{{state.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="navbar nabar-ciudades">
+                <div class="navbar-header">
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let city of ciudades">
+                            <a type="button" (click)="ciudadSeleccinada(city.name)">{{city.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+
     </div>
 </div>
-<nav class="navbar nabar-estados">
-    <div class="navbar-header">
-        <ul class="dropdown-menu">
-            <li *ngFor="let state of states">
-                <a type="button" (click)="estadoSeleccinado(state.isoCode)">{{state.name}}</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<nav class="navbar nabar-ciudades">
-    <div class="navbar-header">
-        <ul class="dropdown-menu">
-            <li *ngFor="let city of ciudades">
-                <a type="button" (click)="ciudadSeleccinada(city.name)">{{city.name}}</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
-        <img src="../../../assets/logo-uam.png" width="auto" height="40" class="d-inline-block align-top" alt="">
-        AgroNet
-    </a>
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
-            <img src="../../../assets/serach-icon.png" width="20" height="20" class="d-inline-block align-top"
-                alt="">
-        </button>
-      </form>
-    </div>
-  </nav>
