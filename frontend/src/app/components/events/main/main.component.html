@@ -1,1 +1,46 @@
-<p>main works!</p>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-6 mx-auto">
+          <h2>Eventos</h2>
+          <div id="mapa-mapbox-events"></div>
+        </div>
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-header">
+              <p>Distancia</p>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-primary">
+                  <input type="radio" name="options" id="option1" autocomplete="off" (click)="events(0.5)"> 500 m
+                </label>
+                <label class="btn btn-primary">
+                  <input type="radio" name="options" id="option1" autocomplete="off" (click)="events(1)"> 1km
+                </label>
+                <label class="btn btn-primary">
+                  <input type="radio" name="options" id="option2" autocomplete="off" (click)="events(3)"> 3km
+                </label>
+                <label class="btn btn-primary active">
+                  <input type="radio" name="options" id="option3" autocomplete="off" (click)="events(50)"> >3km
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="card mt-3">
+            <div class="card-header">
+              <p>Fecha</p>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-primary">
+                  <input type="radio" name="options" id="option1" autocomplete="off"> Hoy
+                </label>
+                <label class="btn btn-primary">
+                  <input type="radio" name="options" id="option1" autocomplete="off"> Esta Semana
+                </label>
+                <label class="btn btn-primary">
+                  <input type="radio" name="options" id="option2" autocomplete="off"> Este Mes
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  
