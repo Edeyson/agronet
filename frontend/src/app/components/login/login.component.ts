@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MapboxService } from 'src/app/services/mapbox.service';
+import { UsuarioserviceService } from 'src/app/services/usuarioservice.service';
 import { Login } from '../interfaces/login';
 import { PostModel } from '../interfaces/post-model';
 
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit
   form: FormGroup;
 
   constructor(
-    private agroservive: MapboxService,
+    private userService: UsuarioserviceService,
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
     private router: Router,
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit
     {
       const login: Login = {email: this.f.email.value, password: this.f.password.value, nameToken: 'Web'};
       const credentials: PostModel = {data: {type: 'RegisteredUser', attributes: login}};
-      this.agroservive.login(credentials)
+      this.userService.login(credentials)
         .subscribe(
           (response:any) => {
             console.log('response');
@@ -45,7 +46,7 @@ export class LoginComponent implements OnInit
             localStorage.setItem('slug', response.slug);
             localStorage.setItem('role_id', response.role_id);
             // router navigate
-            this.router.navigate(['create-event']);
+            this.router.navigate(['inicio']);
           },
           (error) => {
             this.toastrService.error(error.error.message);

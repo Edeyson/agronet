@@ -80,8 +80,7 @@ export class RegistrarseComponent implements OnInit {
     this.usuario.telefono = this.formRegister.value.telefono+"";
     
     if (this.usuario.password === contrasena.value) {    
-      this.toastrService.success("Registro exitoso", "Registro"); 
-      console.log(this.usuario);
+      
 
       let userPost:PostModel= {data:{type:"User",attributes: this.usuario}}
 
@@ -89,6 +88,8 @@ export class RegistrarseComponent implements OnInit {
         localStorage.setItem("token",respuesta.token);
         console.log(respuesta);
       });
+      this.toastrService.success("Registro exitoso", "Registro"); 
+      console.log(this.usuario);
     } else {
     this.toastrService.warning('Las contraseñas no coinciden', 'Advertencia', {
         timeOut: 5000,

@@ -10,7 +10,7 @@ import { Token } from '../components/interfaces/token';
   providedIn: 'root'
 })
 export class MapboxService {
-  urlApi = 'http://143.198.127.128/api/v1/';
+  urlApi = 'http://143.198.127.182/api/v1/';
 
   constructor(
     private http: HttpClient
@@ -30,14 +30,6 @@ export class MapboxService {
     return this.http.post<RespSingleModel>(this.urlApi + 'addrs', addr, { headers });
   }
 
-  login(credentials: PostModel): Observable<Token>
-  {
-    const headers = new HttpHeaders(
-      {
-       'content-type': 'application/json'
-      });
-    return this.http.post<Token>(this.urlApi + 'auth', credentials, { headers });
-  }
 
   storeEvent(event: PostModel): Observable<RespSingleModel>
   {

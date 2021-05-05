@@ -32,6 +32,7 @@ export class CreateComponent implements OnInit {
 
   ngOnInit(): void
   {
+    
     this.buildMap();
 
     this.form = this.formBuilder.group({
@@ -86,8 +87,7 @@ export class CreateComponent implements OnInit {
       {
         const addr: Addr =
         {
-         // registered_user_id: localStorage.getItem('slug'),
-         registered_user_id:'',
+          registered_user_id: localStorage.getItem('slug'),
           country: 'Colombia',
           province: 'Caldas',
           city: 'Manizales',
@@ -125,8 +125,7 @@ export class CreateComponent implements OnInit {
 
               const event: Event =
               {
-               // producer_id: localStorage.getItem('role_id'),
-                producer_id: '',
+                producer_id: localStorage.getItem('role_id'), 
                 addr_id: this.addrId,
                 duracion: this.f.duracion.value,
                 fecha: this.f.fecha.value,
