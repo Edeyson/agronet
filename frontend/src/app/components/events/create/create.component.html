@@ -1,0 +1,47 @@
+<div class="container">
+    <app-navbar></app-navbar>
+    <div class="row mt-3">
+        <div class="col-md-6 mx-auto">
+          <h2>Crear Evento</h2>
+          <div id="mapa-mapbox-create-event"></div>
+        </div>
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-header">
+              <p>Productos</p>
+            </div>
+          </div>
+          <div class="card mt-1">
+            <div class="card-header">
+              <p>Dirección</p>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <label class="col-form-label" for="ref">Referencia:</label>
+                  <input type="text" formControlName="location" class="form-control" placeholder="Cra 22" id="ref">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label" for="etiqueta">Etiqueta:</label>
+                  <input type="text" formControlName="etiqueta" class="form-control" placeholder="Plaza de Bolivar" id="etiqueta">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label" for="etiqueta">Fecha:</label>
+                  <input type="date" formControlName="fecha" class="form-control" placeholder="Plaza de Bolivar" id="etiqueta">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label" for="etiqueta">Hora:</label>
+                  <input type="text" formControlName="hora" class="form-control" placeholder="Plaza de Bolivar" id="etiqueta">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label" for="etiqueta">Duración:</label>
+                  <input type="text" formControlName="duracion" class="form-control" placeholder="Plaza de Bolivar" id="etiqueta">
+                </div>
+                <button type="submit" class="btn btn-primary">Crear Evento</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  

@@ -18,6 +18,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { MaterialModule } from './material/material.module';
 import { ProductModalComponent } from './components/modals/product-modal/product-modal.component';
+import { CreateComponent } from './components/events/create/create.component';
+import { MainComponent } from './components/events/main/main.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ProductModalComponent } from './components/modals/product-modal/product
     ProductosComponent,
     FilterPipe,
     LoginComponent,
-    ProductModalComponent
+    ProductModalComponent,
+    CreateComponent,
+    MainComponent
   ],
   imports: [
     CommonModule,

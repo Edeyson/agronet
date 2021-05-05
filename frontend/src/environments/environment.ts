@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  API_Key: 'f1d7b114cbe24db2a75c89aff87a4e0c',
-  API_URL: 'https://newsapi.org/v2/'
+  mapbox: {
+    accessToken: "http://143.198.127.182/api/v1/"
+  }
 };
 
 /*
