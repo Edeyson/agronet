@@ -6,13 +6,15 @@ import { MainComponent } from './components/events/main/main.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
+import {ProducerGuard} from './guards/producer.guard';
+
 
 const routes: Routes = [
   { path: '',   redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'inicio', component: InicioComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistrarseComponent },
-  { path: 'eventCreate', component: CreateComponent },
+  { path: 'eventCreate', component: CreateComponent, canActivate:[ProducerGuard] },
   { path: 'eventVer', component: MainComponent },
  
 ];
