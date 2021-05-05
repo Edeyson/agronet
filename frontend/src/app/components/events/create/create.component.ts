@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import { Addr } from '../../interfaces/addr';
 import { GeoLocation } from '../../interfaces/geo-location';
 import { PostModel } from '../../interfaces/post-model';
+import { Event } from '../../interfaces/event';
 
 @Component({
   selector: 'app-create',
@@ -85,7 +86,8 @@ export class CreateComponent implements OnInit {
       {
         const addr: Addr =
         {
-          registered_user_id: localStorage.getItem('slug'),
+         // registered_user_id: localStorage.getItem('slug'),
+         registered_user_id:'',
           country: 'Colombia',
           province: 'Caldas',
           city: 'Manizales',
@@ -123,7 +125,8 @@ export class CreateComponent implements OnInit {
 
               const event: Event =
               {
-                producer_id: localStorage.getItem('role_id'),
+               // producer_id: localStorage.getItem('role_id'),
+                producer_id: '',
                 addr_id: this.addrId,
                 duracion: this.f.duracion.value,
                 fecha: this.f.fecha.value,

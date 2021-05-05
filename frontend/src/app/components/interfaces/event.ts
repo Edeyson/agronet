@@ -1,6 +1,6 @@
 export interface Event
 {
-  producer_id: string;
+  producer_id?: string;
   addr_id: string;
   fecha: string;
   hora: string;

@@ -1,6 +1,6 @@
 export interface Addr
 {
-  registered_user_id: string;
+  registered_user_id?: string;
   country: string;
   province: string;
   city: string;
