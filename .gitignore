@@ -1,6 +1,6 @@
 /vendor/
 node_modules/
-/src/environments
+frontend/src/environments
 npm-debug.log
 yarn-error.log
 
