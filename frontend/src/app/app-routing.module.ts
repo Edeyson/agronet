@@ -9,6 +9,7 @@ import { RegistrarseComponent } from './components/registrarse/registrarse.compo
 import { IniciologComponent } from './components/userLog/iniciolog/iniciolog.component';
 import {ProducerGuard} from './guards/producer.guard';
 
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/inicio', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'eventCreate', component: CreateComponent, canActivate:[ProducerGuard] },
   { path: 'eventVer', component: MainComponent },
   { path: 'inicioLog', component: IniciologComponent },
+  { path: 'carrito', component: ShoppingCartComponent }
  
 ];
 

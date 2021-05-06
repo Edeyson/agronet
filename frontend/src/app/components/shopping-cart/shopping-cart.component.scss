@@ -1,0 +1,61 @@
+.stepper__input {
+  width: 50%;
+  max-width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+}
+
+.stepper__input .stepper-input-field {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0;
+  background: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 25px;
+  line-height: 25px;
+  border: none;
+  text-align: center;
+  margin: 0 7px;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  min-width: calc(100% - 25px - 14px);
+}
+
+.stepper__input button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  min-width: 25px;
+  height: 25px;
+  line-height: 25px;
+  color: #fff;
+  user-select: none;
+  border: none;
+}
+
+.product-row{
+  padding-top:30px;
+  padding-bottom: 20px;
+  border-bottom: 0.3px solid rgb(182, 182, 182);
+}
+
+.total{
+  margin-top: 35px;
+}
+
+.total h3{
+  text-align: right;
+}

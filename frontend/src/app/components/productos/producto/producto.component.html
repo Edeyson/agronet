@@ -1,19 +1,26 @@
 <div size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" class="card" style="width: 18rem; margin-top: auto;">
-    <img [src]="article.urlToImage" alt="Card image">
-    <h6 class="card-text">{{article.author}}</h6>
+    <img [src]="product.image_url" alt="Card image">
+    <!-- <h6 class="card-text">{{ product.name }}</h6> -->
     <div class="card-body">
-        <h5 class="card-title">{{article.title}}</h5>
-        <p class="card-text">{{article.content}}</p>
+        <h2 class="card-title">{{ product.name }}</h2>
+        <h3 class="text-success">${{ product.price }}</h3>
+        <p class="card-text">{{ product.description }}</p>
     </div>
     <div class="card-footer centrar">
-        <a class="btn btn-outline-primary my-2 my-sm-0" type="submit" href="registro">
-            <img src="../../../assets/add-icon.png" width="auto" height="30" class="d-inline-block align-top" alt="">
-        </a>
-        &nbsp;
-        <a class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)="articuloSelected()" data-toggle="modal" data-target="#productModal">
-            <img src="../../../assets/más-info-icon.png" width="auto" height="30" class="d-inline-block align-top"
-                alt="">
-        </a>
+        <div class="row">
+            <div class="col-sm-6">
+                <button mat-raised-button color="primary" (click)="addProduct(product)">
+                    Agregar
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+            <div class="col-sm-6">
+                <button mat-raised-button color="success" data-toggle="modal" data-target="#productModal">
+                    Ver Detalle
+                    <mat-icon>remove_red_eye</mat-icon>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
-<app-productmodal [article]="article"></app-productmodal>
+<app-productmodal [article]="product"></app-productmodal>

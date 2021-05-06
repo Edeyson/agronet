@@ -3,21 +3,20 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{{article.title}}</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{article.name}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <h6 class="card-text">{{article.author}}</h6>
-                <img [src]="article.urlToImage" alt="Card image" width="90%">
-                <p class="card-text">{{article.content}}</p>
+                <h6 class="card-text">{{article.price}}</h6>
+                <img [src]="article.image_url" alt="Card image" width="90%">
+                <p class="card-text">{{article.description}}</p>
             </div>
             <div class="modal-footer centrar">
-                <a class="btn btn-outline-primary my-2 my-sm-0" type="submit" href="registro">
-                    <img src="../../../assets/add-icon.png" width="auto" height="30" class="d-inline-block align-top"
-                        alt="">
-                </a>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    Aceptar
+                </button>
             </div>
         </div>
     </div>

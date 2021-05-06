@@ -25,6 +25,7 @@ import { IniciologComponent } from './components/userLog/iniciolog/iniciolog.com
 import { NosotrosComponent } from './components/modals/nosotros/nosotros.component';
 import { ContactenosComponent } from './components/modals/contactenos/contactenos.component';
 import { PerfilComponent } from './components/modals/perfil/perfil.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PerfilComponent } from './components/modals/perfil/perfil.component';
     IniciologComponent,
     NosotrosComponent,
     ContactenosComponent,
-    PerfilComponent
+    PerfilComponent,
+    ShoppingCartComponent 
   ],
   imports: [
     CommonModule,
