@@ -24,6 +24,7 @@ import { HeaderlogComponent } from './components/userLog/headerlog/headerlog.com
 import { IniciologComponent } from './components/userLog/iniciolog/iniciolog.component';
 import { NosotrosComponent } from './components/modals/nosotros/nosotros.component';
 import { ContactenosComponent } from './components/modals/contactenos/contactenos.component';
+import { PerfilComponent } from './components/modals/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ContactenosComponent } from './components/modals/contactenos/contacteno
     HeaderlogComponent,
     IniciologComponent,
     NosotrosComponent,
-    ContactenosComponent
+    ContactenosComponent,
+    PerfilComponent
   ],
   imports: [
     CommonModule,
