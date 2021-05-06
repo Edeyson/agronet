@@ -1,15 +1,31 @@
-<div class="modal" id="aboutModal"
+<div class="modal" id="perfilModal"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h1>AgroNet</h1>
+                <h1>{{user.nombre}}</h1>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-               
+               <ul>
+                   <li>
+                    <label for="">nombre: {{user.nombre}}</label>
+                   </li>
+                   <li>
+                       <label for="">apellido: {{user.apellido}}</label>
+                   </li>
+                   <li>
+                    <label for="">correo: {{user.email}}</label>
+                   </li>
+                   <li>
+                    <label for="">telefono: {{user.telefono}}</label>
+                   </li>
+                   <li>
+                    <label for="">ciudad: {{user.ciudad}}</label>
+                   </li>
+               </ul>
             </div>
             <div class="modal-footer centrar">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
