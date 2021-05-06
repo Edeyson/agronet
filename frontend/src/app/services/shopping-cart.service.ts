@@ -6,7 +6,7 @@ import { Product } from '../components/interfaces/interfaces';
 })
 export class ShoppingCartService 
 {
-  private products: Product[] = [];
+  public products: Product[] = [];
 
   constructor() { }
 

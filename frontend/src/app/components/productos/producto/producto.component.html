@@ -1,8 +1,9 @@
 <div size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" class="card" style="width: 18rem; margin-top: auto;">
     <img [src]="product.image_url" alt="Card image">
-    <h6 class="card-text">{{ product.name }}</h6>
+    <!-- <h6 class="card-text">{{ product.name }}</h6> -->
     <div class="card-body">
-        <h5 class="card-title">{{ product.price }}</h5>
+        <h2 class="card-title">{{ product.name }}</h2>
+        <h3 class="text-success">${{ product.price }}</h3>
         <p class="card-text">{{ product.description }}</p>
     </div>
     <div class="card-footer centrar">
