@@ -86,4 +86,8 @@ Se conecto el componente del login con el backend
 -terminacion del search para las consultas del usuario de forma conjunta
  ----19/04/2021----
  implemento del endpoint para registrarse conexión con el backend
+ 
+ ---04/05/2021---
+ - registro, login funcionales 
+ - crear eventos como usuario productor, ver eventos como usuario publico
 
