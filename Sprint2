@@ -48,6 +48,19 @@ Se implemento la funcionalidad de registrar eventos por parte de los
 productores incluyendo dirección y coordenadas geograficas.
 
 
+----01/05/2021----
+Se implentaron funciones para consultar eventos y ubicaciones geograficas
+mediante la distancia de una coordenada geografica a otra.
+Se dividieron los repositorios de front y back.
+
+----05/05/2021----
+Test unitarios del modelo productores
+
+----06/05/2021----
+Test unitarios modelo Events
+Crud ProducerNews
+Test unitarios Modelo News
+
 
 
 
