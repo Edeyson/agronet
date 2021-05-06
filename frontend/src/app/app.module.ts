@@ -20,6 +20,10 @@ import { MaterialModule } from './material/material.module';
 import { ProductModalComponent } from './components/modals/product-modal/product-modal.component';
 import { CreateComponent } from './components/events/create/create.component';
 import { MainComponent } from './components/events/main/main.component';
+import { HeaderlogComponent } from './components/userLog/headerlog/headerlog.component';
+import { IniciologComponent } from './components/userLog/iniciolog/iniciolog.component';
+import { NosotrosComponent } from './components/modals/nosotros/nosotros.component';
+import { ContactenosComponent } from './components/modals/contactenos/contactenos.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { MainComponent } from './components/events/main/main.component';
     LoginComponent,
     ProductModalComponent,
     CreateComponent,
-    MainComponent
+    MainComponent,
+    HeaderlogComponent,
+    IniciologComponent,
+    NosotrosComponent,
+    ContactenosComponent
   ],
   imports: [
     CommonModule,

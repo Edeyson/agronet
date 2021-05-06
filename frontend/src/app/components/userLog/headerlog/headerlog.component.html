@@ -1,30 +1,7 @@
-<!--
-        <nav class="navbar navbar-dark bg-primary">
-        <div class="navbar-header">
-        <button class="navbar-toggle btn btn-primary dropdown-toggle" data-toggle="collapse"
-        data-target=".navbar-ex1-collapse" type="button" id="dropdownMenuButton">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        </div>
-        <a class="navbar-brand" href="#">
-        <img src="../../../assets/logo-uam.png" width="auto" height="40" class="d-inline-block align-top" alt="">
-        AgroNet
-        </a>
-        <div class="form-inline">
-        <a routerLink="/registro" *ngIf="showHeader">
-        <button class="btn btn-success">Registrarse</button>
-        </a>
-        <a routerLink="/login">
-        <button class="btn btn-secondary">Ingresar</button>
-        </a>
-        </div>
-        </nav>
-
-        -->
 <div>
     <div class="row">
         <div class="col-sm-1">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="inicioLog">
                 <img src="../../../assets/logo-agronet.jpeg" width="100rem" height="auto"
                     class="d-inline-block align-top" alt="">
             </a>
@@ -40,11 +17,11 @@
                         </button>
                     </form>
                     <div class="form-inline">
-                        <a routerLink="/registro" *ngIf="showHeader">
-                            <button class="btn btn-success">Registrarse</button>
+                        <a href="inicioLog">
+                            <button class="btn btn-secondary">Perfil</button>
                         </a>
-                        <a routerLink="/login">
-                            <button class="btn btn-secondary">Ingresar</button>
+                        <a href="inicio">
+                            <button class="btn btn-secondary">Logout</button>
                         </a>
                     </div>
                 </nav>
@@ -65,31 +42,37 @@
                     <div class="collapse navbar-collapse" id="navbarColor02">
                         <ul class="navbar-nav mr-auto">
 
-
-
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Categoria</a>
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="inicioLog" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Eventos</a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Lacteos</a>
-                                    <a class="dropdown-item" href="#">Carnes</a>
-                                    <a class="dropdown-item" href="#">Verduras</a>
-                                    <a class="dropdown-item" href="#">Frutas</a>
+                                    <a class="dropdown-item" href="eventCreate">Crear</a>
+                                    <a class="dropdown-item" href="eventVer">Ver</a>
                                 </div>
                             </li>
 
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="inicioLog" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Categoria</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="inicioLog">Lacteos</a>
+                                    <a class="dropdown-item" href="inicioLog">Carnes</a>
+                                    <a class="dropdown-item" href="inicioLog">Verduras</a>
+                                    <a class="dropdown-item" href="inicioLog">Frutas</a>
+                                </div>
+                            </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">inicio</a>
+                                <a class="nav-link" href="inicioLog">inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModal">nosotros</a>
+                                <a class="nav-link" href="inicioLog" data-toggle="modal" data-target="#aboutModal">nosotros</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">agricultores</a>
+                                <a class="nav-link" href="inicioLog">agricultores</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="modal" data-target="#contactModal">contáctenos</a>
+                                <a class="nav-link" href="inicioLog" data-toggle="modal" data-target="#contactModal">contáctenos</a>
                             </li>
 
                         </ul>
@@ -106,13 +89,13 @@
                         <div class="collapse navbar-collapse navbar-ex1-collapse navbar-secondary">
                             <ul class="nav navbar-nav">
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                    <a href="inicioLog" class="dropdown-toggle" data-toggle="dropdown"
                                         data-target=".nabar-estados">
                                         departamento<b class="caret"></b>
                                     </a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                    <a href="inicioLog" class="dropdown-toggle" data-toggle="dropdown"
                                         data-target=".nabar-ciudades">
                                         ciudad <b class="caret"></b>
                                     </a>
@@ -145,6 +128,7 @@
 
     </div>
 </div>
+
 
 <app-nosotros></app-nosotros>
 <app-contactenos></app-contactenos>
