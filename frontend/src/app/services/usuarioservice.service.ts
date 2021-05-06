@@ -39,6 +39,17 @@ export class UsuarioserviceService {
     return this.http.get<any>(this.urlApi + "users/"+localStorage.getItem("slug"),{ headers: headers});
   }
 
+  public logOut(){
+    const headers = new HttpHeaders(
+      {
+        'Authorization':'Bearer '+localStorage.getItem("token"),
+        'Accept':'application/json',
+        'content-type': 'application/json'
+      });
+    return this.http.delete(this.urlApi + "auth/",{ headers: headers});
+    
+  }
+
 
   isProducer()
   {
