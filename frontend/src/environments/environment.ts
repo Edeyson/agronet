@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   mapbox: {
-    accessToken: ""
+
+    accessToken: "",
+    API_BACKEND_URL: 'http://127.0.0.1:8000/api/'
   }
 };
 

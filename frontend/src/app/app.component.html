@@ -1,3 +1,11 @@
 <!-- <app-header></app-header> -->
 
-<router-outlet></router-outlet>
+<div class="pl-5">
+    <router-outlet></router-outlet>
+</div>
+
+<div class="example-button-container float" *ngIf="shoppingCartService.products.length > 0">
+    <button mat-fab color="primary" (click)="goToShoppingCart()">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+</div>

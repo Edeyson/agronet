@@ -42,6 +42,17 @@ export interface countries {
     departamento?: string;
     ciudad?: string;
     telefono?: string;
+    // direccion?: string;
+    // comentarios?: string;
+  }
+
+  export interface Product
+  {
+    id: number;
+    image_url: string;
+    name: string;
+    description: string;
+    price: number;
     created_at?:string;
   }
 
