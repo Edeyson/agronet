@@ -63,6 +63,13 @@ Se creo el componente del longin
 Se termino el search para las consultas del usuario de forma conjunta
 Se conecto el componente del login con el backend 
 
+------ 05/05/2021---------------------------------
+Se actualizo la vista para listar productos 
+Se cambio el logo del sistema
+Se implemento el servicio del carrito de compras
+Se creo el componente del carrito de compras
+Logica de negocio del carrito de compras
+Se creo la interface de producto
 
 
 
