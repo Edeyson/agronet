@@ -95,6 +95,6 @@ Se creo la interface de producto
  implemento del endpoint para registrarse conexión con el backend
  
  ---04/05/2021---
- - registro, login funcionales 
+ - registro, login, logOut funcionales 
  - crear eventos como usuario productor, ver eventos como usuario publico
 
