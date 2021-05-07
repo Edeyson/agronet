@@ -12,12 +12,14 @@
  se crearon los seeders para los roles de forma conjunta
  se hicieron pruebas de añadir roles a usuarios de forma conjunta
 
+----2/5/2021----
+se crearon las migraciones de los productos
+-se crearon las rutas de productos
+-se creo el modelo de productos
 
-
-
-
-
-
+---3/5/2021-----
+se creo el controlador de productos
+se creo el index de productos
 
 
 ----------Santiago Velez Suarez-------------------
