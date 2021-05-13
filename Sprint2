@@ -48,6 +48,19 @@ Se implemento la funcionalidad de registrar eventos por parte de los
 productores incluyendo dirección y coordenadas geograficas.
 
 
+----01/05/2021----
+Se implentaron funciones para consultar eventos y ubicaciones geograficas
+mediante la distancia de una coordenada geografica a otra.
+Se dividieron los repositorios de front y back.
+
+----05/05/2021----
+Test unitarios del modelo productores
+
+----06/05/2021----
+Test unitarios modelo Events
+Crud ProducerNews
+Test unitarios Modelo News
+
 
 
 
@@ -63,6 +76,13 @@ Se creo el componente del longin
 Se termino el search para las consultas del usuario de forma conjunta
 Se conecto el componente del login con el backend 
 
+------ 05/05/2021---------------------------------
+Se actualizo la vista para listar productos 
+Se cambio el logo del sistema
+Se implemento el servicio del carrito de compras
+Se creo el componente del carrito de compras
+Logica de negocio del carrito de compras
+Se creo la interface de producto
 
 
 
@@ -86,4 +106,8 @@ Se conecto el componente del login con el backend
 -terminacion del search para las consultas del usuario de forma conjunta
  ----19/04/2021----
  implemento del endpoint para registrarse conexión con el backend
+ 
+ ---04/05/2021---
+ - registro, login, logOut funcionales 
+ - crear eventos como usuario productor, ver eventos como usuario publico
 
