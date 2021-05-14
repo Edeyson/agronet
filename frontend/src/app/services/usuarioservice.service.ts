@@ -62,5 +62,16 @@ export class UsuarioserviceService {
     return this.http.get<any>(this.urlApi+"producers/"+localStorage.getItem("role_id"), { headers: headers });
 
   }
+  
+  islogueado()
+  {
+    const headers = new HttpHeaders(
+      {
+        'Authorization':'Bearer '+localStorage.getItem("token"),
+        'Accept':'application/json',
+        'content-type': 'application/json'
+      });
+    return this.http.get<any>(this.urlApi + "users/"+localStorage.getItem("slug"),{ headers: headers});
+  }
 
 }
