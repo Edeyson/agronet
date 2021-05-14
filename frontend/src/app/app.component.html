@@ -4,7 +4,7 @@
     <router-outlet></router-outlet>
 </div>
 
-<div class="example-button-container float" *ngIf="shoppingCartService.products.length > 0">
+<div class="example-button-container float" *ngIf="shoppingCartService.carrito.length > 0">
     <button mat-fab color="primary" (click)="goToShoppingCart()">
       <mat-icon>shopping_cart</mat-icon>
     </button>

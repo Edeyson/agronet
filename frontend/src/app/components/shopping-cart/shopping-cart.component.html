@@ -1,38 +1,38 @@
 <a type="button" (click)="back()">
     <button mat-raised-button>Volver</button>
 </a>
-<ng-container *ngIf="shoppingCartService.products.length == 0">
+<ng-container *ngIf="products.length == 0">
     <div class="alert alert-warning" role="alert">
         El Carrito esta vacio!
     </div>
 </ng-container>
 
-<ng-container *ngIf="shoppingCartService.products.length > 0">
+<ng-container *ngIf="products.length > 0">
     <div class="row">
         <button class="btn btn-warning" (click)="removeCart()">Vaciar Carrito</button>
     </div>
     
-    <div class="row product-row" *ngFor="let product of shoppingCartService.products">
+    <div class="row product-row" *ngFor="let product of products;let i = index">
         <div class="col-md-6">
             <h2>
-               {{ product.name }}
+               {{ product.producto.name }}
             </h2>
-            <button class="btn btn-danger" (click)="deleteProduct(product.id)">Eliminar</button>
+            <button class="btn btn-danger" (click)="deleteProduct(product.producto.id)">Eliminar</button>
         </div>
         <div class="col-md-3 stepper-input stepper__input" style="display: flex;">
-            <button class="btn btn-number">
+            <button (click)="sus(i)" class="btn btn-number">
                 <img src="assets/minus.svg" />
               </button>
               <div class="stepper-input-field" name="range-value" aria-atomic="true" aria-live="polite" aria-relevant="all">
-                1
+                {{product.cantidad}}
               </div>
-              <button class="btn btn-number">
+              <button (click)="add(i)" class="btn btn-number">
                 <img src="assets/plus.svg" />
               </button>
         </div>
         <div class="col-md-3" style="text-align: right;">
             <h3>
-                ${{ product.price }}
+                ${{ product.producto.price }}
             </h3>
         </div>
     </div>
@@ -45,6 +45,7 @@
             <h2>${{ total }}</h2>
         </div>
     </div>
+    <button class="btn btn-success" (click)="comprar()">Comprar</button>
 </ng-container>
 
 
