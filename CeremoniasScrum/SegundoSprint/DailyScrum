@@ -7,10 +7,10 @@ Fecha: 7/4/2021
 - Se crearon los modelos de los roles en forma conjunta. 
 
 2. Qué dificultades se tienen?
--
+- No hubo dificultades
 
 3. Qué queda pendiente?
--
+- Implementacion de los metodos dentro del modelo userBasic
  
  Fecha: 10/4/2021
  
@@ -19,10 +19,11 @@ Fecha: 7/4/2021
  - Se creo el token para los loggin con factum de forma conjunta.
  
  2. Qué dificultades se tienen?
--
+- No se tuvo inconvenientes
 
 3. Qué queda pendiente?
--
+- Creacion del modelo entidas relacion 
+- Creacion de migraciones, seeders y test de referente a los roles que se registran en el sistema.
  
  Fecha: 11/4/2021
  
@@ -33,10 +34,11 @@ Fecha: 7/4/2021
  - Se hicieron pruebas de añadir roles a usuarios de forma conjunta
  
 2. Qué dificultades se tienen?
--
+- Breves errores en la creacion de las migraciones 
 
 3. Qué queda pendiente?
--
+- Creacion de las migraciones para los productos
+- Creacion de las rutas y clase para productos.
 
 Fecha: 2/5/2021
 
@@ -46,22 +48,32 @@ Fecha: 2/5/2021
 - Se creo el modelo de productos
 
 2. Qué dificultades se tienen?
--
+- No se presentaron dificultades 
 
 3. Qué queda pendiente?
--
+- Creacion de la vista principal (Index) para los productos
 
 Fecha: 3/5/2021
 
 1. Qué hice hoy?
-- Se creo el controlador de productos
 - Se creo el index de productos
 
 2. Qué dificultades se tienen?
--
+- Faltaron detalles en la creacion de esta vista
 
 3. Qué queda pendiente?
--
+- Cracion del controlador para los productos.
+
+Fecha: 4/5/2021
+
+1. Qué hice hoy?
+- Se creo el controlador de productos
+
+2. Qué dificultades se tienen?
+- Implementacion de algunos metodos extras a utilizar
+
+3. Qué queda pendiente?
+- Implementacion de algunos metodos extras dentro del controlador de productos a utilizar
 
 --------------------------------------------------
 Desarrollador: Santiago Velez Suarez
@@ -72,10 +84,10 @@ Fecha: 7/4/2021
 - Se crearon los modelos de los roles en forma conjunta 
 
 2. Qué dificultades se tienen?
--
+- No hubo dificultades 
 
 3. Qué queda pendiente?
--
+- Implementacion de los metodos dentro del modelo userBasic
  
  Fecha: 10/4/2021
  
@@ -84,12 +96,13 @@ Fecha: 7/4/2021
  - Se creo el token para los loggin con factum de forma conjunta
  
  2. Qué dificultades se tienen?
--
+- No se tuvo inconvenientes
 
 3. Qué queda pendiente?
--
+- Creacion del modelo entidas relacion 
+- Creacion de migraciones, seeders y test de referente a los roles que se registran en el sistema.
  
- Feche: 11/4/2021
+ Fecha: 11/4/2021
  
  1. Qué hice hoy?
  - Se creo el modelo entidad relacion para los roles de forma conjunta
@@ -98,10 +111,11 @@ Fecha: 7/4/2021
  - Se hicieron pruebas de añadir roles a usuarios de forma conjunta
  
  2. Qué dificultades se tienen?
--
+- Breves errores en la creacion de las migraciones 
 
 3. Qué queda pendiente?
--
+- Creacion de las migraciones para los productos
+- Creacion de las rutas y clase para productos.
 
  Fecha: 19/4/2021
  
@@ -110,11 +124,11 @@ Fecha: 7/4/2021
  - Se implemento el endpoint para realizar logout
  - Se implemento el endpoint para registrarse como cliente
  
- 2. Qué dificultades se tienen?
--
+2. Qué dificultades se tienen?
+- No se presentaron dificultades 
 
 3. Qué queda pendiente?
--
+- Creacion de capa de seguridad para las rutas relacionadas con productores y para los usuarios que se registran
 
 Fecha: 23/4/2021
 
@@ -122,10 +136,10 @@ Fecha: 23/4/2021
 - Se implentaron middleware para proteger rutas de proctores y usuarios registrados
 
 2. Qué dificultades se tienen?
--
+- No se tuvo inconvenientes
 
 3. Qué queda pendiente?
--
+- Creacion de los metodos para la gestion de eventos
 
 Fecha: 28/4/2021
 
@@ -133,10 +147,10 @@ Fecha: 28/4/2021
 - Se implemento la funcionalidad de registrar eventos por parte de los productores incluyendo dirección y coordenadas geograficas.
 
 2. Qué dificultades se tienen?
--
+- Breves errores en la aplicacion de apis para obtener direcciones geograficas
 
 3. Qué queda pendiente?
--
+- Retroalimentacion en el uso del api para obtener ubicaciones geograficas y lograr completar las funcionalidades para la consulta de eventos.
 
 Fecha: 01/05/2021
 
@@ -145,10 +159,10 @@ Fecha: 01/05/2021
 - Se dividieron los repositorios de front y back.
 
 2. Qué dificultades se tienen?
--
+- No se tuvo inconvenientes
 
 3. Qué queda pendiente?
--
+- Pruebas en el modelo de productores
 
 Fecha: 05/05/2021
 
@@ -156,23 +170,25 @@ Fecha: 05/05/2021
 - Test unitarios del modelo productores
 
 2. Qué dificultades se tienen?
--
+- No se tuvo inconvenientes
 
 3. Qué queda pendiente?
--
+- Pruebas para el modelo de eventos
+- Pruebas para el modelo de news
+- Implementacion de las entidades y controladores requeridas para productores nuevos
 
 Fecha: 06/05/2021
 
 1. Qué hice hoy?
 - Test unitarios modelo Events
-- Crud ProducerNews
+- Creacion del Crud ProducerNews
 - Test unitarios Modelo News
 
 2. Qué dificultades se tienen?
--
+- No se tuvo inconvenientes
 
 3. Qué queda pendiente?
--
+- Implementacion de otra historias de usuario
 
 ---------------------------------------------------------------------------FRONTEND-----------------------------------------------------------------------------------------------
 Desarrollador: Caterine Ladino Galvis
@@ -183,31 +199,53 @@ Fecha: 12/04/2021
 1. Qué hice hoy?
 - Se agrego el modulo de Angular Material al frontend
 - Se arreglo el routing del frontend
-- Se creo el componente del longin
-- Se termino el search para las consultas del usuario de forma conjunta
+
+2. Qué dificultades se tienen?
+- No se tuvo inconvenientes 
+
+3. Qué queda pendiente?
+- Creacion del login
+- Conexionl del login con la parte logica del sistema (backend)
+
+Fecha 22/04/2021
+
+1. ¿Que hice hoy?
+- Se creo el componente del login
+- Se creo y termino el search para las consultas del usuario de forma conjunta
 - Se conecto el componente del login con el backend 
 
 2. Qué dificultades se tienen?
--
+- Se tuvo inconvenientes durantes la implementacion del search para las consultas pero se supero con exito
 
 3. Qué queda pendiente?
--
+-  Creacion del logo
+- Implementacion del servicio para el carrito de compras 
 
 Fecha: 05/05/2021
 
 1. Qué hice hoy?
 - Se actualizo la vista para listar productos 
-- Se cambio el logo del sistema
+- Se creo el logo del sistema
 - Se implemento el servicio del carrito de compras
 - Se creo el componente del carrito de compras
+
+2. Qué dificultades se tienen?
+- No se tuvo inconvenientes
+
+3. Qué queda pendiente?
+- Implementacion de la parte logica del servicio del carrito de compras
+
+Fecha 15/05/2021
+
+1. ¿Que hice hoy?
 - Logica de negocio del carrito de compras
 - Se creo la interface de producto
 
 2. Qué dificultades se tienen?
--
+- No se tuvo inconvenientes
 
 3. Qué queda pendiente?
--
+- Modificaciones en la logica de negocio para el carrito de compras 
 
 ---------------------------------------------------------------------
 Scrum Master: Edeyson Bermeo Burbano
@@ -220,10 +258,11 @@ Feche: 11/04/2021
 - Consumo de la api de noticias para simular los productos y organizar en cards en la vista principal
 
 2. Qué dificultades se tienen?
--
+- No se presentaron inconvenientes
 
 3. Qué queda pendiente?
--
+- Creacion de la vista modal para el usuario publico
+-Concluir el search para consultas de usuario
 
 
 Fecha: 12/04/2021
@@ -233,30 +272,43 @@ Fecha: 12/04/2021
 - Terminacion del search para las consultas del usuario de forma conjunta
 
 2. Qué dificultades se tienen?
--
+- No se tuvo inconvenientes 
 
 3. Qué queda pendiente?
--
+- La implementacion del endpoint para registro de usuarios
 
  Fecha: 19/04/2021
  
  1. Qué hice hoy?
- - Implemento del endpoint para registrarse conexión con el backend
+ - Implemento del endpoint para registrarse 
+ - Conexión con el backend
  
  2. Qué dificultades se tienen?
--
+- No se tuvo inconvenientes
 
 3. Qué queda pendiente?
--
+- Creacion del login 
  
- Feche: 04/05/2021
+ Fecha: 04/05/2021
  
  1. Qué hice hoy?
- - Se creo el registro, login, logOut funcionales 
- - Crear eventos como usuario productor, ver eventos como usuario publico
+ - Se creo el registro con su respectiva logica
+ - Se creo el login con su respectiva logica
  
  2. Qué dificultades se tienen?
--
+- No se tuvo inconvenientes
 
 3. Qué queda pendiente?
--
+- Creacion del logout
+
+Fecha 14/05/2021
+
+1.¿Que hice hoy?
+ - Se creo el logOut con su respectiva logica
+ - Crear eventos como usuario productor, ver eventos como usuario publico
+ 
+2. Qué dificultades se tienen?
+- No se tuvo inconvenientes
+
+3. Qué queda pendiente?
+- Implementacion de otras historias de usuario
