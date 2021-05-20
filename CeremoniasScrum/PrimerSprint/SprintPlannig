@@ -2,9 +2,13 @@ Items (Historias de usuario) seleccionados del PRODUCT BACKLOG para el PRIMER SP
 
 Fecha: 04/04/2021
 
-1. Creacion del modelado logico del sistema a desarrollar (Diagrama de clases).
-2. Creacion de la estructura inicial del sistema (lado FRONTEND / lado BACKEND).
-3. Como usuario público quiero registrarme en el sistema para tener los beneficios de usuario registrado.
+Participantes: 
+
+  DEV: Caterine Ladino Gavis (CA) - SCR: Edeyson Bermeo (ED) - DEV: Santiago Velez Suarez (SA) - DEV: Juan David Marulanda (JD)
+               
+1. Creacion del modelado logico del sistema a desarrollar (Diagrama de clases). (JD - SA)
+2. Creacion de la estructura inicial del sistema (lado FRONTEND / lado BACKEND). (JD - SA - CA - ED)
+3. Como usuario público quiero registrarme en el sistema para tener los beneficios de usuario registrado. (JD - SA -CA - ED)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
