@@ -1,1 +1,262 @@
-Esto es el daily scrum del segun sprint
+---------------------------------------------------------------------------BACKEND-----------------------------------------------------------------------------------------------
+Desarrollador: Juan David Marulanda Quintero 
+
+Fecha: 7/4/2021
+
+1. Qué hice hoy?
+- Se crearon los modelos de los roles en forma conjunta. 
+
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+ 
+ Fecha: 10/4/2021
+ 
+ 1. Qué hice hoy?
+ - Se crearon los metodos de la clase userBasic en forma conjunta.
+ - Se creo el token para los loggin con factum de forma conjunta.
+ 
+ 2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+ 
+ Fecha: 11/4/2021
+ 
+ 1. Qué hice hoy?
+ - Se creo el modelo entidad relacion para los roles de forma conjunta
+ - Se crearon las migraciones de los roles de forma conjunta
+ - Se crearon los seeders para los roles de forma conjunta
+ - Se hicieron pruebas de añadir roles a usuarios de forma conjunta
+ 
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+Fecha: 2/5/2021
+
+1. Qué hice hoy?
+- Se crearon las migraciones de los productos
+- Se crearon las rutas de productos
+- Se creo el modelo de productos
+
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+Fecha: 3/5/2021
+
+1. Qué hice hoy?
+- Se creo el controlador de productos
+- Se creo el index de productos
+
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+--------------------------------------------------
+Desarrollador: Santiago Velez Suarez
+
+Fecha: 7/4/2021
+
+1. Qué hice hoy?
+- Se crearon los modelos de los roles en forma conjunta 
+
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+ 
+ Fecha: 10/4/2021
+ 
+ 1. Qué hice hoy?
+ - Se crearon los metodos de la clase userBasic en forma conjunta
+ - Se creo el token para los loggin con factum de forma conjunta
+ 
+ 2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+ 
+ Feche: 11/4/2021
+ 
+ 1. Qué hice hoy?
+ - Se creo el modelo entidad relacion para los roles de forma conjunta
+ - Se crearon las migraciones de los roles de forma conjunta
+ - Se crearon los seeders para los roles de forma conjunta
+ - Se hicieron pruebas de añadir roles a usuarios de forma conjunta
+ 
+ 2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+ Fecha: 19/4/2021
+ 
+ 1. Qué hice hoy?
+ - Se implemento el endpoint para consultar el perfil de usuario
+ - Se implemento el endpoint para realizar logout
+ - Se implemento el endpoint para registrarse como cliente
+ 
+ 2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+Fecha: 23/4/2021
+
+1. Qué hice hoy?
+- Se implentaron middleware para proteger rutas de proctores y usuarios registrados
+
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+Fecha: 28/4/2021
+
+1. Qué hice hoy?
+- Se implemento la funcionalidad de registrar eventos por parte de los productores incluyendo dirección y coordenadas geograficas.
+
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+Fecha: 01/05/2021
+
+1. Qué hice hoy?
+-  Se implentaron funciones para consultar eventos y ubicaciones geograficas mediante la distancia de una coordenada geografica a otra.
+- Se dividieron los repositorios de front y back.
+
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+Fecha: 05/05/2021
+
+1. Qué hice hoy?
+- Test unitarios del modelo productores
+
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+Fecha: 06/05/2021
+
+1. Qué hice hoy?
+- Test unitarios modelo Events
+- Crud ProducerNews
+- Test unitarios Modelo News
+
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+---------------------------------------------------------------------------FRONTEND-----------------------------------------------------------------------------------------------
+Desarrollador: Caterine Ladino Galvis
+
+
+Fecha: 12/04/2021
+
+1. Qué hice hoy?
+- Se agrego el modulo de Angular Material al frontend
+- Se arreglo el routing del frontend
+- Se creo el componente del longin
+- Se termino el search para las consultas del usuario de forma conjunta
+- Se conecto el componente del login con el backend 
+
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+Fecha: 05/05/2021
+
+1. Qué hice hoy?
+- Se actualizo la vista para listar productos 
+- Se cambio el logo del sistema
+- Se implemento el servicio del carrito de compras
+- Se creo el componente del carrito de compras
+- Logica de negocio del carrito de compras
+- Se creo la interface de producto
+
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+---------------------------------------------------------------------
+Desarrollador: Edeyson Bermeo Burbano
+
+Feche: 11/04/2021
+
+1. Qué hice hoy?
+- Se creo el formulario de registro completo con validaciones y un plus de notificaciones
+- Actualización del menu principal con departamentos y ciudades para filtrar
+- Consumo de la api de noticias para simular los productos y organizar en cards en la vista principal
+
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+
+Fecha: 12/04/2021
+
+1. Qué hice hoy?
+- Generacion del modal en vista usuario publico
+- Terminacion del search para las consultas del usuario de forma conjunta
+
+2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+
+ Fecha: 19/04/2021
+ 
+ 1. Qué hice hoy?
+ - Implemento del endpoint para registrarse conexión con el backend
+ 
+ 2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
+ 
+ Feche: 04/05/2021
+ 
+ 1. Qué hice hoy?
+ - Se creo el registro, login, logOut funcionales 
+ - Crear eventos como usuario productor, ver eventos como usuario publico
+ 
+ 2. Qué dificultades se tienen?
+-
+
+3. Qué queda pendiente?
+-
