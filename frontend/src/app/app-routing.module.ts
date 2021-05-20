@@ -6,11 +6,11 @@ import { MainComponent } from './components/events/main/main.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
-import { IniciologComponent } from './components/userLog/iniciolog/iniciolog.component';
 import {ProducerGuard} from './guards/producer.guard';
 
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { InicioGuard } from './guards/inicio.guard';
+import { ProductModalComponent } from './components/modals/product-modal/product-modal.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/inicio', pathMatch: 'full' },
@@ -19,8 +19,10 @@ const routes: Routes = [
   { path: 'registro', component: RegistrarseComponent },
   { path: 'eventCreate', component: CreateComponent, canActivate:[ProducerGuard] },
   { path: 'eventVer', component: MainComponent,canActivate:[InicioGuard] },
-  { path: 'inicioLog', component: IniciologComponent, canActivate:[InicioGuard] },
-  { path: 'carrito', component: ShoppingCartComponent,canActivate:[InicioGuard]}
+  { path: 'carrito', component: ShoppingCartComponent,canActivate:[InicioGuard]},
+  { path: 'inicioLog', component: InicioComponent,canActivate:[InicioGuard]},
+  { path: 'product/:id', component: ProductModalComponent}
+  
  
 ];
 

@@ -1,4 +1,4 @@
-<app-headerlog></app-headerlog>
+<app-header></app-header>
 <div class="container">
     <div class="row mt-3">
         <div class="col-md-6 mx-auto">
@@ -18,6 +18,14 @@
             <div class="card-body">
               <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <div class="form-group">
+                  <label class="col-form-label" for="title">Titulo:</label>
+                  <input type="text" formControlName="title" class="form-control" placeholder="Titulo" id="title">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label" for="desc">Descripcion:</label>
+                  <textarea type="text" formControlName="desc" class="form-control" placeholder="Descripcion" id="desc"></textarea>
+                </div>
+                <div class="form-group">
                   <label class="col-form-label" for="ref">Referencia:</label>
                   <input type="text" formControlName="location" class="form-control" placeholder="Cra 22" id="ref">
                 </div>
@@ -31,11 +39,11 @@
                 </div>
                 <div class="form-group">
                   <label class="col-form-label" for="etiqueta">Hora:</label>
-                  <input type="time" formControlName="hora" class="form-control" placeholder="Plaza de Bolivar" id="etiqueta">
+                  <input type="text" formControlName="hora" class="form-control" placeholder="Plaza de Bolivar" id="etiqueta">
                 </div>
                 <div class="form-group">
                   <label class="col-form-label" for="etiqueta">Duración:</label>
-                  <input type="number" formControlName="duracion" class="form-control" placeholder="Plaza de Bolivar" id="etiqueta">
+                  <input type="number" formControlName="duracion" class="form-control" id="etiqueta">
                 </div>
                 <button type="submit" class="btn btn-primary">Crear Evento</button>
               </form>

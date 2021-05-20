@@ -37,6 +37,8 @@ export class CreateComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       location: ['', Validators.required],
+      title: ['', Validators.required],
+      desc: [''],
       etiqueta: ['', Validators.required],
 
       fecha: ['', Validators.required],
@@ -87,7 +89,7 @@ export class CreateComponent implements OnInit {
       {
         const addr: Addr =
         {
-          registered_user_id: localStorage.getItem('slug'),
+          user_id: localStorage.getItem('slug'),
           country: 'Colombia',
           province: 'Caldas',
           city: 'Manizales',
@@ -125,11 +127,14 @@ export class CreateComponent implements OnInit {
 
               const event: Event =
               {
-                producer_id: localStorage.getItem('role_id'), 
+                producer_id: localStorage.getItem('slug'), 
                 addr_id: this.addrId,
                 duracion: this.f.duracion.value,
                 fecha: this.f.fecha.value,
-                hora: this.f.hora.value
+                hora: this.f.hora.value,
+                title: this.f.title.value,
+                desc: this.f.desc.value,
+
               };
               const postEvent: PostModel = {data: {type: 'Event', attributes: event}};
               this.agroservive.storeEvent(postEvent)

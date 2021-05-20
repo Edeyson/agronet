@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -8,16 +9,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductModalComponent implements OnInit {
   
-  public input:any;
 
-  public articulos: any;
-  @Input() article:any;
-
-
-  constructor() { 
+  public producto = "";
+  constructor(private route: ActivatedRoute) { 
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe(parametro=>{
+      console.log(parametro.id);
+      this.producto = parametro.id;
+    });
   }
 
 }

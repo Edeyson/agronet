@@ -64,6 +64,6 @@ export class MapboxService {
        'Accept': 'application/json',
        'content-type': 'application/json'
       });
-    return this.http.get<RespModel>(this.urlApi + 'events/geo/' + lt + '/' + lng + '/' + km, { headers });
+    return this.http.get<RespModel>(this.urlApi + 'geo/' + lt + '/' + lng + '/' + km, { headers });
   }
 }

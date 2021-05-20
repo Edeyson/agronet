@@ -15,12 +15,11 @@
                 </button>
             </div>
             <div class="col-sm-6">
-                <button mat-raised-button color="success" data-toggle="modal" data-target="#productModal">
+                <a  type="button" mat-raised-button color="success" [routerLink]="['/product', product.id]">
                     Ver Detalle
                     <mat-icon>remove_red_eye</mat-icon>
-                </button>
+                </a>
             </div>
         </div>
     </div>
 </div>
-<app-productmodal [article]="product"></app-productmodal>

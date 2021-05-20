@@ -59,7 +59,7 @@ export class UsuarioserviceService {
         'Accept':'application/json',
         'content-type': 'application/json'
       });
-    return this.http.get<any>(this.urlApi+"producers/"+localStorage.getItem("role_id"), { headers: headers });
+    return this.http.get<any>(this.urlApi+"producers/"+localStorage.getItem("slug"), { headers: headers });
 
   }
   

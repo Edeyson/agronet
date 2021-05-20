@@ -1,5 +1,5 @@
 
-<div>
+<div *ngIf="!banderaLogueado">
     <div class="row">
         <div class="col-sm-1">
             <a class="navbar-brand" href="inicio">
@@ -74,9 +74,6 @@
 
                     </div>
                 </nav>
-
-
-
             </div>
             <div class="dropdown">
                 <div style="width: 10rem;">
@@ -124,5 +121,142 @@
     </div>
 </div>
 
+<div *ngIf="banderaLogueado">
+    <div class="row">
+        <div class="col-sm-1">
+            <a class="navbar-brand" href="inicio">
+                <img src="../../../assets/logo-agronet.jpeg" width="100rem" height="auto"
+                    class="d-inline-block align-top" alt="">
+            </a>
+        </div>
+        <div class="col-lg">
+            <div class="row">
+                <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+                            <img src="../../../assets/serach-icon.png" width="20" height="20"
+                                class="d-inline-block align-top" alt="">
+                        </button>
+                    </form>
+                    <div class="form-inline">
+                        <a type="button" data-toggle="modal" data-target="#perfilModal">
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="50" fill="currentColor" class="bi bi-file-person" viewBox="0 0 16 16">
+                                <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+                                <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                              </svg>
+                        </a>
+                        <a  type="button" (click)="logOut()">
+                            <button class="btn btn-secondary">Logout</button>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+
+                <nav class="navbar navbar-expand-xl navbar-ligth bg-ligth">
+
+                    <button class="navbar-toggle btn btn-secondary dropdown-toggle" data-toggle="collapse"
+                        data-target=".navbar-ex1-collapse" type="button" id="dropdownMenuButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarColor02">
+                        <ul class="navbar-nav mr-auto">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="inicio" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Eventos</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="eventCreate">Crear</a>
+                                    <a class="dropdown-item" href="eventVer">Ver</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="inicio" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Categoria</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="inicio">Lacteos</a>
+                                    <a class="dropdown-item" href="inicio">Carnes</a>
+                                    <a class="dropdown-item" href="inicio">Verduras</a>
+                                    <a class="dropdown-item" href="inicio">Frutas</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="inicio">inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="inicio" data-toggle="modal" data-target="#aboutModal">nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="inicio">agricultores</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="inicio" data-toggle="modal" data-target="#contactModal">contáctenos</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </nav>
+
+
+
+            </div>
+            <div class="dropdown">
+                <div style="width: 10rem;">
+                    <nav class="navbar navbar-dark">
+                        <div class="collapse navbar-collapse navbar-ex1-collapse navbar-secondary">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="inicio" class="dropdown-toggle" data-toggle="dropdown"
+                                        data-target=".nabar-estados">
+                                        departamento<b class="caret"></b>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="inicio" class="dropdown-toggle" data-toggle="dropdown"
+                                        data-target=".nabar-ciudades">
+                                        ciudad <b class="caret"></b>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <nav class="navbar nabar-estados">
+                <div class="navbar-header">
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let state of states">
+                            <a type="button" (click)="estadoSeleccinado(state.isoCode)">{{state.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="navbar nabar-ciudades">
+                <div class="navbar-header">
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let city of ciudades">
+                            <a type="button" (click)="ciudadSeleccinada(city.name)">{{city.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+
+    </div>
+</div>
+
+
 <app-nosotros></app-nosotros>
 <app-contactenos></app-contactenos>
+<app-perfil></app-perfil>
