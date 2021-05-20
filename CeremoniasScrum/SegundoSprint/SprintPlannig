@@ -6,10 +6,11 @@ Participantes:
   
   DEV: Caterine Ladino Gavis (CA) - SCR: Edeyson Bermeo (ED) - DEV: Santiago Velez Suarez (SA) - DEV: Juan David Marulanda (JD)
   
-1. Como gestor quiero gestionar eventos para mantener a los usuarios informados sobre los festivales
-2. Como usuario publico quiero consultar los eventos proximos para planificar mis compras
-3. Como usuario publico quiero registrarme como productor para poder ofertar mis productos 
-4. Modelado del sistema
+1. Como usuario publico quiero consultar los eventos proximos para planificar mis compras ()
+2. Como usuario publico quiero registrarme como productor para poder ofertar mis productos ()
+3. Modelado del sistema (Mockups) (CA - ED)
+4. Modelado logico del sistema (Diagrama entidad relacion) (SA - JD)
+5. Como usuario publico quiero consultar productores para saber que productos me ofrecen ()
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
