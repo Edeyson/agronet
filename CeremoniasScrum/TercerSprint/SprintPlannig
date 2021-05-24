@@ -6,6 +6,15 @@ Fecha: 04/04/2021
 Participantes: 
 
   DEV: Caterine Ladino Gavis (CA) - SCR: Edeyson Bermeo (ED) - DEV: Santiago Velez Suarez (SA) - DEV: Juan David Marulanda (JD)
+  
+  1. Como usuario publico quiero consultar un productor para saber su informacion
+  2. Como usuario publico quiero solicitar registro como productor para vender mis productos
+  3. Como productor quiero gestionar pedidos para hacer saber a los usuarios el estado de su compra
+  4. Como Productor quiero gestionar pedidos de los consumidores para realizar los envíos en los días establecidos
+  5. Como productor quiero gestionar mis productos para mantener mi tienda al dia
+  6. Como usuario registrado quiero realizar pedidos a un productor para reabastecer mi despensa
+  7. Como productor quiero inscribirme en eventos para participar en la las ferias de venta colectiva
+  8. Como productor quiero gestionar puntos de venta directos para que los clientes puedan llegar sin problemas
  
  -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
