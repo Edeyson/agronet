@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit
             localStorage.setItem('token', response.token);
             localStorage.setItem('slug', response.slug);
             // router navigate
-            this.router.navigate(['inicio']);
+            this.router.navigate(['']);
             this.toastrService.success("inicio de sesion exitoso", "Login");
           },
           (error) => {

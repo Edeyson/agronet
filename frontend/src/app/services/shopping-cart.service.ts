@@ -12,19 +12,23 @@ export class ShoppingCartService {
 
   addProduct(product: Product) {
     let carro = {
-      "cantidad": 1,
-      "producto": {
-        'id': product.id,
-        'image_url': product.image_url,
-        'name': product.name,
-        'description': product.description,
-        'price': product.price
+      "cantidad":1,
+      'type':product.type,
+      'id':product.id,
+      "attributes":{
+        'producer_id':product.attributes.producer_id,
+        'category_id':product.attributes.category_id,
+        'image_path':product.attributes.image_path,
+        'name':product.attributes.name,
+        'description':product.attributes.description,
+        'measurement':product.attributes.measurement,
+        "price":product.attributes.price
       }
-    }
+    } 
     let esta = false;
     let id = 0;
     for(let i=0;i<this.carrito.length;i++){
-      if(product.id==this.carrito[i].producto.id){
+      if(product.id==this.carrito[i].id){
         esta = true;
         id=i;
         break
@@ -40,7 +44,7 @@ export class ShoppingCartService {
   }
 
   deleteProduct(id){
-    this.carrito = this.carrito.filter(product => product.producto.id != id);    
+    this.carrito = this.carrito.filter(product => product.id != id);    
     return this.carrito;
   }
 

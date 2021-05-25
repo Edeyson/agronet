@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule} from '@angular/forms';
+import { ProductserviceService } from 'src/app/services/productservice.service';
 import { Product } from '../../interfaces/interfaces';
 
 @Component({
@@ -9,13 +10,13 @@ import { Product } from '../../interfaces/interfaces';
 })
 export class ProductosComponent implements OnInit 
 {
-  public products: Product[] = [];
+  public products = [];
 
   public articulos: any;
 
   public filtrarProducto = '';
 
-  constructor() { 
+  constructor(private productService: ProductserviceService) { 
     // this.loadNews();
   }
 
@@ -25,20 +26,16 @@ export class ProductosComponent implements OnInit
 
   loadProducts()
   {
-    this.products = [];
-
-    for (let i = 0; i < 20; i++) 
-    {
-      const product: Product = {
-        id: i+1,
-        name: `producto ${i}`,
-        description: `Descripcionnnnn ${i}`,
-        price: 100*i,
-        image_url: 'https://via.placeholder.com/300'
-      }   
-  
-      this.products.push(product);
-    }
+    this.productService.getAll().subscribe(
+      resp=>{
+        console.log(resp.data[0].attributes);
+        //this.products = resp.data.attributes;
+        resp.data.forEach(element => {
+          console.log(element);
+          this.products.push(element);
+        });
+      }
+    );
   }
 
   loadNews(){

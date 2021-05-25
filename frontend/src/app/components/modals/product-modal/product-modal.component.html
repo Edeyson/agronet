@@ -1,2 +1,19 @@
-<app-header></app-header>
-producto {{producto}}
+<div class="card" style="width: 80%;">
+    <div class="row">
+        <div class="col">
+            <h2 class="card-title">productor: {{ producer.nombre }} {{producer.apellido}}</h2>
+            <img [src]="product.attributes.image_path" alt="Card image" width="500rem">
+        </div>
+        <div class="col">
+            <div class="card-body">
+                <h2 class="card-title">{{ product.attributes.name }} x {{product.attributes.measurement}}Kg</h2>
+                <h3 class="text-success">${{ product.attributes.price }}</h3>
+                <p class="card-text">{{ product.attributes.description }}</p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="card-footer centrar">
+      
+    </div>
+</div>

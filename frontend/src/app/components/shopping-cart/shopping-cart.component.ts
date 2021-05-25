@@ -13,14 +13,18 @@ export class ShoppingCartComponent implements OnInit
   public total = 0;
   public  products = [{
     "cantidad":0,
-    "producto":{
-      "id": 0,
-    "image_url": '',
-    "name": '',
-    "description": '',
-    "price": 0
+    'type':"",
+    'id':0,
+    "attributes":{
+      'producer_id':0,
+      'category_id':0,
+      'image_path':"",
+      'name':"",
+      'description':"",
+      'measurement':0,
+      "price":0
     }
-  }];
+  } ];
 
   constructor(
     public shoppingCartService: ShoppingCartService,
@@ -40,7 +44,7 @@ export class ShoppingCartComponent implements OnInit
   {
     this.total = 0;    
     this.products.map((product) => {      
-      this.total += (product.producto.price*product.cantidad);
+      this.total += (product.attributes.price*product.cantidad);
     });
   }
 

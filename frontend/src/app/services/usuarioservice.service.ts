@@ -9,7 +9,7 @@ import { Token } from '../components/interfaces/token';
   providedIn: 'root'
 })
 export class UsuarioserviceService {
-  urlApi = 'http://143.198.127.182/api/v1/';
+  urlApi = 'https://api.agrolibre.xyz/api/v1/';
 
   constructor(private http: HttpClient) { }
 
@@ -37,6 +37,9 @@ export class UsuarioserviceService {
         'content-type': 'application/json'
       });
     return this.http.get<any>(this.urlApi + "users/"+localStorage.getItem("slug"),{ headers: headers});
+  }
+  public producer(id){
+    return this.http.get<any>(this.urlApi + "producer/"+id);
   }
 
   public logOut(){
