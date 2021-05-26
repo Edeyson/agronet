@@ -77,4 +77,10 @@ export class UsuarioserviceService {
     return this.http.get<any>(this.urlApi + "users/"+localStorage.getItem("slug"),{ headers: headers});
   }
 
+
+  serProducer(){
+    let userPost:PostModel= {data:{type:"Producer",attributes: {id:localStorage.getItem('slug')}}}
+    return this.http.post<any>(this.urlApi+'producers', userPost);
+  }
+
 }

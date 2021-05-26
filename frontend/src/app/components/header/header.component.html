@@ -63,8 +63,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModal">nosotros</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">agricultores</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Agricultores</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">agricultor 1</a>
+                                    <a class="dropdown-item" href="#">agricultor 2</a>
+                                    <a class="dropdown-item" href="#">agricultor 3</a>
+                                    <a class="dropdown-item" href="#">agricultor 4</a>
+                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="modal" data-target="#contactModal">contáctenos</a>
@@ -147,8 +154,11 @@
                                 <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                               </svg>
                         </a>
+                        <a  type="button" (click)="serProducer()">
+                            <button class="btn btn-success">Solicitar ser Producer</button>
+                        </a>
                         <a  type="button" (click)="logOut()">
-                            <button class="btn btn-secondary">Logout</button>
+                            <button class="btn btn-danger">Logout</button>
                         </a>
                     </div>
                 </nav>
@@ -195,8 +205,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="inicio" data-toggle="modal" data-target="#aboutModal">nosotros</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="inicio">agricultores</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Agricultores</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">agricultor 1</a>
+                                    <a class="dropdown-item" href="#">agricultor 2</a>
+                                    <a class="dropdown-item" href="#">agricultor 3</a>
+                                    <a class="dropdown-item" href="#">agricultor 4</a>
+                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="inicio" data-toggle="modal" data-target="#contactModal">contáctenos</a>

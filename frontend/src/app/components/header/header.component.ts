@@ -59,4 +59,14 @@ public logOut(){
   );
 }
 
+serProducer(){
+  console.log("user", localStorage.getItem('slug'));
+  this.userService.serProducer().subscribe(
+    resp=>{
+      console.log(resp);
+      
+    }
+  );
+}
+
 }

@@ -14,7 +14,7 @@ export class ProductosComponent implements OnInit
 
   public articulos: any;
 
-  public filtrarProducto = '';
+  public filterProduct = '';
 
   constructor(private productService: ProductserviceService) { 
     // this.loadNews();
