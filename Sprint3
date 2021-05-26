@@ -44,3 +44,40 @@ guards de usuario logueado completas
 ---25/05/2021------
 conexion de los endpoints de ver o listar productos 
 
+
+########################### JUAN DAVID MARULANDA ##########################################
+
+---20/05/2021---
+
+se enlazaron correctamente las rutas de los productos
+se creó el crud funcional de los productos 
+
+---22/05/2021---
+
+se crearon los seeders para los productos
+se creo el crud funcional para las categorias
+se enlazaron correctamemte las rutas con los endpoints de las categorias
+
+---23/05/2021---
+
+se crearon los seeders para las categorias
+se creo la primera versión del READ ME en español
+
+---24/05/2021---
+
+se creo la migracion para las preguntas
+se creo la migracion para las respuestas
+se creo el modelo y controlador para las preguntas
+se creo el modelo y controlador para las respuestas
+se crearon las rutas de las respuestas
+se crearon las rutas de las preguntas
+se crearon los archivos request y resource para las preguntas 
+se creo el CRUD funcional para las preguntas
+se crearon los archivos request y resource para las respuestas
+se corrigio un problema al momento de listar los productos de una categoria
+se crearon los metodos store e index de las respuestas
+se hizo el planteamiento inicial de el carrito de compras
+se modifico el analizis inicial de la clase answers
+se modificó todo el modelo de answers con el nuevo diseño
+
+
