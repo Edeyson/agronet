@@ -1,4 +1,3 @@
-
 <div>
     <form id="registro-form" class="form" action="" method="post" [formGroup]="formRegister">
         <div class="row">
@@ -10,20 +9,24 @@
 
 
                     <div class="form-group">
-                        <label for="nombre" class="text-info" required>Primer nombre<span class="required">*</span></label>
-                        <input type="text" id="nombre" class="form-control" placeholder="Primer nombre" required autofocus formControlName="nombre" [ngClass]="{'is-invalid': submitted && f.nombre.errors}">
+                        <label for="nombre" class="text-info" required>Primer nombre<span
+                                class="required">*</span></label>
+                        <input type="text" id="nombre" class="form-control" placeholder="Primer nombre" required
+                            autofocus formControlName="nombre" [ngClass]="{'is-invalid': submitted && f.nombre.errors}">
                         <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
                             <div *ngIf="f.nombre.errors.required">
                                 Campo obligatorio
                             </div>
                         </div>
                     </div>
- 
+
 
                     <div class="form-group">
                         <label for="apellido" class="text-info" required>Primer apellido<span
-                class="required">*</span></label>
-                        <input type="text" id="apellido" class="form-control" placeholder="Primer apellido" required autofocus formControlName="apellido" [ngClass]="{'is-invalid': submitted && f.apellido.errors}">
+                                class="required">*</span></label>
+                        <input type="text" id="apellido" class="form-control" placeholder="Primer apellido" required
+                            autofocus formControlName="apellido"
+                            [ngClass]="{'is-invalid': submitted && f.apellido.errors}">
                         <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
                             <div *ngIf="f.apellido.errors.required">
                                 Campo obligatorio
@@ -34,8 +37,10 @@
 
 
                     <div class="form-group">
-                        <label for="email" class="text-info" required>email electrónico <span class="required">*</span></label>
-                        <input type="email" id="email" class="form-control" placeholder="principal@email.com" required formControlName="email" [ngClass]="{'is-invalid': submitted && f.email.errors}">
+                        <label for="email" class="text-info" required>email electrónico <span
+                                class="required">*</span></label>
+                        <input type="email" id="email" class="form-control" placeholder="principal@email.com" required
+                            formControlName="email" [ngClass]="{'is-invalid': submitted && f.email.errors}">
                         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                             <div *ngIf="f.email.errors.required">
                                 Campo obligatorio
@@ -45,8 +50,10 @@
 
                     <!-- password -->
                     <div class="form-group">
-                        <label for="password" class="text-info" required>Contraseña <span class="required">*</span></label>
-                        <input type="password" id="password" class="form-control" placeholder="******" required formControlName="password" [ngClass]="{'is-invalid': submitted && f.password.errors}">
+                        <label for="password" class="text-info" required>Contraseña <span
+                                class="required">*</span></label>
+                        <input type="password" id="password" class="form-control" placeholder="******" required
+                            formControlName="password" [ngClass]="{'is-invalid': submitted && f.password.errors}">
                         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                             <div *ngIf="f.password.errors.required">
                                 Campo obligatorio
@@ -57,16 +64,19 @@
                     <!-- confirm password -->
                     <div class="form-group">
                         <label for="confirmarpassword" class="text-info" required>Repita la contraseña <span
-                class="required">*</span></label>
-                        <input type="password" min="6" id="confirmarpassword" class="form-control" placeholder="******" required #confirmarpassword>
+                                class="required">*</span></label>
+                        <input type="password" min="6" id="confirmarpassword" class="form-control" placeholder="******"
+                            required #confirmarpassword>
 
 
                     </div>
 
                     <!-- number phone -->
                     <div class="form-group">
-                        <label for="telefono" class="text-info" required>Teléfono móvil <span class="required">*</span></label>
-                        <input type="number" id="phone" class="form-control" required formControlName="telefono" [ngClass]="{'is-invalid': submitted && f.telefono.errors}">
+                        <label for="telefono" class="text-info" required>Teléfono móvil <span
+                                class="required">*</span></label>
+                        <input type="number" id="phone" class="form-control" required formControlName="telefono"
+                            [ngClass]="{'is-invalid': submitted && f.telefono.errors}">
                         <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
                             <div *ngIf="f.telefono.errors.required">
                                 Campo obligatorio
@@ -85,13 +95,16 @@
 
                     <!-- state of country -->
                     <div class="form-group">
-                        <label for="inputState" class="text-info" required>Departamento <span class="required">*</span></label>
-                        <select name="departamento" class="form-control" (change)="onSate($event)" formControlName="departamento" [ngClass]="{'is-invalid': submitted && f.departamento.errors}">
-              <option value="0" disabled>Selecciona un estado... </option>
-              <option *ngFor="let departamento of states" [value]="departamento.isoCode">
-                {{departamento.name}}
-              </option>
-            </select>
+                        <label for="inputState" class="text-info" required>Departamento <span
+                                class="required">*</span></label>
+                        <select name="departamento" class="form-control" (change)="onSate($event)"
+                            formControlName="departamento"
+                            [ngClass]="{'is-invalid': submitted && f.departamento.errors}">
+                            <option value="0" disabled>Selecciona un estado... </option>
+                            <option *ngFor="let departamento of states" [value]="departamento.isoCode">
+                                {{departamento.name}}
+                            </option>
+                        </select>
                         <div *ngIf="submitted && f.departamento.errors" class="invalid-feedback">
                             <div *ngIf="f.departamento.errors.required">
                                 Campo obligatorio
@@ -103,12 +116,13 @@
                     <!-- City state -->
                     <div class="form-group">
                         <label for="ciudad" class="text-info" required>Ciudad <span class="required">*</span></label>
-                        <select name="ciudad" class="form-control" formControlName="ciudad" [ngClass]="{'is-invalid': submitted && f.ciudad.errors}">
-              <option value="0" disabled>Selecciona una ciudad...</option>
-              <option *ngFor="let ciudad of ciudades" [value]="ciudad.name">
-                {{ciudad.name}}
-              </option>
-            </select>
+                        <select name="ciudad" class="form-control" formControlName="ciudad"
+                            [ngClass]="{'is-invalid': submitted && f.ciudad.errors}">
+                            <option value="0" disabled>Selecciona una ciudad...</option>
+                            <option *ngFor="let ciudad of ciudades" [value]="ciudad.name">
+                                {{ciudad.name}}
+                            </option>
+                        </select>
                         <div *ngIf="submitted && f.ciudad.errors" class="invalid-feedback">
                             <div *ngIf="f.ciudad.errors.required">
                                 Campo obligatorio
