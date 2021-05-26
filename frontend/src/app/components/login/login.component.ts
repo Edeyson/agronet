@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit
             console.log(response);
             localStorage.setItem('token', response.token);
             localStorage.setItem('slug', response.slug);
+            this.userService.isAuth = true;
             // router navigate
             this.router.navigate(['']);
             this.toastrService.success("inicio de sesion exitoso", "Login");

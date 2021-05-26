@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductosComponent } from '../../productos/productos/productos.component';
 
 @Component({
   selector: 'app-iniciolog',

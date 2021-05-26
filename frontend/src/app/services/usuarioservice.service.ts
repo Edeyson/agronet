@@ -11,6 +11,8 @@ import { Token } from '../components/interfaces/token';
 export class UsuarioserviceService {
   urlApi = 'https://api.agrolibre.xyz/api/v1/';
 
+  public isAuth: boolean = false;
+
   constructor(private http: HttpClient) { }
 
   public registrar(user: PostModel){

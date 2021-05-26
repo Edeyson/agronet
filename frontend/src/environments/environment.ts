@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  apiUrl: "https://api.agrolibre.xyz/api/v1/",
   mapbox: {
 
     accessToken: "",
