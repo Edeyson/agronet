@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { ProductserviceService } from 'src/app/services/productservice.service';
+import { UsuarioserviceService } from 'src/app/services/usuarioservice.service';
 import { Product } from '../../interfaces/interfaces';
 
 @Component({
@@ -16,12 +17,17 @@ export class ProductosComponent implements OnInit
 
   public filterProduct = '';
 
-  constructor(private productService: ProductserviceService) { 
+  constructor(private productService: ProductserviceService, private userService: UsuarioserviceService) { 
     // this.loadNews();
   }
 
   ngOnInit(): void {
     this.loadProducts();
+    const token = localStorage.getItem('token');
+    if(token)
+    {
+      this.userService.isAuth = true;
+    }
   }
 
   loadProducts()

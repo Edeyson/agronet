@@ -1,0 +1,109 @@
+--------------------------------------------------------------------------BACKEND---------------------------------------------------------------------------------------------------
+Desarrollador: Santiago Velez Suarez
+
+Fecha: 10/05/2021
+
+1. ¿Que se hizo hoy?
+- Test unitarios modelo Events
+- Crud ProducerNews
+- Test unitarios Modelo News
+
+2. ¿Que dificultades se tienen?
+-
+
+3. ¿Que queda pendiente?
+-
+
+Fecha:11/05/2021
+
+1. ¿Que se hizo hoy?
+- Seeders para usuarios, direcciones, coordenadas y eventos
+
+2. ¿Que dificultades se tienen?
+-
+
+3. ¿Que queda pendiente?
+-
+
+Fecha: 15/05/2021
+
+1. ¿Que se hizo hoy?
+- Test unitarios, News, Events
+
+2. ¿Que dificultades se tienen?
+-
+
+3. ¿Que queda pendiente?
+-
+
+
+Fecha: 18/05/2021
+
+1. ¿Que se hizo hoy?
+- Tienda de Productor(Ubicación, contacto, domicilio)
+- Cobertura Domicilios
+- Costo Domicilios
+- Seeders shops
+- Test shops
+
+2. ¿Que dificultades se tienen?
+-
+
+3. ¿Que queda pendiente?
+-
+
+
+Fecha: 21/05/2021
+
+1. ¿Que se hizo hoy?
+- Git Hooks para el despligue de la aplicación
+- Dominio y host agronet
+
+2. ¿Que dificultades se tienen?
+-
+
+3. ¿Que queda pendiente?
+-
+-------------------------------------------------------------------
+Desarrollador:Juan davd Marulanda Quintero
+
+
+
+-------------------------------------------------------------------------FRONTEND------------------------------------------------------------------------------------------------------
+Desarrollador: Caterine Ladin Galvis
+
+Fecha 24/05/2021
+
+1.¿Que se hizo hoy?
+-Se realizo el CRUD de productos para el usuario logueado como productor
+
+2. ¿Que dificultades se tienen?
+-
+
+3. ¿Que queda pendiente?
+-
+
+-----------------------------------------------------------------------
+Desarrollador: Edeyson Bermeo 
+
+Fecha: 13/05/2021
+
+1.¿Que se hizo hoy?
+- Carrito de compras semi-completo
+- Guards de usuario logueado completas
+
+2.¿Que dificultades se tienen?
+- 
+
+3. ¿Que queda pendiente?
+
+Fecha: 25/05/2021
+
+1.¿Que se hizo hoy?
+- Conexion del endpoint del backend para listar y ver productos
+
+2.¿Que dificultades se tienen?
+-
+
+3. ¿Que queda pendiente?
+-

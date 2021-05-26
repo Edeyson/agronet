@@ -1,0 +1,65 @@
+<div>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Registrar un Nuevo Producto
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content style="display:block">
+            <h3> Nombre del Producto</h3>
+            <mat-form-field class="input-block">
+                <mat-label>Nombre del producto</mat-label>
+                <input matInput type="text" [(ngModel)]="product.data.attributes.name" placeholder="Nombre del Producto">
+            </mat-form-field>
+
+            <h3>Selecciona la categoría de tu producto</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Categoria</mat-label>
+                <mat-select [(ngModel)]="product.data.attributes.category_id">
+                    <mat-option *ngFor="let category of categories" [value]="category.id">
+                    {{category.attributes.category_name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <h3> Descripción del Producto </h3>
+            <mat-form-field class="input-block">
+                <mat-label>Descripción del Producto</mat-label>
+                <textarea matInput type="text" [(ngModel)]="product.data.attributes.description" placeholder="Descripción del producto"></textarea>
+            </mat-form-field>
+
+            <h3> Ruta de la Imagen</h3>
+            <mat-form-field class="input-block">
+                <mat-label>Ruta imagen</mat-label>
+                <input matInput type="text" [(ngModel)]="product.data.attributes.image_path" placeholder="Ruta de la imagen">
+            </mat-form-field>
+
+            <h3> Precio del Producto </h3>
+            <mat-form-field class="input-block">
+                <mat-label>Precio del producto</mat-label>
+                <input matInput type="number" [(ngModel)]="product.data.attributes.price" placeholder="Precio del producto">
+            </mat-form-field>
+
+            <h3> Cantidad </h3>
+            <mat-form-field class="input-block">
+                <mat-label>Cantidad</mat-label>
+                <input matInput type="number" [(ngModel)]="product.data.attributes.measurement" placeholder="Cantidad">
+            </mat-form-field>
+        </mat-card-content>
+        <div style="text-align:center">
+            <button
+                mat-raised-button
+                color="primary"
+                (click)="isEdit ? updateProduct() : createProduct()"
+                >
+                Guardar
+            </button>
+            <button
+                mat-raised-button
+                color="primary"
+                type="button"
+                (click)="exit()"
+            >Cancelar</button>
+        </div>
+    </mat-card>
+</div>

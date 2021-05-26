@@ -2,15 +2,16 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CountriesService } from 'src/app/services/countries.service';
 import { UsuarioserviceService } from 'src/app/services/usuarioservice.service';
-import { cities, states } from '../interfaces/interfaces';
+import { cities, states } from '../../interfaces/interfaces';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: 'app-headerlog',
+  templateUrl: './headerlog.component.html',
+  styleUrls: ['./headerlog.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderlogComponent implements OnInit {
 
+ 
   @Input() showHeader = true;
 
   
@@ -23,19 +24,11 @@ export class HeaderComponent implements OnInit {
   public country = 'CO';
   public selectedStateName = "";
   public statesOfCountry = [];
-  public banderaLogueado = false;
 
   constructor( private service: CountriesService, 
     private userService: UsuarioserviceService,
-    private router:Router){ 
+    private router:Router) { 
     this.states = this.service.getStatesOfCountry(this.country);
-    if(localStorage.getItem('token') && localStorage.getItem('token')!==''){
-      this.banderaLogueado = true;
-    }else
-    {
-      this.banderaLogueado = false; 
-    }
-    
   }
 
   ngOnInit(): void {
@@ -49,29 +42,15 @@ ciudadSeleccinada(ciudad:string){
 console.log(ciudad);
 
 }
+
+
 public logOut(){
   this.userService.logOut().subscribe(
     logout =>{
       console.log(logout);
       localStorage.clear();
-      this.router.navigate(['inicioLog']);
+      this.router.navigate(['inicio']);
     }
   );
 }
-
-serProducer(){
-  console.log("user", localStorage.getItem('slug'));
-  this.userService.serProducer().subscribe(
-    resp=>{
-      console.log(resp);
-      
-    }
-  );
-}
-
-newProducto()
-{
-  this.router.navigate(['create-product']);
-}
-
 }

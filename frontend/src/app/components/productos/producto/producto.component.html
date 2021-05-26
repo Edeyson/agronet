@@ -24,5 +24,19 @@
                 </a>
             </div>
         </div>
+        <div class="row mt-4" *ngIf="usuarioService.isAuth">
+            <div class="col-sm-6">
+                <button mat-raised-button color="warning" (click)="updateProduct(product.id)">
+                    Editar
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+            <div class="col-sm-6">
+                <button type="button" mat-raised-button color="danger" (click)="deleteProduct(product.id)">
+                    Eliminar
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
