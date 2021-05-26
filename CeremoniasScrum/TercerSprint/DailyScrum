@@ -9,21 +9,24 @@ Fecha: 10/05/2021
 - Test unitarios Modelo News
 
 2. ¿Que dificultades se tienen?
--
+- Breves inconvenientes probando el modelo de eventos
 
 3. ¿Que queda pendiente?
--
+- Creacion de seeder para usuarios, direcciones, coordenadas y los eventos
 
 Fecha:11/05/2021
 
 1. ¿Que se hizo hoy?
-- Seeders para usuarios, direcciones, coordenadas y eventos
+- Seeders para usuarios 
+- Seeders para direcciones 
+- Seeders para coordenadas 
+- Seeders para eventos
 
 2. ¿Que dificultades se tienen?
--
+- No se tuvo inconvenientes
 
 3. ¿Que queda pendiente?
--
+-Pruebas para las noticias, y eventos
 
 Fecha: 15/05/2021
 
@@ -31,10 +34,10 @@ Fecha: 15/05/2021
 - Test unitarios, News, Events
 
 2. ¿Que dificultades se tienen?
--
+- No se tuvo inconvenientes
 
 3. ¿Que queda pendiente?
--
+- Funcionalidades para productores y domicilios 
 
 
 Fecha: 18/05/2021
@@ -47,10 +50,10 @@ Fecha: 18/05/2021
 - Test shops
 
 2. ¿Que dificultades se tienen?
--
+- Ligeros detalles en la implementacion
 
 3. ¿Que queda pendiente?
--
+- Configuracion para el despliegue de la aplicacion
 
 
 Fecha: 21/05/2021
@@ -60,13 +63,24 @@ Fecha: 21/05/2021
 - Dominio y host agronet
 
 2. ¿Que dificultades se tienen?
--
+- No se tuvo inconvenientes 
 
 3. ¿Que queda pendiente?
--
--------------------------------------------------------------------
-Desarrollador:Juan davd Marulanda Quintero
+- Algunas configuaciones para lograr el despliegue completo de la aplicacion
 
+-------------------------------------------------------------------
+Desarrollador: Juan David Marulanda Quintero
+
+Fecha: 16/05/2021
+
+1.¿Que se hizo hoy?
+- Implementaion funcional del carrito 
+
+2. ¿Que dificultades se tienen?
+- No se tuvo inconvenientes
+
+3. ¿Que queda pendiente?
+- Creacion de los modulos relacionados a los answers y questions
 
 
 -------------------------------------------------------------------------FRONTEND------------------------------------------------------------------------------------------------------
@@ -75,13 +89,13 @@ Desarrollador: Caterine Ladin Galvis
 Fecha 24/05/2021
 
 1.¿Que se hizo hoy?
--Se realizo el CRUD de productos para el usuario logueado como productor
+- Se realizo el CRUD de productos para el usuario logueado como productor
 
 2. ¿Que dificultades se tienen?
--
+- No se tuvo inconvenientes
 
 3. ¿Que queda pendiente?
--
+- 
 
 -----------------------------------------------------------------------
 Desarrollador: Edeyson Bermeo 
@@ -93,9 +107,10 @@ Fecha: 13/05/2021
 - Guards de usuario logueado completas
 
 2.¿Que dificultades se tienen?
-- 
+- No se presentaron inconvenientes
 
 3. ¿Que queda pendiente?
+- Conexion requerida entre backend y frontend para listar productos
 
 Fecha: 25/05/2021
 
@@ -103,7 +118,7 @@ Fecha: 25/05/2021
 - Conexion del endpoint del backend para listar y ver productos
 
 2.¿Que dificultades se tienen?
--
+- No se presentaron inconvenientes
 
 3. ¿Que queda pendiente?
 -
