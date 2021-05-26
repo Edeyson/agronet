@@ -1,0 +1,73 @@
+--------------------------------------------------------------------------BACKEND---------------------------------------------------------------------------------------------------
+Desarrollador: Santiago Velez Suarez
+
+Fecha: 10/05/2021
+
+1. ¿Que se hizo hoy?
+- Test unitarios modelo Events
+- Crud ProducerNews
+- Test unitarios Modelo News
+
+2.
+
+3.
+
+Fecha:11/05/2021
+
+1. ¿Que se hizo hoy?
+- Seeders para usuarios, direcciones, coordenadas y eventos
+
+2.
+
+3.
+
+Fecha: 15/05/2021
+
+1. ¿Que se hizo hoy?
+- Test unitarios, News, Events
+
+2.
+
+3.
+
+
+Fecha: 18/05/2021
+
+1. ¿Que se hizo hoy?
+- Tienda de Productor(Ubicación, contacto, domicilio)
+- Cobertura Domicilios
+- Costo Domicilios
+- Seeders shops
+- Test shops
+
+2.
+
+3.
+
+
+Fecha: 21/05/2021
+
+1. ¿Que se hizo hoy?
+- Git Hooks para el despligue de la aplicación
+- Dominio y host agronet
+
+2.
+
+3.
+-------------------------------------------------------------------
+Desarrollador:
+
+-------------------------------------------------------------------------FRONTEND------------------------------------------------------------------------------------------------------
+Desarrollador: 
+-----------------------------------------------------------------------
+Scrum Master: Edeyson Bermeo 
+
+Fecha: 13/05/2021
+
+1.¿Que se hizo hoy?
+- Carrito de compras semi-completo
+- Guards de usuario logueado completas
+
+2.
+
+3.
