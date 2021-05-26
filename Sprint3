@@ -1,0 +1,39 @@
+
+
+
+
+
+
+
+
+####################################################################
+----------Santiago Velez Suarez-------------------
+----06/05/2021----
+Test unitarios modelo Events
+Crud ProducerNews
+Test unitarios Modelo News
+----07/05/2021----
++ Seeders para usuarios, direcciones, coordenadas y eventos
+----15/05/2021----
++ Test unitarios, News, Events
+----18/05/2021----
++ Tienda de Productor(Ubicación, contacto, domicilio)
++ Cobertura Domicilios
++ Costo Domicilios
++ Seeders shops
++ Test shops
+----21/05/2021----
++ git Hooks para el despligue de la aplicación
++ Dominio y host agronet
+
+
+
+
+####################################################################
+Edeyson Bermeo 
+---13/05/2021---
+carrito de compras semi-completo
+guards de usuario logueado completas
+---25/05/2021------
+conexion de los endpoints de ver o listar productos 
+
