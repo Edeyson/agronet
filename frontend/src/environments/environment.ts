@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   mapbox: {
 
-    accessToken: "pk.eyJ1IjoiZWRleXNvbiIsImEiOiJja285Ym9jd3YyM3B1MnVscnhsb3NvN28wIn0.HXXauXWFBuKgiQ25kmG5HA",
+    accessToken: "",
     API_BACKEND_URL: 'https://api.agrolibre.xyz/api/v1/'
   }
 };
