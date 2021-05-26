@@ -5,6 +5,8 @@ export interface Event
   fecha: string;
   hora: string;
   duracion: number;
+  title:string;
+  desc:string;
   state?: string;
   created_at?: string;
 }

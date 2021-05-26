@@ -9,7 +9,7 @@ export class FilterPipe implements PipeTransform {
     if(arg != ''){
       const resultProductos = [];
     for(let producto of value){
-      if(producto.title.toLowerCase().indexOf(arg.toLowerCase()) > -1){
+      if(producto.attributes.name.toLowerCase().indexOf(arg.toLowerCase()) > -1){
         resultProductos.push(producto);
         console.log("sip");
       }

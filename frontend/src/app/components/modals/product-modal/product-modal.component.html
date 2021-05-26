@@ -1,23 +1,19 @@
-<div class="modal" id="productModal"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{{article.name}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h6 class="card-text">{{article.price}}</h6>
-                <img [src]="article.image_url" alt="Card image" width="90%">
-                <p class="card-text">{{article.description}}</p>
-            </div>
-            <div class="modal-footer centrar">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    Aceptar
-                </button>
-            </div>
+<div class="card" style="width: 80%;">
+    <div class="row">
+        <div class="col">
+            <h2 class="card-title">productor: {{ producer.nombre }} {{producer.apellido}}</h2>
+            <img [src]="product.attributes.image_path" alt="Card image" width="500rem">
         </div>
+        <div class="col">
+            <div class="card-body">
+                <h2 class="card-title">{{ product.attributes.name }} x {{product.attributes.measurement}}Kg</h2>
+                <h3 class="text-success">${{ product.attributes.price }}</h3>
+                <p class="card-text">{{ product.attributes.description }}</p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="card-footer centrar">
+      
     </div>
 </div>

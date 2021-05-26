@@ -20,12 +20,12 @@ import { MaterialModule } from './material/material.module';
 import { ProductModalComponent } from './components/modals/product-modal/product-modal.component';
 import { CreateComponent } from './components/events/create/create.component';
 import { MainComponent } from './components/events/main/main.component';
-import { HeaderlogComponent } from './components/userLog/headerlog/headerlog.component';
-import { IniciologComponent } from './components/userLog/iniciolog/iniciolog.component';
+
 import { NosotrosComponent } from './components/modals/nosotros/nosotros.component';
 import { ContactenosComponent } from './components/modals/contactenos/contactenos.component';
 import { PerfilComponent } from './components/modals/perfil/perfil.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { CreateproductComponent } from './components/createproduct/createproduct.component';
 
 @NgModule({
   declarations: [
@@ -40,12 +40,12 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
     ProductModalComponent,
     CreateComponent,
     MainComponent,
-    HeaderlogComponent,
-    IniciologComponent,
+    
     NosotrosComponent,
     ContactenosComponent,
     PerfilComponent,
-    ShoppingCartComponent 
+    ShoppingCartComponent,
+    CreateproductComponent 
   ],
   imports: [
     CommonModule,

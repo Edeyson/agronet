@@ -48,11 +48,16 @@ export interface countries {
 
   export interface Product
   {
-    id: number;
-    image_url: string;
-    name: string;
-    description: string;
-    price: number;
-    created_at?:string;
+    type:string,
+    id:number,
+    attributes:{
+      producer_id:number,
+      category_id:number,
+      image_path:string,
+      name:string,
+      description:string,
+      measurement:number,
+      price:number
+    } 
   }
 

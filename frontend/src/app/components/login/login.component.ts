@@ -44,9 +44,8 @@ export class LoginComponent implements OnInit
             console.log(response);
             localStorage.setItem('token', response.token);
             localStorage.setItem('slug', response.slug);
-            localStorage.setItem('role_id', response.role_id);
             // router navigate
-            this.router.navigate(['inicioLog']);
+            this.router.navigate(['']);
             this.toastrService.success("inicio de sesion exitoso", "Login");
           },
           (error) => {

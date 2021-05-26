@@ -9,7 +9,7 @@ import { Token } from '../components/interfaces/token';
   providedIn: 'root'
 })
 export class UsuarioserviceService {
-  urlApi = 'http://143.198.127.182/api/v1/';
+  urlApi = 'https://api.agrolibre.xyz/api/v1/';
 
   constructor(private http: HttpClient) { }
 
@@ -38,6 +38,9 @@ export class UsuarioserviceService {
       });
     return this.http.get<any>(this.urlApi + "users/"+localStorage.getItem("slug"),{ headers: headers});
   }
+  public producer(id){
+    return this.http.get<any>(this.urlApi + "producer/"+id);
+  }
 
   public logOut(){
     const headers = new HttpHeaders(
@@ -59,7 +62,7 @@ export class UsuarioserviceService {
         'Accept':'application/json',
         'content-type': 'application/json'
       });
-    return this.http.get<any>(this.urlApi+"producers/"+localStorage.getItem("role_id"), { headers: headers });
+    return this.http.get<any>(this.urlApi+"producers/"+localStorage.getItem("slug"), { headers: headers });
 
   }
   
@@ -72,6 +75,12 @@ export class UsuarioserviceService {
         'content-type': 'application/json'
       });
     return this.http.get<any>(this.urlApi + "users/"+localStorage.getItem("slug"),{ headers: headers});
+  }
+
+
+  serProducer(){
+    let userPost:PostModel= {data:{type:"Producer",attributes: {id:localStorage.getItem('slug')}}}
+    return this.http.post<any>(this.urlApi+'producers', userPost);
   }
 
 }

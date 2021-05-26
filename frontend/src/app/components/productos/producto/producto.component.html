@@ -1,10 +1,13 @@
 <div size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" class="card" style="width: 18rem; margin-top: auto;">
-    <img [src]="product.image_url" alt="Card image">
+    
+    <h2 class="card-title">productor: {{ producer.nombre }} {{producer.apellido}}</h2>
+    <h3 class="card-title">Categoria: {{ product.attributes.category_id }}</h3>
+    <img [src]="product.attributes.image_path" alt="Card image">
     <!-- <h6 class="card-text">{{ product.name }}</h6> -->
     <div class="card-body">
-        <h2 class="card-title">{{ product.name }}</h2>
-        <h3 class="text-success">${{ product.price }}</h3>
-        <p class="card-text">{{ product.description }}</p>
+        <h2 class="card-title">{{ product.attributes.name }} x {{product.attributes.measurement}}Kg</h2>
+        <h3 class="text-success">${{ product.attributes.price }}</h3>
+        <p class="card-text">{{ product.attributes.description }}</p>
     </div>
     <div class="card-footer centrar">
         <div class="row">
@@ -15,12 +18,11 @@
                 </button>
             </div>
             <div class="col-sm-6">
-                <button mat-raised-button color="success" data-toggle="modal" data-target="#productModal">
+                <a  type="button" mat-raised-button color="success" [routerLink]="['/product', product.id]">
                     Ver Detalle
                     <mat-icon>remove_red_eye</mat-icon>
-                </button>
+                </a>
             </div>
         </div>
     </div>
 </div>
-<app-productmodal [article]="product"></app-productmodal>
