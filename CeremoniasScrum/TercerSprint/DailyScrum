@@ -85,7 +85,8 @@ Fecha: 16/05/2021
 Fecha: 20/05/2021
 
 1. ¿Que se hizo hoy?
-- Implementacion de modulos para question
+- Se enlazaron correctamente las rutas de los productos
+- Se creó el crud funcional de los productos 
 
 2. ¿Que dificultades se tienen?
 - No se tuvo inconvenientes con este
@@ -103,6 +104,55 @@ Fecha: 21/05/2021
 
 3.¿Que queda pendiiente?
 - Creaion de los modulos relacionados a los answers
+
+Fecha : 22/05/2021
+
+1. ¿Que se hizo hoy?
+- Se crearon los seeders para los productos
+- Se creo el crud funcional para las categorias
+- Se enlazaron correctamemte las rutas con los endpoints de las categorias
+
+2. ¿Que dificultades se tienen?
+- No se tuvo inconvenientes 
+
+3. ¿Que queda pendiente?
+- Las creacion de los seeders para las categorias 
+
+Fecha: 23/05/2021
+
+1.¿Que se hizo hoy?
+- Se crearon los seeders para las categorias
+- Se creo la primera versión del READ ME en español
+
+2. ¿Que dificultades se tienen?
+- No se tuvo inconvenientes
+
+3. ¿Que queda pendiente?
+- Modulos relacionados con las preguntas 
+ 
+Fecha: 24/05/2021
+
+1. ¿Que se hizo hoy?
+- Se creo la migracion para las preguntas
+- Se creo la migracion para las respuestas
+- Se creo el modelo y controlador para las preguntas
+- Se creo el modelo y controlador para las respuestas
+- Se crearon las rutas de las respuestas
+- Se crearon las rutas de las preguntas
+- Se crearon los archivos request y resource para las preguntas 
+- Se creo el CRUD funcional para las preguntas
+- Se crearon los archivos request y resource para las respuestas
+- Se corrigio un problema al momento de listar los productos de una categoria
+- Se crearon los metodos store e index de las respuestas
+- Se hizo el planteamiento inicial de el carrito de compras
+- Se modifico el analizis inicial de la clase answers
+- Se modificó todo el modelo de answers con el nuevo diseño
+
+2.¿Que dificultades se tuvo?
+- No se tuvo inconvenientes
+
+3 ¿Que queda pendiente?
+- Implementacion relacinada con los modulos de respuestas
 
 -------------------------------------------------------------------------FRONTEND------------------------------------------------------------------------------------------------------
 Desarrollador: Caterine Ladin Galvis
