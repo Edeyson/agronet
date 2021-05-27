@@ -7,16 +7,16 @@ Participantes:
 
   DEV: Caterine Ladino Gavis (CA) - SCR: Edeyson Bermeo (ED) - DEV: Santiago Velez Suarez (SA) - DEV: Juan David Marulanda (JD)
   
-  1. Como usuario publico quiero consultar un productor para saber su informacion (CA - ED - SA - JD)
-  2. Como usuario publico quiero solicitar registro como productor para vender mis productos (CA - ED - SA - JD)
-  3. Como productor quiero gestionar pedidos para hacer saber a los usuarios el estado de su compra (CA - ED - SA - JD)
-  4. Como Productor quiero gestionar pedidos de los consumidores para realizar los envíos en los días establecidos (CA - ED - SA - JD)
-  5. Como productor quiero gestionar mis productos para mantener mi tienda al dia (CA - ED - SA - JD)
-  6. Como usuario registrado quiero realizar pedidos a un productor para reabastecer mi despensa (CA - ED - SA - JD)
-  7. Como productor quiero inscribirme en eventos para participar en la las ferias de venta colectiva (CA - ED - SA - JD)
-  8. Como productor quiero gestionar puntos de venta directos para que los clientes puedan llegar sin problemas (CA - ED - SA - JD)
-  9. Como administrador quiero gestionar quiero gestion productores para llevar una regulacion de estos (CA - ED - SA - JD)
-  10. Como gestor quiero gestionar eventos para mantener a los usuarios informados sobre los festivales (CA - ED - SA - JD)
+  1. Como usuario publico quiero consultar un productor para saber su informacion (ED - SA )
+  2. Como usuario publico quiero solicitar registro como productor para vender mis productos (CA - JD)
+  3. Como productor quiero gestionar pedidos para hacer saber a los usuarios el estado de su compra (CA -JD)
+  4. Como Productor quiero gestionar pedidos de los consumidores para realizar los envíos en los días establecidos (CA - JD)
+  5. Como productor quiero gestionar mis productos para mantener mi tienda al dia (ED - SA)
+  6. Como usuario registrado quiero realizar pedidos a un productor para reabastecer mi despensa (ED - SA)
+  7. Como productor quiero inscribirme en eventos para participar en la las ferias de venta colectiva (ED - SA)
+  8. Como productor quiero gestionar puntos de venta directos para que los clientes puedan llegar sin problemas (ED - SA)
+  9. Como administrador quiero gestionar quiero gestion productores para llevar una regulacion de estos (CA - JD)
+  10. Como gestor quiero gestionar eventos para mantener a los usuarios informados sobre los festivales (ED - SA)
   11. Como usuario registrado quiero realizar preguntar sobre un articulo en venta para obtener mas informacion al respecto (JD)
   
  
