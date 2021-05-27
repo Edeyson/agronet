@@ -49,4 +49,8 @@ export class ProductserviceService {
     return this.http.delete<any>(this.urlApi+'products/'+id, { headers });
   }
 
+
+  getProductsByUser(){
+    return this.http.get<any>(this.urlApi+"producer/"+localStorage.getItem("slug")+"/products");
+  }
 }

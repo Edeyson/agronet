@@ -27,6 +27,9 @@ export class ProductoComponent implements OnInit {
     telefono: "",
     updated_at: ""
   };
+
+  public bandera=false;
+
   constructor(
     private shoppingCartService: ShoppingCartService,
     public usuarioService: UsuarioserviceService,
@@ -38,6 +41,7 @@ export class ProductoComponent implements OnInit {
   ngOnInit(): void {
     console.log("Selected: ",this.product);
     this.getProducer();
+    this.getProductsByUser();
   }
 
   getProducer(){
@@ -65,6 +69,20 @@ export class ProductoComponent implements OnInit {
       res => {
         this.toastrService.success("Borrado correctamente", "Producto");
         this.router.navigate(['/inicio']);
+      }
+    );
+  }
+
+  getProductsByUser(){
+    this.productService.getProductsByUser().subscribe(
+      resp=>{
+        console.log("productos",resp);
+        resp.data.forEach(element => {
+          console.log("elemto;",element);
+          if(element.id==this.product.id){
+            this.bandera=true;
+          }
+        });
       }
     );
   }

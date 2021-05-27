@@ -81,7 +81,21 @@ export class UsuarioserviceService {
 
 
   serProducer(){
-    return this.http.get<any>(this.urlApi+'producers');
+    const headers = new HttpHeaders(
+      {
+        'Authorization':'Bearer '+localStorage.getItem("token"),
+        'Accept':'application/json',
+        'content-type': 'application/json'
+      });
+    let producer = {
+      data:{
+        type:"Producer",
+        attributes:{
+          id:localStorage.getItem("slug")
+        }
+      }
+    }
+    return this.http.post<any>(this.urlApi+'producers',producer,{headers:headers});
   }
 
 }

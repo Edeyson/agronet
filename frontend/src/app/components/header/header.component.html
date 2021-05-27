@@ -65,7 +65,6 @@
 </nav>
 
 
-
 <nav *ngIf="banderaLogueado" class="navbar navbar-expand-xl navbar-dark bg-dark">
     <div class="col-sm-1">
         <a class="navbar-brand" href="inicio">
@@ -129,48 +128,67 @@
         </ul>
 
     </div>
-</div>
 
-<div *ngIf="banderaLogueado">
-    <div class="row">
-        <div class="col-sm-1">
-            <a class="navbar-brand" href="inicio">
-                <img src="../../../assets/logo-agronet.jpeg" width="100rem" height="auto"
-                    class="d-inline-block align-top" alt="">
-            </a>
-        </div>
-        <div class="col-lg">
-            <div class="row">
-                <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
-                            <img src="../../../assets/serach-icon.png" width="20" height="20"
-                                class="d-inline-block align-top" alt="">
-                        </button>
-                    </form>
-                    <div class="form-inline">
-                        <a type="button" data-toggle="modal" data-target="#perfilModal">
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="50" fill="currentColor" class="bi bi-file-person" viewBox="0 0 16 16">
-                                <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
-                                <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                              </svg>
-                        </a>
-                        <a  type="button" (click)="newProducto()">
-                            <button class="btn btn-primary">Nuevo Producto</button>
-                        </a>
-                        <a  type="button" (click)="serProducer()">
-                            <button class="btn btn-success">Solicitar ser Producer</button>
+    <div class="form-inline">
+        <a type="button" data-toggle="modal" data-target="#perfilModal">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="50" fill="currentColor" class="bi bi-file-person"
+                viewBox="0 0 16 16">
+                <path
+                    d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
+                <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+            </svg>
+        </a>
+        <a type="button" (click)="logOut()">
+            <button class="btn btn-danger">logOut</button>
+        </a>
+        <a *ngIf="banderaProducer" type="button" (click)="newProducto()">
+            <button class="btn btn-primary">Nuevo Producto</button>
+        </a>
+        <a *ngIf="!banderaProducer" type="button" (click)="serProducer()">
+            <button class="btn btn-success">Solicitar ser Producer</button>
+        </a>
+    </div>
+
+</nav>
+
+<nav class="navbar nabar-estados">
+    <div class="navbar-header">
+        <ul class="dropdown-menu">
+            <li *ngFor="let state of states">
+                <a type="button" (click)="estadoSeleccinado(state.isoCode)">{{state.name}}</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<nav class="navbar nabar-ciudades">
+    <div class="navbar-header">
+        <ul class="dropdown-menu">
+            <li *ngFor="let city of ciudades">
+                <a type="button" (click)="ciudadSeleccinada(city.name)">{{city.name}}</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="dropdown">
+    <div style="width: 10rem;">
+        <nav class="navbar navbar-dark">
+            <div class="collapse navbar-collapse navbar-ex1-collapse navbar-secondary">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                            data-target=".nabar-estados">
+                            departamento<b class="caret"></b>
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target=".nabar-ciudades">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                            data-target=".nabar-ciudades">
                             ciudad <b class="caret"></b>
                         </a>
-
-                    </div>
-                </nav>
+                    </li>
+                </ul>
             </div>
         </nav>
     </div>

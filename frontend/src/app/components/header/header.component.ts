@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { catchError, map } from 'rxjs/operators';
 import { CountriesService } from 'src/app/services/countries.service';
+import { ProductserviceService } from 'src/app/services/productservice.service';
 import { UsuarioserviceService } from 'src/app/services/usuarioservice.service';
 import { cities, states } from '../interfaces/interfaces';
 
@@ -24,6 +26,7 @@ export class HeaderComponent implements OnInit {
   public selectedStateName = "";
   public statesOfCountry = [];
   public banderaLogueado = false;
+  public banderaProducer = false;
 
   constructor( private service: CountriesService, 
     private userService: UsuarioserviceService,
@@ -39,6 +42,12 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.userService.isProducer()
+                  .subscribe(
+                    resp=>{
+                      this.banderaProducer = true;
+                    }
+                  );
   }
   estadoSeleccinado(estado:string){
     console.log(estado);
@@ -63,8 +72,7 @@ serProducer(){
   console.log("user", localStorage.getItem('slug'));
   this.userService.serProducer().subscribe(
     resp=>{
-      console.log(resp);
-      
+      console.log("producer: ",resp);
     }
   );
 }
@@ -73,5 +81,8 @@ newProducto()
 {
   this.router.navigate(['create-product']);
 }
+
+
+
 
 }
